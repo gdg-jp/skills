@@ -1,3 +1,0 @@
-CREATE TABLE IF NOT EXISTS _migrations_seed (
-  id INTEGER PRIMARY KEY
-);
