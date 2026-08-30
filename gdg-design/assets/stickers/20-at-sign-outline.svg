@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.5 156.5"><defs>
+    <style>
+      .cls-1 {
+        fill: #c3ecf6;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke: #1e1e1e;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6, .cls-9, .cls-10, .cls-14, .cls-15, .cls-17 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4 {
+        fill: #4285f4;
+      }
+
+      .cls-2, .cls-5, .cls-7, .cls-8, .cls-11, .cls-12, .cls-13, .cls-16 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #57caff;
+      }
+
+      .cls-5 {
+        fill: #ff7daf;
+      }
+
+      .cls-6 {
+        fill: #ea4335;
+      }
+
+      .cls-7 {
+        fill: #f8d8d8;
+      }
+
+      .cls-8 {
+        fill: #ffe7a5;
+      }
+
+      .cls-9, .cls-16 {
+        fill: #34a853;
+      }
+
+      .cls-18 {
+        fill: #f0f0f0;
+      }
+
+      .cls-10, .cls-12 {
+        fill: none;
+      }
+
+      .cls-13 {
+        fill: #ffd427;
+      }
+
+      .cls-14 {
+        fill: #ccf6cf;
+      }
+
+      .cls-15 {
+        fill: #f9ab00;
+      }
+
+      .cls-17 {
+        fill: #5cdb6d;
+      }
+    </style>
+  </defs>
+  <g transform="translate(-3266.5 -600)"><g>
+      <g>
+        <path class="cls-10" d="M3370.37,696.24c-12.05,22.43-36.58,32.58-54.79,22.67-18.21-9.91-23.2-36.14-11.15-58.57" />
+        <path class="cls-10" d="M3304.43,660.34c12.05-22.43,36.58-32.58,54.79-22.67,18.21,9.91,23.2,36.14,11.15,58.57" />
+      </g>
+      <path class="cls-10" d="M3387.64,705.09c-3.12,5.8-9.46,8.42-14.17,5.86-4.71-2.56-6-9.34-2.88-15.14" />
+      <g>
+        <path class="cls-10" d="M3348.33,741.57c-14.76,5.81-30.55,5.73-44.06-1.62-27.64-15.05-35.21-54.85-16.92-88.9" />
+        <path class="cls-10" d="M3287.35,651.04c18.29-34.05,55.53-49.46,83.17-34.41,27.64,15.05,35.21,54.85,16.92,88.9" />
+      </g>
+    </g>
+    </g></svg>

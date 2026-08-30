@@ -1,0 +1,4 @@
+interface:
+  display_name: "connpass Syntax"
+  short_description: "connpassのMarkdown・HTML・CSS記法を安全に作成"
+  default_prompt: "Use $connpass-syntax to format this content for a connpass event page."

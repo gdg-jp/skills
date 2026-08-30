@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.5 257.5"><defs>
+    <style>
+      .cls-1 {
+        fill: #c3ecf6;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke: #1e1e1e;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6, .cls-9, .cls-10, .cls-14, .cls-15, .cls-17 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4 {
+        fill: #4285f4;
+      }
+
+      .cls-2, .cls-5, .cls-7, .cls-8, .cls-11, .cls-12, .cls-13, .cls-16 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #57caff;
+      }
+
+      .cls-5 {
+        fill: #ff7daf;
+      }
+
+      .cls-6 {
+        fill: #ea4335;
+      }
+
+      .cls-7 {
+        fill: #f8d8d8;
+      }
+
+      .cls-8 {
+        fill: #ffe7a5;
+      }
+
+      .cls-9, .cls-16 {
+        fill: #34a853;
+      }
+
+      .cls-18 {
+        fill: #f0f0f0;
+      }
+
+      .cls-10, .cls-12 {
+        fill: none;
+      }
+
+      .cls-13 {
+        fill: #ffd427;
+      }
+
+      .cls-14 {
+        fill: #ccf6cf;
+      }
+
+      .cls-15 {
+        fill: #f9ab00;
+      }
+
+      .cls-17 {
+        fill: #5cdb6d;
+      }
+    </style>
+  </defs>
+  <g transform="translate(-79.5 -91)"><g>
+      <path class="cls-8" d="M94.02,101.59h111.96c2.22,0,4.02,1.8,4.02,4.02v59.43c0,2.22-1.8,4.02-4.02,4.02h-51.98c-2.22,0-4.02,1.8-4.02,4.02v93.23c0,2.22,1.8,4.02,4.02,4.02h51.98c2.22,0,4.02,1.8,4.02,4.02v59.49c0,2.22-1.8,4.02-4.02,4.02h-111.96c-2.22,0-4.02-1.8-4.02-4.02V105.6c0-2.22,1.8-4.02,4.02-4.02Z" />
+      <path class="cls-8" d="M355.99,101.59h-111.96c-2.22,0-4.02,1.8-4.02,4.02v59.43c0,2.22,1.8,4.02,4.02,4.02h51.98c2.22,0,4.02,1.8,4.02,4.02v93.23c0,2.22-1.8,4.02-4.02,4.02h-51.98c-2.22,0-4.02,1.8-4.02,4.02v59.49c0,2.22,1.8,4.02,4.02,4.02h111.96c2.22,0,4.02-1.8,4.02-4.02V105.6c0-2.22-1.8-4.02-4.02-4.02Z" />
+    </g>
+    </g></svg>

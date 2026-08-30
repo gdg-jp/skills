@@ -1,0 +1,6 @@
+interface:
+  display_name: "GDG Design"
+  short_description: "Create brand-aligned Google Developer Groups visuals"
+  icon_large: "./assets/gdg.svg"
+  brand_color: "#4285F4"
+  default_prompt: "Use $gdg-design to create a brand-aligned visual for my Google Developer Group."

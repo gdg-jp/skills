@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201.5 190.5"><defs>
+    <style>
+      .cls-1 {
+        fill: #c3ecf6;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke: #1e1e1e;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6, .cls-9, .cls-10, .cls-14, .cls-15, .cls-17 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4 {
+        fill: #4285f4;
+      }
+
+      .cls-2, .cls-5, .cls-7, .cls-8, .cls-11, .cls-12, .cls-13, .cls-16 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #57caff;
+      }
+
+      .cls-5 {
+        fill: #ff7daf;
+      }
+
+      .cls-6 {
+        fill: #ea4335;
+      }
+
+      .cls-7 {
+        fill: #f8d8d8;
+      }
+
+      .cls-8 {
+        fill: #ffe7a5;
+      }
+
+      .cls-9, .cls-16 {
+        fill: #34a853;
+      }
+
+      .cls-18 {
+        fill: #f0f0f0;
+      }
+
+      .cls-10, .cls-12 {
+        fill: none;
+      }
+
+      .cls-13 {
+        fill: #ffd427;
+      }
+
+      .cls-14 {
+        fill: #ccf6cf;
+      }
+
+      .cls-15 {
+        fill: #f9ab00;
+      }
+
+      .cls-17 {
+        fill: #5cdb6d;
+      }
+    </style>
+  </defs>
+  <g transform="translate(-1639 -802)"><path class="cls-4" d="M1825.88,866.35h-53.3v-49.3c0-2.21-1.79-4-4-4h-57.39c-2.21,0-4,1.79-4,4v49.3h-53.3c-2.21,0-4,1.79-4,4v55.16c0,2.21,1.79,4,4,4h53.3v48.3c0,2.21,1.79,4,4,4h57.39c2.21,0,4-1.79,4-4v-48.3h53.3c2.21,0,4-1.79,4-4v-55.16c0-2.21-1.79-4-4-4Z" />
+    </g></svg>
