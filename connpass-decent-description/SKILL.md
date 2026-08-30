@@ -124,15 +124,20 @@ description: Improve the structure and presentation of connpass event or group d
 <div style="background-color:#F0F0F0; color:#1E1E1E; padding:8px;">
 ```
 
-connpass の既定装飾が黒い枠線の上へ見えないよう、カード先頭の `h1` には厳密に
-`margin:0` を指定する。
+タイトルカードでは、`h1` を囲む `div` に `padding` を指定しない。余白は `h1` 自身へ指定する。
+connpass の既定CSSは `h1` に `box-shadow` を付けるため、親 `div` に余白があると影が枠線の内側へ
+露出する。`h1` を親の四辺へ接触させることで、既定の影を親 `div` の枠線で隠す。
+
+カード先頭の `h1` には厳密に `margin:0` を指定する。
 
 ```html
-<h1 style="margin:0; border:none;">{{イベント名}}</h1>
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; margin:0 0 16px 0;">
+  <h1 style="margin:0; padding:18px; border:none;">{{イベント名}}</h1>
+</div>
 ```
 
 `margin:0 0 12px 0` のように下マージンを足した値へ置き換えない。
-見出し後の間隔は、次の要素の `margin-top` またはカードの `padding` で作る。
+タイトルカードと次の要素の間隔は、親 `div` の `margin-bottom` または次の要素の `margin-top` で作る。
 
 パネルを使う場合は、GDGの基本形として白地、Black 02 の四辺の枠線を優先する。
 ただし、既存ファイルの別の表現を変更する前に、その目的とユーザーの希望を確認する。
@@ -218,6 +223,7 @@ python3 scripts/lint_connpass.py path/to/description.html
 - 実装した追加・削除・改名・並べ替えが、対話で承認された範囲内か
 - 既存の見出し、訴求、色の意味、CSS上の工夫を不用意に失っていないか
 - `#F0F0F0` のページ地が `padding:8px` になっているか
+- タイトルの親 `div` に `padding` がなく、`h1` 自身に `padding` があるか
 - `h1` が厳密な `margin:0` を保っているか
 - 見出しに名前やURLが `outline` のステッカーを使っていないか
 - 開催概要の内容が `font-size:14px` で揃っているか
