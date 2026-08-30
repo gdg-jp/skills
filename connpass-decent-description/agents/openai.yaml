@@ -1,0 +1,5 @@
+interface:
+  display_name: "connpass Decent Description"
+  short_description: "申込率を上げる connpass 説明文を構成・装飾"
+  brand_color: "#4285F4"
+  default_prompt: "Use $connpass-decent-description to structure and style my connpass event description."

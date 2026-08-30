@@ -1,0 +1,211 @@
+<!--
+  GDG connpass — 複数トラック conference テンプレート（3 トラック）
+  {{...}} を差し替えて使う。
+  パネルはすべて白地 + Black 02 枠線。色を使うのはタイムテーブルのセル、
+  トラック凡例のセル、登壇者アイコンのキーラインだけ。
+  トラック色は分類なので固定する: Track A = Blue / B = Green / C = Yellow。
+  貼る前に: python3 scripts/lint_connpass.py assets/conference-template.html
+-->
+
+<div style="background-color:#F0F0F0; color:#1E1E1E; padding:16px;">
+
+<!-- バナー: 地の直下に置ける唯一の非パネル要素 -->
+<img src="https://img.gdgs.jp/gdg-logo" alt="{{イベント名}} のバナー" width="1000" />
+
+<!-- タイトル + 2〜3 行の説明 -->
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;margin:16px 0 16px 0;">
+  <h1 style="margin:0 0 12px 0; font-size:26px; border:none;">
+    {{イベント名}}<br/>
+    <span style="font-size:20px;">{{開催地}} {{開催年}}</span>
+  </h1>
+  <p style="margin:0 0 6px 0; font-size:18px; font-weight:bold;">{{一言キャッチコピー}}</p>
+  <p style="margin:0;">{{3 トラックで何を扱うのか 2 行。誰に向けたものかまで書く}}</p>
+</div>
+
+<!-- 一目サマリ: トラック凡例。色が分類を表すのでセルに Pastel を使ってよい -->
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;">
+  <table border="0">
+    <tbody>
+      <tr>
+        <td style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:12px 16px;">
+          <strong>Track A — {{テーマA}}</strong><br/>
+          <span style="font-size:14px;">{{扱う内容を 1 行}}</span>
+        </td>
+        <td style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:12px 16px;">
+          <strong>Track B — {{テーマB}}</strong><br/>
+          <span style="font-size:14px;">{{扱う内容を 1 行}}</span>
+        </td>
+        <td style="border:2px solid #F9AB00; background-color:#FFE7A5; color:#1E1E1E; padding:12px 16px;">
+          <strong>Track C — {{テーマC}}</strong><br/>
+          <span style="font-size:14px;">{{扱う内容を 1 行}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;">
+  <h2 style="margin:0 0 12px 0; font-size:22px; border:none;">
+    <img src="https://img.gdgs.jp/gdg-sticker-hash-green" alt="" height="22" /> 開催概要
+  </h2>
+  <table border="0" style="border:none;">
+    <tbody>
+      <tr>
+        <td align="left" style="border:none; padding:6px 18px 6px 0; font-weight:bold;">🌐 公式サイト</td>
+        <td style="border:none; padding:6px 0;"><a href="{{公式サイトURL}}">{{公式サイト表示名}}</a></td>
+      </tr>
+      <tr>
+        <td align="left" style="border:none; padding:6px 18px 6px 0; font-weight:bold;">📅 日時</td>
+        <td style="border:none; padding:6px 0;">{{2026/11/14（土）10:00–18:00}}</td>
+      </tr>
+      <tr>
+        <td align="left" style="border:none; padding:6px 18px 6px 0; font-weight:bold;">📍 会場</td>
+        <td style="border:none; padding:6px 0;">
+          {{会場名}}<br/>
+          {{住所・フロア}}
+        </td>
+      </tr>
+      <tr>
+        <td align="left" style="border:none; padding:6px 18px 6px 0; font-weight:bold;">🎫 参加費</td>
+        <td style="border:none; padding:6px 0;">{{無料}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- タイムテーブル: 1 列目は時間、2 列目以降がトラック -->
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;">
+  <h2 style="margin:0 0 12px 0; font-size:22px; border:none;">
+    <img src="https://img.gdgs.jp/gdg-sticker-hash-green" alt="" height="22" /> タイムテーブル
+  </h2>
+  <table border="0">
+    <thead>
+      <tr>
+        <th style="border:none; padding:8px;"></th>
+        <th style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:10px 14px;">Track A</th>
+        <th style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:10px 14px;">Track B</th>
+        <th style="border:2px solid #F9AB00; background-color:#FFE7A5; color:#1E1E1E; padding:10px 14px;">Track C</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; color:#9AA0A6; font-weight:bold;">{{09:30〜10:00}}</td>
+      <td colspan="3" align="center" style="border:2px solid #9AA0A6; background-color:#F0F0F0; color:#9AA0A6; padding:8px 14px; font-size:14px;">受付</td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{10:00〜10:15}}</td>
+      <td colspan="3" align="center" style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:8px 14px;"><strong>Opening</strong></td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{10:30〜11:10}}</td>
+      <td style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{A-1 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{B-1 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #F9AB00; background-color:#FFE7A5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{C-1 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{11:20〜12:00}}</td>
+      <td style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{A-2 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{B-2 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #F9AB00; background-color:#FFE7A5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{C-2 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; color:#9AA0A6; font-weight:bold;">{{12:00〜13:00}}</td>
+      <td colspan="3" align="center" style="border:2px solid #9AA0A6; background-color:#F0F0F0; color:#9AA0A6; padding:8px 14px; font-size:14px;">休憩・ランチ</td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{13:00〜13:40}}</td>
+      <td style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{A-3 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{B-3 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #9AA0A6; background-color:#F0F0F0; color:#9AA0A6; padding:10px 14px; font-size:14px;">（このコマは休止）</td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; color:#9AA0A6; font-weight:bold;">{{13:50〜14:10}}</td>
+      <td colspan="3" align="center" style="border:2px solid #9AA0A6; background-color:#F0F0F0; color:#9AA0A6; padding:8px 14px; font-size:14px;">休憩</td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{14:10〜14:50}}</td>
+      <td style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{A-4 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #34A853; background-color:#CCF6C5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{B-4 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+      <td style="border:2px solid #F9AB00; background-color:#FFE7A5; color:#1E1E1E; padding:10px 14px; font-size:14px;">
+        <strong>{{C-4 のタイトル}}</strong><br/>{{登壇者名}}
+      </td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; font-weight:bold;">{{17:30〜17:45}}</td>
+      <td colspan="3" align="center" style="border:2px solid #4285F4; background-color:#C3ECF6; color:#1E1E1E; padding:8px 14px;"><strong>Closing</strong></td>
+    </tr>
+    <tr>
+      <td align="right" style="border:none; padding:10px 14px 10px 0; color:#9AA0A6; font-weight:bold;">{{18:00}}</td>
+      <td colspan="3" align="center" style="border:2px solid #9AA0A6; background-color:#F0F0F0; color:#9AA0A6; padding:8px 14px; font-size:14px;">終了</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- セッション: セッション数が多いのでトラックごとにパネルを分ける -->
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;">
+  <h2 style="margin:0 0 12px 0; font-size:22px; border:none;">
+    <img src="https://img.gdgs.jp/gdg-sticker-hash-green" alt="" height="22" /> Track A — {{テーマA}}
+  </h2>
+
+  <h3 style="margin:20px 0 8px 0; border:none;">{{A-1 のタイトル}}</h3>
+  <p style="margin:0 0 14px 0;">{{セッション概要を 2〜3 行。何が持ち帰れるかを書く}}</p>
+
+  <table border="0" style="border:none;">
+    <tbody>
+      <tr>
+        <td style="border:none; padding:0 18px 0 0;">
+          <p>　</p>
+          <img src="https://img.gdgs.jp/gdg-logo" alt="{{登壇者名}}" width="160" style="border:3px solid #4285F4;" />
+        </td>
+        <td style="border:none; padding:0;">
+          <h4 style="margin:0 0 6px 0; border:none;"><a href="{{登壇者のSNS URL}}">{{登壇者名}}</a></h4>
+          <p style="margin:0 0 10px 0; font-weight:bold;">{{所属}}, {{肩書き}}</p>
+          <p style="margin:0;">{{自己紹介文}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- A-2 以降も同じ形を繰り返す。アイコンのキーラインはそのトラックの色 -->
+</div>
+
+<!-- Track B / Track C も同じ形のパネルを続ける（キーラインは #34A853 / #F9AB00） -->
+
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;">
+  <h2 style="margin:0 0 12px 0; font-size:22px; border:none;">
+    <img src="https://img.gdgs.jp/gdg-sticker-hash-green" alt="" height="22" /> Opening / Closing
+  </h2>
+  <p style="margin:0;">{{主催チームからイベントの趣旨と GDG の紹介をします}}</p>
+</div>
+
+<!-- コールアウト: 1 ページに 1 つまで -->
+<div style="background-color:#FFFFFF; border:2px solid #1E1E1E; color:#1E1E1E; padding:16px; margin:0 0 16px 0;margin:0; text-align:center; font-weight:bold;">
+  <img src="https://img.gdgs.jp/gdg-sticker-brace-left-pastel-green" alt="" height="20" />
+  {{どのトラックも出入り自由です。気になるセッションだけの参加も歓迎です}}
+  <img src="https://img.gdgs.jp/gdg-sticker-brace-right-pastel-green" alt="" height="20" />
+</div>
+
+</div>
+
+<!-- ここから下は装飾なしの Markdown。assets/boilerplate-ja.md を貼る -->

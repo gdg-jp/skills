@@ -24,6 +24,7 @@ npx skills add gdg-jp/skills --skill gdg-accounts
 
 ## Skills
 
+- **connpass-decent-description** — Structure and style connpass event descriptions that convert.
 - **connpass-syntax** — Write connpass group and event descriptions with supported formatting.
 - **gdg-accounts** — Manage GDG Accounts OIDC clients with the `gdg` CLI.
 - **gdg-connpass** — Manage connpass groups, events, surveys, and organizer workflows.
