@@ -1,0 +1,48 @@
+{
+  "title": "GDG Example Day",
+  "timezone": "Asia/Tokyo",
+  "tracks": [
+    { "id": "a", "label": "Track A", "color": "blue" },
+    { "id": "b", "label": "Track B", "color": "green" }
+  ],
+  "speakers": {
+    "sample": { "name": "サンプル 登壇者", "role": "Developer Advocate" }
+  },
+  "entries": [
+    {
+      "id": "opening",
+      "kind": "session",
+      "title": "Opening",
+      "start": "10:00",
+      "end": "10:15",
+      "tracks": ["a", "b"],
+      "speakers": []
+    },
+    {
+      "id": "long-session",
+      "kind": "session",
+      "title": "長いタイトルでも読みやすさを保つセッション",
+      "start": "10:15",
+      "end": "11:00",
+      "tracks": ["a"],
+      "speakers": ["sample"]
+    },
+    {
+      "id": "parallel-session",
+      "kind": "session",
+      "title": "Parallel session",
+      "start": "10:15",
+      "end": "11:00",
+      "tracks": ["b"],
+      "speakers": []
+    },
+    {
+      "id": "break",
+      "kind": "break",
+      "title": "休憩",
+      "start": "11:00",
+      "end": "11:15",
+      "tracks": ["a", "b"]
+    }
+  ]
+}

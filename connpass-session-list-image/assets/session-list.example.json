@@ -1,0 +1,26 @@
+{
+  "title": "GDG Event Session List",
+  "speakers": {
+    "speaker-one": {
+      "name": "Speaker One",
+      "role": "Developer Advocate",
+      "image": "https://img.gdgs.jp/example"
+    }
+  },
+  "sections": [
+    {
+      "id": "talks",
+      "heading": "TALKS",
+      "color": "blue",
+      "desktopColumn": 1,
+      "sessions": [
+        {
+          "id": "session-one",
+          "title": "Build safer AI agents",
+          "speakers": ["speaker-one"],
+          "highlights": [{ "text": "AI agents", "color": "blue" }]
+        }
+      ]
+    }
+  ]
+}

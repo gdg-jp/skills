@@ -1,0 +1,4 @@
+interface:
+  display_name: "Connpass Session List Image"
+  short_description: "Render connpass-ready desktop and mobile session lists"
+  default_prompt: "Use $connpass-session-list-image to create desktop and mobile GDG session-list graphics from structured JSON."

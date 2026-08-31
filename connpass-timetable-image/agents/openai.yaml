@@ -1,0 +1,5 @@
+interface:
+  display_name: "Connpass Timetable Image"
+  short_description: "Create connpass-ready desktop and mobile timetables"
+  brand_color: "#4285F4"
+  default_prompt: "Use $connpass-timetable-image to create desktop and mobile timetable images for my GDG event."
