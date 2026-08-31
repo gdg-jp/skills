@@ -102,6 +102,45 @@ body {
   padding: 0;
 }
 
+.break-layout-spacer {
+  min-height: 54px;
+}
+
+.stepped-break {
+  position: relative;
+  z-index: 2;
+  min-height: 114px;
+  pointer-events: none;
+}
+
+.stepped-break-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.stepped-break-shape path {
+  fill: var(--off-white);
+  stroke: var(--ink);
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+
+.stepped-break-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "LINE Seed JP Timetable", "Google Sans Timetable", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
 .entry-card {
   display: flex;
   min-width: 0;

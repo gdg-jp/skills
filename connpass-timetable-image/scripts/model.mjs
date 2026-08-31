@@ -49,6 +49,31 @@ export function validateSchedule(schedule) {
     errors.push("entries must be a non-empty array");
   }
 
+  const hiddenIntervals = schedule.hiddenIntervals ?? [];
+  if (!Array.isArray(hiddenIntervals)) {
+    errors.push("hiddenIntervals must be an array");
+  } else {
+    const parsedHiddenIntervals = [];
+    for (const [index, interval] of hiddenIntervals.entries()) {
+      try {
+        const start = timeToMinutes(interval?.start);
+        const end = timeToMinutes(interval?.end);
+        if (start >= end) errors.push(`hiddenIntervals[${index}] must end after it starts`);
+        parsedHiddenIntervals.push({ index, start, end });
+      } catch (error) {
+        errors.push(`hiddenIntervals[${index}]: ${error.message}`);
+      }
+    }
+    parsedHiddenIntervals.sort((left, right) => left.start - right.start || left.end - right.end);
+    for (let index = 1; index < parsedHiddenIntervals.length; index += 1) {
+      if (parsedHiddenIntervals[index].start < parsedHiddenIntervals[index - 1].end) {
+        errors.push(
+          `hiddenIntervals overlap: ${parsedHiddenIntervals[index - 1].index} and ${parsedHiddenIntervals[index].index}`,
+        );
+      }
+    }
+  }
+
   const entryIds = new Set();
   const trackEntries = new Map([...trackIds].map((id) => [id, []]));
   for (const entry of schedule.entries ?? []) {
@@ -111,9 +136,28 @@ export function validateSchedule(schedule) {
 }
 
 export function scheduleBoundaries(schedule) {
-  return [...new Set(schedule.entries.flatMap((entry) => [entry.start, entry.end]))].sort(
-    (left, right) => timeToMinutes(left) - timeToMinutes(right),
-  );
+  return [
+    ...new Set([
+      ...schedule.entries.flatMap((entry) => [entry.start, entry.end]),
+      ...(schedule.hiddenIntervals ?? []).flatMap((interval) => [interval.start, interval.end]),
+    ]),
+  ].sort((left, right) => timeToMinutes(left) - timeToMinutes(right));
+}
+
+export function visibleScheduleIntervals(schedule) {
+  const boundaries = scheduleBoundaries(schedule);
+  const hiddenIntervals = (schedule.hiddenIntervals ?? []).map((interval) => ({
+    start: timeToMinutes(interval.start),
+    end: timeToMinutes(interval.end),
+  }));
+  return boundaries
+    .slice(0, -1)
+    .map((start, index) => ({ start, end: boundaries[index + 1] }))
+    .filter((interval) => {
+      const start = timeToMinutes(interval.start);
+      const end = timeToMinutes(interval.end);
+      return !hiddenIntervals.some((hidden) => hidden.start <= start && hidden.end >= end);
+    });
 }
 
 function escapeHtml(value) {
@@ -183,44 +227,161 @@ function trackRangeLabel(schedule, entry) {
     : `${labels[0]}–${labels.at(-1)}`;
 }
 
+function intervalIndexesForEntry(entry, intervals) {
+  const start = timeToMinutes(entry.start);
+  const end = timeToMinutes(entry.end);
+  return intervals
+    .map((interval, index) => ({
+      index,
+      start: timeToMinutes(interval.start),
+      end: timeToMinutes(interval.end),
+    }))
+    .filter((interval) => interval.start >= start && interval.end <= end)
+    .map((interval) => interval.index);
+}
+
+function entryGridPlacement(schedule, entry, intervals) {
+  const trackIndexes = entry.tracks.map((id) =>
+    schedule.tracks.findIndex((track) => track.id === id),
+  );
+  const intervalIndexes = intervalIndexesForEntry(entry, intervals);
+  if (intervalIndexes.length === 0) return null;
+  return {
+    columnStart: Math.min(...trackIndexes) + 2,
+    columnEnd: Math.max(...trackIndexes) + 3,
+    rowStart: intervalIndexes[0] + 2,
+    rowEnd: intervalIndexes.at(-1) + 3,
+    intervalIndexes,
+  };
+}
+
+function steppedBreakPairs(schedule) {
+  const trackOrder = new Map(schedule.tracks.map((track, index) => [track.id, index]));
+  const breaks = schedule.entries.filter((entry) => entry.kind === "break");
+  const claimed = new Set();
+  const pairs = [];
+  for (const first of breaks) {
+    if (claimed.has(first.id)) continue;
+    const second = breaks.find(
+      (candidate) =>
+        !claimed.has(candidate.id) &&
+        candidate.id !== first.id &&
+        candidate.title === first.title &&
+        candidate.start === first.end &&
+        first.tracks.every((track) => candidate.tracks.includes(track)) &&
+        candidate.tracks.length > first.tracks.length,
+    );
+    if (!second) continue;
+    const firstIndexes = first.tracks.map((track) => trackOrder.get(track));
+    const secondIndexes = second.tracks.map((track) => trackOrder.get(track));
+    if (
+      Math.min(...secondIndexes) > Math.min(...firstIndexes) ||
+      Math.max(...secondIndexes) < Math.max(...firstIndexes)
+    ) {
+      continue;
+    }
+    claimed.add(first.id);
+    claimed.add(second.id);
+    pairs.push({ first, second });
+  }
+  return { pairs, claimed };
+}
+
+function steppedBreakPath(xLeft, xRight, y, radiusX, radiusY) {
+  const commands = [
+    `M ${xLeft + radiusX} 0`,
+    `H ${xRight - radiusX}`,
+    `Q ${xRight} 0 ${xRight} ${radiusY}`,
+  ];
+  if (xRight < 1000) {
+    commands.push(
+      `V ${y - radiusY}`,
+      `Q ${xRight} ${y} ${xRight + radiusX} ${y}`,
+      `H ${1000 - radiusX}`,
+      `Q 1000 ${y} 1000 ${y + radiusY}`,
+    );
+  }
+  commands.push(`V ${1000 - radiusY}`, `Q 1000 1000 ${1000 - radiusX} 1000`);
+  commands.push(`H ${radiusX}`, `Q 0 1000 0 ${1000 - radiusY}`);
+  if (xLeft > 0) {
+    commands.push(
+      `V ${y + radiusY}`,
+      `Q 0 ${y} ${radiusX} ${y}`,
+      `H ${xLeft - radiusX}`,
+      `Q ${xLeft} ${y} ${xLeft} ${y - radiusY}`,
+    );
+  }
+  commands.push(`V ${radiusY}`, `Q ${xLeft} 0 ${xLeft + radiusX} 0`, "Z");
+  return commands.join(" ");
+}
+
+function renderSteppedBreak(schedule, pair, intervals) {
+  const firstPlacement = entryGridPlacement(schedule, pair.first, intervals);
+  const secondPlacement = entryGridPlacement(schedule, pair.second, intervals);
+  if (!firstPlacement || !secondPlacement) return "";
+  const overallStart = secondPlacement.columnStart;
+  const overallEnd = secondPlacement.columnEnd;
+  const overallTracks = overallEnd - overallStart;
+  const xLeft = ((firstPlacement.columnStart - overallStart) / overallTracks) * 1000;
+  const xRight = ((firstPlacement.columnEnd - overallStart) / overallTracks) * 1000;
+  const firstRows = firstPlacement.intervalIndexes.length;
+  const secondRows = secondPlacement.intervalIndexes.length;
+  const y = (firstRows / (firstRows + secondRows)) * 1000;
+  const radiusX = Math.min(24, 52 / overallTracks);
+  const radiusY = Math.min(120, 220 / (firstRows + secondRows));
+  const path = steppedBreakPath(xLeft, xRight, y, radiusX, radiusY);
+  return `<div class="entry-slot stepped-break" data-entry-id="${escapeHtml(
+    `${pair.first.id}+${pair.second.id}`,
+  )}" style="grid-column:${overallStart}/${overallEnd};grid-row:${firstPlacement.rowStart}/${secondPlacement.rowEnd}">
+    <svg class="stepped-break-shape" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path d="${path}"></path></svg>
+    <div class="stepped-break-label">${escapeHtml(pair.first.title)}</div>
+  </div>`;
+}
+
 export function renderDesktop(schedule) {
-  const boundaries = scheduleBoundaries(schedule);
-  const boundaryIndex = new Map(boundaries.map((time, index) => [time, index]));
+  const intervals = visibleScheduleIntervals(schedule);
   const columns = `48px repeat(${schedule.tracks.length}, minmax(0, 1fr))`;
-  const rows = `74px repeat(${boundaries.length - 1}, minmax(26px, auto))`;
+  const rows = `74px repeat(${intervals.length}, minmax(26px, auto))`;
   const headers = schedule.tracks
     .map(
       (track, index) =>
         `<div class="track-header color-${track.color}" style="grid-column:${index + 2};grid-row:1">${escapeHtml(track.label)}</div>`,
     )
     .join("");
-  const times = boundaries
-    .slice(0, -1)
+  const times = intervals
     .map(
-      (time, index) =>
+      (interval, index) =>
         `<div class="time-block" style="grid-column:1;grid-row:${index + 2}"><strong>${escapeHtml(
-          time,
-        )}</strong><span>〜${escapeHtml(boundaries[index + 1])}</span></div>`,
+          interval.start,
+        )}</strong><span>〜${escapeHtml(interval.end)}</span></div>`,
     )
     .join("");
+  const steppedBreaks = steppedBreakPairs(schedule);
   const entries = schedule.entries
+    .filter((entry) => !steppedBreaks.claimed.has(entry.id))
     .map((entry) => {
-      const trackIndexes = entry.tracks.map((id) =>
-        schedule.tracks.findIndex((track) => track.id === id),
-      );
-      const columnStart = Math.min(...trackIndexes) + 2;
-      const columnEnd = Math.max(...trackIndexes) + 3;
-      const rowStart = boundaryIndex.get(entry.start) + 2;
-      const rowEnd = boundaryIndex.get(entry.end) + 2;
-      return `<div class="entry-slot" style="grid-column:${columnStart}/${columnEnd};grid-row:${rowStart}/${rowEnd}">${renderCard(
+      const placement = entryGridPlacement(schedule, entry, intervals);
+      if (!placement) return "";
+      return `<div class="entry-slot" style="grid-column:${placement.columnStart}/${placement.columnEnd};grid-row:${placement.rowStart}/${placement.rowEnd}">${renderCard(
         schedule,
         entry,
       )}</div>`;
     })
     .join("");
+  const steppedBreakSpacers = steppedBreaks.pairs
+    .flatMap((pair) => [pair.first, pair.second])
+    .map((entry) => {
+      const placement = entryGridPlacement(schedule, entry, intervals);
+      if (!placement) return "";
+      return `<div class="break-layout-spacer" aria-hidden="true" style="grid-column:${placement.columnStart}/${placement.columnEnd};grid-row:${placement.rowStart}/${placement.rowEnd}"></div>`;
+    })
+    .join("");
+  const steppedBreakEntries = steppedBreaks.pairs
+    .map((pair) => renderSteppedBreak(schedule, pair, intervals))
+    .join("");
   return `<main id="canvas" class="canvas canvas-desktop" aria-label="${escapeHtml(
     schedule.title,
-  )} timetable"><div class="schedule-grid" style="grid-template-columns:${columns};grid-template-rows:${rows}">${headers}${times}${entries}</div></main>`;
+  )} timetable"><div class="schedule-grid" style="grid-template-columns:${columns};grid-template-rows:${rows}">${headers}${times}${steppedBreakSpacers}${entries}${steppedBreakEntries}</div></main>`;
 }
 
 export function renderMobile(schedule) {

@@ -36,6 +36,12 @@ limit.
 Inspect both PNGs at full size and thumbnail size. Check text wrapping, chronological order,
 track labels, portrait crops, contrast, and whether shared breaks appear once on mobile.
 
+Treat source rows explicitly marked as omitted from the timetable, such as
+`切り替え(タイムテーブルには記載しない)`, as hidden time bands: do not create entries for them,
+and add their full ranges to `hiddenIntervals` so the desktop time rail omits those rows too.
+When consecutive same-title breaks expand across additional tracks, keep the real per-track
+coverage in adjacent entries; the renderer joins them with inverted rounded corners on desktop.
+
 ## Publish only when requested
 
 Load `gdg-img` before publishing. Upload the desktop PNG as the source image, then attach the mobile

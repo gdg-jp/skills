@@ -1,6 +1,7 @@
 # Timetable input schema
 
 The renderer accepts one UTF-8 JSON object with `title`, `tracks`, `speakers`, and `entries`.
+It also accepts optional `hiddenIntervals` for source rows that must not appear at all.
 
 ## Tracks
 
@@ -59,3 +60,29 @@ Each entry represents its complete duration rather than spreadsheet continuation
 Desktop layout uses start/end boundaries to create vertical spans. Mobile layout groups entries by
 start time and orders them by track; long sessions appear once at their start rather than being
 duplicated at every intermediate boundary.
+
+## Hidden intervals
+
+Rows such as `切り替え(タイムテーブルには記載しない)` are display exclusions, not timetable
+entries. Omit the row content from `entries` and record its complete time range in
+`hiddenIntervals`:
+
+```json
+"hiddenIntervals": [
+  { "start": "13:50", "end": "14:00" },
+  { "start": "15:25", "end": "15:35" }
+]
+```
+
+The desktop renderer removes the entire time band, including its time label, even when a longer
+session crosses it. Therefore `13:25–13:50` may be followed directly by `14:00–14:25`. This is
+intentional. Hidden intervals must not overlap.
+
+## Stepped shared breaks
+
+Model a continuous break whose track coverage expands as adjacent `break` entries with the same
+title. For example, use one entry for tracks B–C from 14:25–14:45 and another for all tracks from
+14:45–15:00. The desktop renderer joins them into one stepped card and rounds the inside corners
+where the card expands. Its label is centered vertically against the full joined shape, not only
+the later, wider segment. Do not flatten the first segment across tracks that are still in
+session. Mobile keeps the chronological break entries separate because it has no track grid.
