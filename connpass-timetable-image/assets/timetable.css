@@ -211,11 +211,7 @@ body {
 }
 
 .speaker-row {
-  display: grid;
   min-width: 0;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 7px;
-  align-items: end;
   margin-top: 6px;
 }
 
@@ -226,6 +222,18 @@ body {
 .speaker-copy {
   min-width: 0;
   text-align: right;
+}
+
+.speaker-item {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  align-items: end;
+}
+
+.speaker-item + .speaker-item {
+  margin-top: 4px;
 }
 
 .speaker-name {
@@ -244,25 +252,13 @@ body {
   overflow-wrap: anywhere;
 }
 
-.avatars {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-left: 5px;
-}
-
 .avatar {
-  width: 48px;
-  height: 48px;
-  margin-left: -8px;
+  width: 44px;
+  height: 44px;
   border: 1.5px solid var(--ink);
   border-radius: 50%;
   background: var(--white);
   object-fit: cover;
-}
-
-.avatar:first-child {
-  margin-left: 0;
 }
 
 .canvas-mobile {
@@ -353,6 +349,6 @@ body {
 }
 
 .canvas-mobile .avatar {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
 }

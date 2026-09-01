@@ -34,7 +34,8 @@ references, per-track overlaps, font and portrait loading, content overflow, and
 limit.
 
 Inspect both PNGs at full size and thumbnail size. Check text wrapping, chronological order,
-track labels, portrait crops, contrast, and whether shared breaks appear once on mobile.
+track labels, portrait crops, contrast, multi-speaker name/role association, and whether shared
+breaks appear once on mobile.
 
 Treat source rows explicitly marked as omitted from the timetable, such as
 `切り替え(タイムテーブルには記載しない)`, as hidden time bands: do not create entries for them,

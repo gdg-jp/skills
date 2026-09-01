@@ -56,6 +56,9 @@ Each entry represents its complete duration rather than spreadsheet continuation
   shared break or logistics item.
 - Entries may not overlap within one track.
 - `speakers` and `note` are optional. Speaker IDs must exist in `speakers`.
+- `speakers` may contain multiple IDs. Their array order is the display order, each ID may appear
+  only once per entry, and each speaker's role remains paired with that speaker's name. Do not
+  combine all names into one label or all roles into a separate aggregate label.
 
 Desktop layout uses start/end boundaries to create vertical spans. Mobile layout groups entries by
 start time and orders them by track; long sessions appear once at their start rather than being

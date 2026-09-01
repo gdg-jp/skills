@@ -115,6 +115,9 @@ export function validateSchedule(schedule) {
     if (entry.speakers !== undefined && !Array.isArray(entry.speakers)) {
       errors.push(`${entry.id} speakers must be an array`);
     }
+    if (Array.isArray(entry.speakers) && new Set(entry.speakers).size !== entry.speakers.length) {
+      errors.push(`${entry.id} repeats a speaker`);
+    }
     for (const speakerId of entry.speakers ?? []) {
       if (!speakers[speakerId]) errors.push(`${entry.id} references unknown speaker ${speakerId}`);
     }
@@ -174,24 +177,20 @@ function titleSizeClass(title) {
   return "";
 }
 
-function renderAvatars(speakerList) {
-  const images = speakerList.filter((speaker) => speaker.imageData);
-  if (images.length === 0) return "";
-  return `<div class="avatars">${images
-    .slice(0, 4)
-    .map(
-      (speaker) => `<img class="avatar" src="${speaker.imageData}" alt="" width="54" height="54">`,
-    )
-    .join("")}</div>`;
-}
-
 function renderSpeakerCopy(speakerList) {
   if (speakerList.length === 0) return "";
-  const names = speakerList.map((speaker) => escapeHtml(speaker.name)).join("、");
-  const roles = [...new Set(speakerList.map((speaker) => speaker.role).filter(Boolean))];
-  return `<div class="speaker-copy"><div class="speaker-name">${names}</div>${
-    roles.length > 0 ? `<div class="speaker-role">${roles.map(escapeHtml).join(" · ")}</div>` : ""
-  }</div>`;
+  return `<div class="speaker-copy">${speakerList
+    .map(
+      (speaker) =>
+        `<div class="speaker-item"><div class="speaker-details"><div class="speaker-name">${escapeHtml(
+          speaker.name,
+        )}</div>${speaker.role ? `<div class="speaker-role">${escapeHtml(speaker.role)}</div>` : ""}</div>${
+          speaker.imageData
+            ? `<img class="avatar" src="${speaker.imageData}" alt="" width="44" height="44">`
+            : ""
+        }</div>`,
+    )
+    .join("")}</div>`;
 }
 
 function entryColor(schedule, entry) {
@@ -212,7 +211,7 @@ function renderCard(schedule, entry, options = {}) {
     ${trackLabel}
     <div class="entry-title ${titleSizeClass(entry.title)}">${escapeHtml(entry.title)}</div>
     ${note}
-    <div class="speaker-row">${renderSpeakerCopy(speakerList)}${renderAvatars(speakerList)}</div>
+    <div class="speaker-row">${renderSpeakerCopy(speakerList)}</div>
   </article>`;
 }
 

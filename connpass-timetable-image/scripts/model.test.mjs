@@ -71,6 +71,25 @@ test("rejects unknown speaker and track references", () => {
   );
 });
 
+test("renders multiple speakers in order with each role paired to its name", () => {
+  const schedule = fixture();
+  schedule.speakers.moderator = { name: "Moderator", role: "Community lead" };
+  schedule.entries[1].speakers = ["moderator", "speaker"];
+  const html = renderDesktop(validateSchedule(schedule));
+  const moderator = html.indexOf("Moderator");
+  const moderatorRole = html.indexOf("Community lead");
+  const speaker = html.indexOf(">Speaker<");
+  const speakerRole = html.indexOf("Engineer");
+  assert.ok(moderator < moderatorRole && moderatorRole < speaker && speaker < speakerRole);
+  assert.equal(html.match(/class="speaker-item"/g)?.length, 2);
+});
+
+test("rejects a repeated speaker within one entry", () => {
+  const schedule = fixture();
+  schedule.entries[1].speakers = ["speaker", "speaker"];
+  assert.throws(() => validateSchedule(schedule), /a-session repeats a speaker/);
+});
+
 test("mobile output orders simultaneous entries by track and renders long sessions once", () => {
   const html = renderMobile(validateSchedule(fixture()));
   assert.ok(html.indexOf("a-session") < html.indexOf("b-session"));
