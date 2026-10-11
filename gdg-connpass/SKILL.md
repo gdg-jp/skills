@@ -31,6 +31,9 @@ Use `gdg connpass` for connpass.com administration through the GDG service.
 ```sh
 gdg connpass groups list
 gdg connpass groups upsert GROUP_ID [--chapter-id ID] [--numeric-group-id ID] [--enabled=BOOL]
+gdg connpass luma-calendars list
+gdg connpass luma-calendars upsert CALENDAR_ID [--chapter-id ID] [--enabled=BOOL]
+gdg connpass checkin QR_URL   # connpass reception QR or Luma ticket QR (luma.com/check-in/evt-…?pk=g-…)
 
 gdg connpass events list GROUP_ID
 gdg connpass events get GROUP_ID EVENT_ID
@@ -112,7 +115,7 @@ gdg connpass session relogin [--wait]
 
 - Event publish, cancel, delete, participant messaging, group allowlisting, and bot relogin are
   consequential external actions. Execute only the exact action requested.
-- `groups` and `session` are admin operations. Contributor-level event access does not imply admin
+- `groups`, `luma-calendars`, and `session` are admin operations. Contributor-level event access does not imply admin
   authority.
 - Boolean flags are applied only when explicitly present, so `--registration-enabled=false` and
   similar forms are meaningful.
