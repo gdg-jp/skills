@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-retro output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "reportMd",
+    "proposals",
+    "examples",
+    "contactOutcomes",
+    "wikiOutreachUpdateMd",
+    "provisionalUpdates"
+  ],
+  "properties": {
+    "reportMd": {
+      "type": "string"
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "target", "summary", "observation", "evidence", "payloadJson"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["rule", "constant", "guide", "template", "example", "decision"]
+          },
+          "target": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["editGroupKeys", "metricRefs", "retroNoteRefs"],
+            "properties": {
+              "editGroupKeys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "metricRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "retroNoteRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "payloadJson": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "draftVersionId", "assetId", "why", "metrics"],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "draftVersionId": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "assetId": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "why": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contactOutcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["contactId", "outcome", "note"],
+        "properties": {
+          "contactId": {
+            "type": "integer"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": ["worked", "no_response", "declined"]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "wikiOutreachUpdateMd": {
+      "type": "string"
+    },
+    "provisionalUpdates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "valueJson", "evidence"],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "valueJson": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Retro"
+  short_description: "人の修正と指標から Playbook への提案を出す"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-retro for this campaign."

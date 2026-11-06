@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Improve"
+  short_description: "採用した提案を pr-playbook に書き戻す"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-improve to apply the exported proposals."

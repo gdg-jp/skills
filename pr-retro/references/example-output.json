@@ -1,0 +1,33 @@
+{
+  "reportMd": "## 結果\n申込 852 件（目標 800）。現地出席 533。\n\n## 人が直したこと\nX 投稿の本文の冒頭が 12 回直された（日時を先頭に）。\n\n## Keep / Problem / Try\n- Keep: Instagram 広告の早期開始\n- Problem: 当日実況を 1 人で回した\n- Try: 実況は前日に全件予約",
+  "proposals": [
+    {
+      "kind": "guide",
+      "target": "guides/x.md",
+      "summary": "告知投稿は日時を 1 行目に置く",
+      "observation": "X 投稿の本文 12 件で、人が日時を 1 行目に移した",
+      "evidence": {
+        "editGroupKeys": ["x_post /posts/*/text"],
+        "metricRefs": [],
+        "retroNoteRefs": ["Problem 2"]
+      },
+      "payloadJson": "{\"markdown\":\"告知投稿の 1 行目は日時にする。\"}"
+    },
+    {
+      "kind": "constant",
+      "target": "constants.json#/x/foldThreshold",
+      "summary": "折りたたみ位置の観察値",
+      "observation": "「さらに表示」が 140 字前後で出た",
+      "evidence": {
+        "editGroupKeys": [],
+        "metricRefs": [],
+        "retroNoteRefs": ["Try 1"]
+      },
+      "payloadJson": "{\"path\":\"/x/foldThreshold/weighted\",\"value\":280}"
+    }
+  ],
+  "examples": [],
+  "contactOutcomes": [],
+  "wikiOutreachUpdateMd": "| 組織 | 担当 | 結果 |\n|---|---|---|\n| 大阪大学 情報系研究室 | （担当） | 案内済み、5 名参加 |",
+  "provisionalUpdates": []
+}
