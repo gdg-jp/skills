@@ -109,4 +109,4 @@ export const mustFailures = (report) => report.results.filter((r) => r.strength 
 
 export { validateSchema } from "./schema.mjs";
 export { scanHtml, ALLOWED_TAGS, ALLOWED_CSS } from "./connpass-html.mjs";
-export { weightedLength, foldIndex, hashtags, findUrls } from "./util.mjs";
+export { weightedLength, foldIndex, hashtags, findUrls, japaneseTexts } from "./util.mjs";
