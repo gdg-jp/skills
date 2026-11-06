@@ -49,7 +49,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const text = `${JSON.stringify(buildOutputSchema(), null, 2)}\n`;
   if (process.argv.includes("--check")) {
     // Compare as JSON: Biome may reformat the file.
-    if (JSON.stringify(JSON.parse(readFileSync(target, "utf8"))) !== JSON.stringify(buildOutputSchema())) {
+    if (
+      JSON.stringify(JSON.parse(readFileSync(target, "utf8"))) !==
+      JSON.stringify(buildOutputSchema())
+    ) {
       console.error(
         "output.schema.json is out of date: run node pr-playbook/scripts/render/build-schema.mjs",
       );
