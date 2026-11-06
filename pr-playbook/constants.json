@@ -153,5 +153,42 @@
   },
   "surveyQuestions": ["年齢", "職業", "経験年数", "イベントを知った場所"],
   "surveySourceQuestion": "イベントを知った場所",
-  "surveyExtraOptions": ["その他"]
+  "surveyExtraOptions": ["その他"],
+  "render": {
+    "thumbnailScale": 0.25,
+    "minFontPxAtThumbnail": 9,
+    "minContrast": 4.5,
+    "provisional_thumbnailScale": true,
+    "provisional_minFontPxAtThumbnail": true
+  },
+  "images": {
+    "connpassThumbnail": {
+      "width": 1200,
+      "height": 630,
+      "maxBytes": 1048576,
+      "provisional": true,
+      "note": "connpass のイベント画像の推奨比率は未確認（事前確認 4）。1 MB 上限は apps/connpass の実装値"
+    },
+    "jpegQualityStart": 85,
+    "jpegQualityStep": 10,
+    "jpegQualityMin": 60
+  },
+  "live": {
+    "flagNotes": {
+      "noRecording": "⚠️ 録画・撮影 NG",
+      "english": "🌐 英語セッション",
+      "onsiteOnly": "📍 現地のみ",
+      "bringPc": "💻 PC をご用意ください"
+    },
+    "streamPrefix": "📺 配信はこちら",
+    "trackEmoji": ["🔵", "🟢", "🟡", "🔴"],
+    "photoAfterMinutes": 10,
+    "templates": {
+      "session": "{{emoji}}{{time}}〜 {{track}}\n『{{title}}』\n👤{{speakers}}\n{{flags}}\n{{stream}}\n{{hashtag}}",
+      "opening": "{{time}} オープニングが始まります！\n{{event}}\n{{stream}}\n{{hashtag}}",
+      "doors": "{{time}} 開場しました！受付でお名前をお伝えください。\n{{hashtag}}",
+      "closing": "{{time}} クロージングです。ご参加ありがとうございました！\n{{hashtag}}"
+    },
+    "provisional_templates": true
+  }
 }

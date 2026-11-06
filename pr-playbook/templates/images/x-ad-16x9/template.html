@@ -1,0 +1,10 @@
+<div class="canvas" data-safe-inset="32" style="width:{{width}}px;height:{{height}}px;">
+  <img class="logo" data-logo src="{{logoSrc}}" alt="GDG" style="left:64px;top:32px;" />
+  <div class="panel" style="left:64px;top:112px;width:1472px;height:724px;padding:32px;">
+  {{#if eventName}}<p class="slot eyebrow" data-slot="eventName" style="font-size:30px;">{{eventName}}</p>{{/if}}
+  <p class="slot headline" data-slot="headline" data-required="true" style="font-size:calc(var(--title-scale) * 88px);max-height:400px;">{{#each headlineParts}}{{#if em}}<span class="em">{{text}}</span>{{else}}{{text}}{{/if}}{{/each}}</p>
+  {{#if sub}}<p class="slot sub" data-slot="sub" data-required="false" style="font-size:38px;max-height:118px;">{{sub}}</p>{{/if}}
+  <div class="facts">{{#if date}}<span class="slot fact" data-slot="date" data-required="false" style="font-size:30px;">{{date}}</span>{{/if}}{{#if place}}<span class="slot fact" data-slot="place" data-required="false" style="font-size:30px;">{{place}}</span>{{/if}}</div>
+  <span class="slot cta" data-slot="cta" data-required="true" style="font-size:40px;">{{cta}}</span>
+  </div>
+</div>

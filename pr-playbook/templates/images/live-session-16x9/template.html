@@ -1,0 +1,9 @@
+<div class="canvas" data-safe-inset="32" style="width:{{width}}px;height:{{height}}px;">
+  <img class="logo" data-logo src="{{logoSrc}}" alt="GDG" style="left:64px;top:40px;" />
+  <div class="panel" style="left:64px;top:128px;width:1472px;height:708px;padding:56px;">
+  <div class="facts"><span class="slot fact" data-slot="time" data-required="true" style="font-size:40px;">{{time}}</span><span class="slot fact" data-slot="track" data-required="true" style="font-size:40px;">{{track}}</span></div>
+  <p class="slot title" data-slot="sessionTitle" data-required="true" style="font-size:calc(var(--title-scale) * 80px);max-height:310px;">{{#each sessionTitleParts}}{{#if em}}<span class="em">{{text}}</span>{{else}}{{text}}{{/if}}{{/each}}</p>
+  <p class="slot" data-slot="speakerName" data-required="true" style="font-size:44px;font-weight:700;max-height:120px;">{{speakerName}}</p>
+  {{#if flags}}<p class="slot" data-slot="flags" style="max-height:70px;">{{#each flags}}<span class="chip" style="font-size:28px;">{{this}}</span>{{/each}}</p>{{/if}}
+  </div>
+</div>

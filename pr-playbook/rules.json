@@ -446,6 +446,78 @@
         "kind": "review"
       },
       "fix": "レビュアーがプレビューで確認する。"
+    },
+    {
+      "id": "RENDER-NO-OVERFLOW",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "スロットの文字が枠と画像の外にはみ出さない。",
+      "source": "Tips 5: サムネイルは縮小表示でも読める",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-no-overflow"
+      },
+      "fix": "文言を短くするか titleScale を下げる。"
+    },
+    {
+      "id": "RENDER-MIN-FONT",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "必須スロットの文字が、一覧の縮小表示（constants.render.thumbnailScale）で constants.render.minFontPxAtThumbnail px 以上ある。",
+      "source": "Tips 5: サムネイルは縮小表示でも読める",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-min-font"
+      },
+      "fix": "文言を短くして文字を大きくする。"
+    },
+    {
+      "id": "RENDER-CONTRAST",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "必須スロットの文字と背景のコントラスト比が constants.render.minContrast 以上。",
+      "source": "Tips 23: イベント skin の色でも読める",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-contrast"
+      },
+      "fix": "skin の text / panelBg を見直す。"
+    },
+    {
+      "id": "RENDER-SAFE-ZONE",
+      "strength": "SHOULD",
+      "scope": ["draft.asset_spec"],
+      "requirement": "必須スロットがテンプレートのセーフゾーン（data-safe-inset）の内側にある。",
+      "source": "Tips 12: 媒体ごとの表示枠",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-safe-zone"
+      },
+      "fix": "文言を短くする。"
+    },
+    {
+      "id": "RENDER-LOGO-INTACT",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "ロゴは比率・回転・切り抜きを変えず、上に何も重ねない。",
+      "source": "gdg-design: Logo の禁則",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-logo-intact"
+      },
+      "fix": "テンプレートのロゴに手を加えない。"
+    },
+    {
+      "id": "RENDER-FONTS-LOADED",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "見出しと本文の書体が読み込まれている（フォントを配置していない環境では unevaluated）。",
+      "source": "Tips 23: 書体もブランドの一部",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-fonts-loaded"
+      },
+      "fix": "フォントを配置する（pr の README）。"
     }
   ]
 }

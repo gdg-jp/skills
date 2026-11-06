@@ -19,6 +19,7 @@ import {
   survey,
   swagKinds,
 } from "./plan.mjs";
+import { asArray } from "./util.mjs";
 import {
   fold,
   igChannelSpecific,
@@ -105,6 +106,13 @@ export function runChecks({
   const ctx = { kind, draft, brief, related, yomiyasu, constants: playbook.constants };
   const results = rulesFor(playbook.rules, kind).map((rule) => {
     const base = { ruleId: rule.id, strength: rule.strength };
+    // Render rules are measured in the browser (scripts/render/checks-script.js) and passed in.
+    if (rule.verification.kind === "render") {
+      const measured = asArray(related?.render).find((r) => r?.ruleId === rule.id);
+      return measured
+        ? { ...base, status: measured.status, detail: measured.detail ?? "" }
+        : { ...base, status: "unevaluated", detail: "render: 描画していない" };
+    }
     if (rule.verification.kind !== "mechanical") {
       return { ...base, status: "unevaluated", detail: `${rule.verification.kind}: 人が判断する` };
     }

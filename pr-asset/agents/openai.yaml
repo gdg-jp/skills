@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Asset"
+  short_description: "画像テンプレートのスロットを Playbook どおりに埋める"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-asset with this brief."

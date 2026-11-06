@@ -1,0 +1,49 @@
+{
+  "templateId": "ig-feed-4x5",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "purpose": "Instagram フィード",
+  "slots": {
+    "eventName": {
+      "type": "text",
+      "required": false,
+      "maxLength": 40
+    },
+    "headline": {
+      "type": "text",
+      "required": true,
+      "maxLength": 40
+    },
+    "sub": {
+      "type": "text",
+      "required": false,
+      "maxLength": 80
+    },
+    "date": {
+      "type": "text",
+      "required": false,
+      "maxLength": 30
+    },
+    "place": {
+      "type": "text",
+      "required": false,
+      "maxLength": 40
+    }
+  },
+  "layoutVars": {
+    "titleScale": {
+      "min": 0.8,
+      "max": 1.2,
+      "default": 1
+    },
+    "align": {
+      "enum": ["left", "center"],
+      "default": "left"
+    },
+    "emphasis": {
+      "maxItems": 3
+    }
+  }
+}

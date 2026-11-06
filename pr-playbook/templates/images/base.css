@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Google Sans", "LINE Seed JP", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color: var(--text);
+}
+.canvas {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+.panel {
+  position: absolute;
+  background: var(--panel);
+  border: 4px solid var(--keyline);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.slot {
+  overflow: hidden;
+  margin: 0;
+}
+.eyebrow {
+  font-weight: 700;
+  color: var(--text);
+}
+.headline {
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: var(--align);
+}
+.headline .em,
+.title .em {
+  color: var(--accent1);
+}
+.title {
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: var(--align);
+}
+.sub {
+  line-height: 1.5;
+  text-align: var(--align);
+}
+.facts {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.fact {
+  font-weight: 700;
+  padding: 6px 16px;
+  background: var(--sticker);
+  border: 3px solid var(--keyline);
+  color: #1e1e1e;
+}
+.cta {
+  align-self: flex-start;
+  font-weight: 700;
+  padding: 12px 32px;
+  background: var(--keyline);
+  color: #ffffff;
+}
+.logo {
+  position: absolute;
+  height: 56px;
+  width: auto;
+}
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid var(--keyline);
+}
+.chip {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 6px 14px;
+  border: 3px solid var(--keyline);
+  background: var(--sticker);
+  color: #1e1e1e;
+  font-weight: 700;
+}

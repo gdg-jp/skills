@@ -1,0 +1,14 @@
+<div class="canvas" data-safe-inset="32" style="width:{{width}}px;height:{{height}}px;">
+  <img class="logo" data-logo src="{{logoSrc}}" alt="GDG" style="left:56px;top:40px;" />
+  <div class="panel" style="left:56px;top:128px;width:968px;height:896px;padding:48px;justify-content:flex-start;">
+  {{#if track}}<span class="slot fact" data-slot="track" style="align-self:flex-start;font-size:28px;">{{track}}{{#if time}} {{time}}{{/if}}</span>{{/if}}
+  {{#if headline}}<p class="slot title" data-slot="headline" data-required="false" style="font-size:calc(var(--title-scale) * 60px);max-height:230px;">{{#each headlineParts}}{{#if em}}<span class="em">{{text}}</span>{{else}}{{text}}{{/if}}{{/each}}</p>{{/if}}
+  <div style="display:flex;gap:40px;align-items:center;margin-top:auto;">
+    <div style="width:300px;height:300px;flex:none;">{{#if speakerImageUrl}}<img class="avatar" src="{{url speakerImageUrl}}" alt="{{speakerName}}" />{{/if}}</div>
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0;">
+      <p class="slot" data-slot="speakerName" data-required="true" style="font-size:52px;font-weight:700;max-height:140px;">{{speakerName}}</p>
+      <p class="slot sub" data-slot="speakerRole" data-required="true" style="font-size:36px;max-height:140px;">{{speakerRole}}</p>
+    </div>
+  </div>
+  </div>
+</div>

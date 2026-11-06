@@ -1,0 +1,8 @@
+<div class="canvas" data-safe-inset="32" style="width:{{width}}px;height:{{height}}px;">
+  <div data-photo-background="true" style="position:absolute;inset:0;">{{#if photoUrl}}<img class="photo" src="{{url photoUrl}}" alt="" />{{/if}}</div>
+  <img class="logo" data-logo src="{{logoSrc}}" alt="GDG" style="left:64px;top:40px;" />
+  <div class="panel" style="left:64px;top:520px;width:1200px;height:316px;padding:40px;">
+  <p class="slot headline" data-slot="headline" data-required="true" style="font-size:calc(var(--title-scale) * 72px);max-height:190px;">{{#each headlineParts}}{{#if em}}<span class="em">{{text}}</span>{{else}}{{text}}{{/if}}{{/each}}</p>
+  {{#if sub}}<p class="slot sub" data-slot="sub" style="font-size:32px;max-height:100px;">{{sub}}</p>{{/if}}
+  </div>
+</div>
