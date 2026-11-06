@@ -42,7 +42,17 @@
   "reminders": {
     "staffOffsetMinutes": 60,
     "speakerOffsetMinutes": 180,
-    "provisional_speaker": true
+    "provisional_speaker": true,
+    "templates": {
+      "staff": "{{mention}} {{at}} に X で投稿します。いいね・リポストお願いします！\n{{headline}}\n{{url}}",
+      "story": "{{mention}} {{at}} の投稿の画像を、各自の Instagram ストーリーに上げてください。\n{{image}}\n{{url}}",
+      "review": "{{mention}} 下書き「{{title}}」のレビューをお願いします。\n{{url}}",
+      "followup": "{{mention}} 「{{title}}」の依頼にまだ返事がありません。もう一度連絡してください。\n{{url}}",
+      "delegated": "{{mention}} {{account}} での投稿をお願いします（{{at}}）。\n{{text}}",
+      "discordPost": "{{text}}",
+      "linkBroken": "リンク切れ: {{target}} が {{status}} を返しています（{{campaign}}）\n{{url}}"
+    },
+    "provisional_templates": true
   },
   "budget": {
     "nonAdsMaxYen": 10000,
@@ -55,8 +65,14 @@
   "milestonesDaysBefore": [45, 21, 7],
   "milestoneToleranceDays": 2,
   "ads": {
-    "x": { "startDaysBefore": [10, 14], "impressionDays": 3 },
-    "meta": { "startDaysBefore": 10, "toleranceDays": 1 }
+    "x": {
+      "startDaysBefore": [10, 14],
+      "impressionDays": 3
+    },
+    "meta": {
+      "startDaysBefore": 10,
+      "toleranceDays": 1
+    }
   },
   "connpass": {
     "titleMinChars": 20,
@@ -79,9 +95,17 @@
       "東京"
     ]
   },
-  "instagram": { "minHashtags": 5, "provisional_minHashtags": true },
-  "flyer": { "versions": ["v1", "v2"], "v2SessionConfirmedRatio": 0.5 },
-  "swag": { "kinds": ["all", "referral", "lottery", "redeem", "survey"] },
+  "instagram": {
+    "minHashtags": 5,
+    "provisional_minHashtags": true
+  },
+  "flyer": {
+    "versions": ["v1", "v2"],
+    "v2SessionConfirmedRatio": 0.5
+  },
+  "swag": {
+    "kinds": ["all", "referral", "lottery", "redeem", "survey"]
+  },
   "officialSeriesNames": [
     "Google I/O Extended",
     "I/O Extended",
