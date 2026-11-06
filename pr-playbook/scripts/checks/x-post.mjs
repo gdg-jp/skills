@@ -18,6 +18,10 @@ const label = (post, i) => `posts[${i}]${post?.purpose ? `(${post.purpose})` : "
 
 export function noHashtag(ctx) {
   const problems = [];
+  asArray(ctx.draft?.candidates).forEach((candidate, i) => {
+    const tags = hashtags(candidate.xShort);
+    if (tags.length) problems.push(`candidates[${i}].xShort: #${tags.join(" #")}`);
+  });
   posts(ctx).forEach((post, i) => {
     if (post.purpose === "live") return;
     const tags = hashtags(post.text);

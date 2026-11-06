@@ -4,8 +4,8 @@
     {
       "id": "X-NO-HASHTAG",
       "strength": "MUST",
-      "scope": ["draft.x_post"],
-      "requirement": "X の告知投稿（purpose が live 以外）の本文にハッシュタグを入れない。",
+      "scope": ["draft.x_post", "draft.copy"],
+      "requirement": "X の告知投稿（purpose が live 以外）と、コピー候補の X 用変種（xShort）にハッシュタグを入れない。",
       "source": "Tips 2: ハッシュタグは X のアルゴリズム上不利に働く",
       "verification": {
         "kind": "mechanical",

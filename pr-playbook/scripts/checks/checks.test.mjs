@@ -112,6 +112,13 @@ test("X-FOLD-LINK-VISIBLE fails when the link falls below the fold", () => {
   assert.equal(result(check("x_post", draft), "X-FOLD-LINK-VISIBLE").status, "fail");
 });
 
+test("X-NO-HASHTAG also covers the X variant of copy candidates", () => {
+  const copy = json(resolve(skills, "pr-copy/references/example-output.json"));
+  assert.equal(result(check("copy", copy), "X-NO-HASHTAG").status, "pass");
+  copy.candidates[0].xShort += " #DevFestKansai";
+  assert.equal(result(check("copy", copy), "X-NO-HASHTAG").status, "fail");
+});
+
 test("ANNOUNCE-AFTER-CONFIRMED fails a session post for a TBA session", () => {
   const draft = xDraft();
   const tba = structuredClone(brief);
