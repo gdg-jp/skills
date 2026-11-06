@@ -1,0 +1,9 @@
+<div style="margin-top:12px;padding:12px;background-color:{{color skin.panelBg}};border:2px solid {{color skin.keyline}};color:{{color skin.text}};">
+{{#if heading}}<h2 style="margin:0 0 12px 0;padding:8px 12px;background-color:{{color skin.sticker}};border:2px solid {{color skin.keyline}};font-size:20px;">{{heading}}</h2>{{/if}}
+<ul>
+{{#if discordInviteUrl}}<li>当日の連絡と質問は Discord で: <a href="{{url discordInviteUrl}}">{{url discordInviteUrl}}</a></li>{{/if}}
+{{#each streamUrls}}<li>{{label}}: <a href="{{url url}}">{{url url}}</a></li>{{/each}}
+{{#if slidesUrl}}<li>資料: <a href="{{url slidesUrl}}">{{url slidesUrl}}</a></li>{{/if}}
+{{#if calendarUrl}}<li>カレンダーに追加: <a href="{{url calendarUrl}}">{{url calendarUrl}}</a></li>{{/if}}
+</ul>
+</div>

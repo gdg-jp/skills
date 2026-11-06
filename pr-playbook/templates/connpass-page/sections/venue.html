@@ -1,0 +1,6 @@
+<div style="margin-top:12px;padding:12px;background-color:{{color skin.panelBg}};border:2px solid {{color skin.keyline}};color:{{color skin.text}};">
+{{#if heading}}<h2 style="margin:0 0 12px 0;padding:8px 12px;background-color:{{color skin.sticker}};border:2px solid {{color skin.keyline}};font-size:20px;">{{heading}}</h2>{{/if}}
+<p><strong>{{name}}</strong><br>{{address}}</p>
+{{#if access}}<ul>{{#each access}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+{{#if mapUrl}}<p><a href="{{url mapUrl}}">地図を開く</a></p>{{/if}}
+</div>

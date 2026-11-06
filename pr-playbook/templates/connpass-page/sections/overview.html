@@ -1,0 +1,5 @@
+<div style="margin-top:12px;padding:12px;background-color:{{color skin.panelBg}};border:2px solid {{color skin.keyline}};color:{{color skin.text}};">
+{{#if heading}}<h2 style="margin:0 0 12px 0;padding:8px 12px;background-color:{{color skin.sticker}};border:2px solid {{color skin.keyline}};font-size:20px;">{{heading}}</h2>{{/if}}
+{{#each rows}}<div style="padding:8px;border-bottom:1px solid #DDDDDD;border-left:6px solid {{color accent}};"><strong style="font-size:14px;">{{icon}} {{label}}：</strong><span style="font-size:14px;">{{value}}</span></div>
+{{/each}}{{#if note}}<p style="margin:12px 8px 4px 8px;font-size:13px;">{{note}}</p>{{/if}}
+</div>

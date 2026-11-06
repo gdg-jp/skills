@@ -1,0 +1,9 @@
+{
+  "name": "gdg-design",
+  "bg": "#F0F0F0",
+  "panelBg": "#FFFFFF",
+  "keyline": "#1E1E1E",
+  "accent": ["#4285F4", "#34A853", "#EA4335", "#F9AB00"],
+  "text": "#1E1E1E",
+  "sticker": "#C3ECF6"
+}

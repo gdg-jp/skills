@@ -1,0 +1,8 @@
+<div style="margin-top:12px;padding:12px;background-color:{{color skin.panelBg}};border:2px solid {{color skin.keyline}};color:{{color skin.text}};">
+{{#if heading}}<h2 style="margin:0 0 12px 0;padding:8px 12px;background-color:{{color skin.sticker}};border:2px solid {{color skin.keyline}};font-size:20px;">{{heading}}</h2>{{/if}}
+<table border="1" style="border:1px solid {{color skin.keyline}};">
+<thead><tr><th style="padding:6px;background-color:{{color skin.sticker}};">時間</th><th style="padding:6px;background-color:{{color skin.sticker}};">トラック</th><th style="padding:6px;background-color:{{color skin.sticker}};">セッション</th></tr></thead>
+<tbody>{{#each sessions}}<tr><td style="padding:6px;">{{time}}</td><td style="padding:6px;">{{track}}</td><td style="padding:6px;"><strong>{{title}}</strong><br>{{speaker}}{{#if tags}}<br>{{#each tags}}<span style="font-size:12px;padding:0 6px;border:1px solid {{color skin.keyline}};">{{this}}</span> {{/each}}{{/if}}</td></tr>
+{{/each}}</tbody>
+</table>
+</div>

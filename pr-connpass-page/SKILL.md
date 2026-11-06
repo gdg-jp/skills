@@ -5,7 +5,7 @@ description: GDG イベントの connpass 説明ページを、3 行の概要と
 
 # pr-connpass-page — connpass ページ
 
-<!-- reads: guides/connpass-page.md, guides/brand.md, guides/thumbnail.md, examples/connpass-page/devfest-kansai-2026/README.md -->
+<!-- reads: guides/connpass-page.md, guides/brand.md, guides/thumbnail.md, examples/connpass-page/devfest-kansai-2026/README.md, templates/connpass-page/README.md -->
 
 ## 入力
 
@@ -21,14 +21,24 @@ description: GDG イベントの connpass 説明ページを、3 行の概要と
 
 ## 手順
 
+HTML は書かない。セクションのスロット（文言と URL）を返し、HTML は描画器が組む
+（`pr-playbook/templates/connpass-page/README.md` がセクションとスロットの一覧）。
+
 1. タイトルを決める（採用コピーの `connpassTitle`）
 2. 冒頭の概要を 3 行以内で書く（`summary`。Markdown）
-3. セクションを並べる: hero 画像 → セッション一覧画像 → 開催概要 → メインコピー → 企画 → おすすめ → タイムテーブル → 登壇者 → 会場 →
-   スポンサー → 参加者への導線。要らないものは省く。各セクションは `connpass-syntax` の許可リストの中だけで書く
-4. 色は brief の `skin`（無ければ `gdg-design`）。`skinSource` に出所を書く
-5. 画像が足りない箇所は `imageSlots` に「何の画像が要るか」と載せる文言を書く
-6. 申込時のアンケート（年齢・職業・経験年数・知った場所）を `surveyQuestions` に、配信 URL・Discord・資料の案内を `participantOnlyInfo` に書く
-7. `html` は全セクションをつないだもの。検査し、MUST を直す。日本語を `yomiyasu` で推敲する
+3. `sections[]` をページの順に並べる: `hero` → `sessions-image` → `overview` → `headline` → `feature` → `audience` →
+   `timetable-image` → `speakers` → `venue` → `sponsors` → `participant-guide` → `plain`。要らないものは省く。
+   見出しのステッカーは各セクションの `heading`
+4. 画像の URL は手元にある img.gdgs.jp のものだけを使う。無ければ `imageUrl: null` にし、`imageSlots` に
+   「何の画像が要るか」と載せる文言を書く（画像だけのセクションは描画されない）
+5. 色は brief の `skin`（無ければ `gdg-design`）。`skinSource` に出所を書く（色そのものは返さない）
+6. 申込時のアンケート（年齢・職業・経験年数・知った場所）を `surveyQuestions` に、配信 URL・Discord・資料の案内を
+   `participantOnlyInfo` と `participant-guide` に書く
+7. 描画して検査し、MUST を直す。日本語を `yomiyasu` で推敲する
+
+```sh
+node <pr-playbook>/scripts/render/run.mjs --input out.json --skin <skin.json> --out connpass.html
+```
 
 ## 出力
 

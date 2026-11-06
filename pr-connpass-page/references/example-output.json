@@ -5,35 +5,132 @@
     {
       "id": "hero",
       "heading": null,
-      "html": "<a href=\"{{shortlink}}\"><img src=\"https://img.gdgs.jp/NWbxmMod\" alt=\"DevFest 2026 in Kansai\" width=\"1000\" /></a>"
+      "slots": {
+        "imageUrl": "https://img.gdgs.jp/Dxmg2A7L?fit=scale-down&f=auto",
+        "alt": "DevFest Kansai 2026",
+        "linkUrl": null
+      }
+    },
+    {
+      "id": "sessions-image",
+      "heading": null,
+      "slots": {
+        "imageUrl": "https://img.gdgs.jp/VGGgOVsc?fit=scale-down&f=avif",
+        "alt": "DevFest 2026 in Kansai セッション一覧"
+      }
     },
     {
       "id": "overview",
       "heading": "開催概要",
-      "html": "<div style=\"background-color:#FFFFFF; border:2px solid #1E1E1E; padding:12px; margin-top:16px;\"><h2 style=\"margin:0; font-size:20px;\">開催概要</h2><div style=\"padding:8px; border-left:6px solid #4285F4;\"><strong style=\"font-size:14px;\">開催日：</strong><span style=\"font-size:14px;\">2026年10月18日（日）</span></div><div style=\"padding:8px; border-left:6px solid #34A853;\"><strong style=\"font-size:14px;\">会場：</strong><span style=\"font-size:14px;\">国際工科専門職大学 大阪キャンパス</span></div><div style=\"padding:8px; border-left:6px solid #F9AB00;\"><strong style=\"font-size:14px;\">参加費：</strong><span style=\"font-size:14px;\">無料</span></div></div>"
+      "slots": {
+        "rows": [
+          {
+            "icon": ":calendar:",
+            "label": "開催日",
+            "value": "2026年10月18日（日）"
+          },
+          {
+            "icon": ":eleven_o’clock:",
+            "label": "開催時間",
+            "value": "10:30〜18:00"
+          },
+          {
+            "icon": ":round_pushpin:",
+            "label": "会場",
+            "value": "国際工科専門職大学 大阪キャンパス"
+          },
+          {
+            "icon": ":laptop:",
+            "label": "開催形式",
+            "value": "現地開催・オンライン配信"
+          },
+          {
+            "icon": ":admission_tickets:",
+            "label": "参加費",
+            "value": "無料"
+          }
+        ],
+        "note": "※イベント内容や開催時間は、今後変更となる場合があります。"
+      }
     },
     {
-      "id": "sessions",
-      "heading": "セッション一覧",
-      "html": "<img src=\"https://img.gdgs.jp/VGGgOVsc?fit=scale-down&amp;f=avif\" alt=\"DevFest 2026 in Kansai セッション一覧\" width=\"1000\" style=\"margin-top:12px;\" />"
+      "id": "headline",
+      "heading": null,
+      "slots": {
+        "mainCopy": "AI 時代の「考える」を取り戻す。異分野と越境の AI カンファレンス",
+        "paragraphs": [
+          "Google Developer Group（GDG）が世界中で展開する技術イベント「DevFest」を、今年も大阪で開催します。Google AI をはじめとする最新技術と、ファッション・ものづくり・ビジネスの専門性が交わる 1 日です。",
+          "AI を便利な道具ではなく、問いを深め、アイデアをカタチにする共創パートナーとして捉え直します。技術セッション、ハンズオン、異分野との対話で、課題の発見からプロトタイプまでを体験できます。"
+        ],
+        "callout": "初心者から経験豊富なエンジニアまで、どなたでも大歓迎です！"
+      }
     },
     {
-      "id": "guide",
+      "id": "feature",
+      "heading": "学生展示ブース企画",
+      "slots": {
+        "body": "個人開発や研究で作ったプロダクトを会場で披露しませんか？大勢の参加者や登壇者に直接見てもらえます。",
+        "imageUrl": null,
+        "ctaLabel": "展示に申し込む",
+        "ctaUrl": "https://gdgs.jp/df26-booth"
+      }
+    },
+    {
+      "id": "audience",
+      "heading": "こんな方におすすめ",
+      "slots": {
+        "items": [
+          "AI を使ったものづくりに興味がある方",
+          "異分野のエンジニア・デザイナーと話したい方",
+          "最新の Google 技術を知りたい学生の方"
+        ]
+      }
+    },
+    {
+      "id": "timetable-image",
+      "heading": "タイムテーブル",
+      "slots": {
+        "imageUrl": null,
+        "alt": "タイムテーブル",
+        "note": "登壇順は変わることがあります。"
+      }
+    },
+    {
+      "id": "participant-guide",
       "heading": "参加者の方へ",
-      "html": "<div style=\"background-color:#FFFFFF; border:2px solid #1E1E1E; padding:12px; margin-top:16px;\"><p style=\"margin:0;\">配信と資料の案内は「参加者への情報」に載せています。最新情報は <a href=\"https://x.com/intent/follow?screen_name=gdgkwansai\">X でフォロー</a> してください。</p></div>"
+      "slots": {
+        "discordInviteUrl": "https://gdgs.jp/df26-discord",
+        "streamUrls": [
+          {
+            "label": "配信（Track A）",
+            "url": "https://gdgs.jp/df26-live-a"
+          }
+        ],
+        "slidesUrl": null,
+        "calendarUrl": null
+      }
+    },
+    {
+      "id": "plain",
+      "heading": "主催",
+      "slots": {
+        "paragraphs": [
+          "主催: GDG Greater Kwansai / 共催: GDG on Campus Osaka ほか",
+          "行動規範: https://developers.google.com/community-guidelines"
+        ]
+      }
     }
   ],
-  "html": "<a href=\"{{shortlink}}\"><img src=\"https://img.gdgs.jp/NWbxmMod\" alt=\"DevFest 2026 in Kansai\" width=\"1000\" /></a>\n\n<div style=\"background-color:#FFFFFF; border:2px solid #1E1E1E; padding:12px; margin-top:16px;\"><h2 style=\"margin:0; font-size:20px;\">開催概要</h2><div style=\"padding:8px; border-left:6px solid #4285F4;\"><strong style=\"font-size:14px;\">開催日：</strong><span style=\"font-size:14px;\">2026年10月18日（日）</span></div><div style=\"padding:8px; border-left:6px solid #34A853;\"><strong style=\"font-size:14px;\">会場：</strong><span style=\"font-size:14px;\">国際工科専門職大学 大阪キャンパス</span></div><div style=\"padding:8px; border-left:6px solid #F9AB00;\"><strong style=\"font-size:14px;\">参加費：</strong><span style=\"font-size:14px;\">無料</span></div></div>\n\n<img src=\"https://img.gdgs.jp/VGGgOVsc?fit=scale-down&amp;f=avif\" alt=\"DevFest 2026 in Kansai セッション一覧\" width=\"1000\" style=\"margin-top:12px;\" />\n\n<div style=\"background-color:#FFFFFF; border:2px solid #1E1E1E; padding:12px; margin-top:16px;\"><p style=\"margin:0;\">配信と資料の案内は「参加者への情報」に載せています。最新情報は <a href=\"https://x.com/intent/follow?screen_name=gdgkwansai\">X でフォロー</a> してください。</p></div>",
   "imageSlots": [
+    {
+      "id": "timetable-image",
+      "purpose": "タイムテーブル",
+      "text": "10:30〜18:00、3 トラック"
+    },
     {
       "id": "hero",
       "purpose": "イベントの顔",
       "text": "AI 時代の「考える」を取り戻す。"
-    },
-    {
-      "id": "sessions",
-      "purpose": "セッション一覧",
-      "text": "登壇者 30 名"
     }
   ],
   "surveyQuestions": [

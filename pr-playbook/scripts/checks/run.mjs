@@ -6,6 +6,8 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { renderConnpassPage } from "../render/connpass-page.mjs";
+import { loadTemplates } from "../render/run.mjs";
 import { mustFailures, runChecks } from "./index.mjs";
 import { runYomiyasu } from "./yomiyasu.mjs";
 
@@ -45,6 +47,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(2);
   }
   const draft = readJson(opts.input);
+  // connpass pages are slots: check the HTML the renderer builds from them (the pr app does the same).
+  if (
+    opts.kind === "connpass_page" &&
+    Array.isArray(draft?.sections) &&
+    draft.sections.some((s) => s.slots)
+  )
+    draft.html = renderConnpassPage(draft, loadTemplates()).html;
   const brief = readJson(opts.brief);
   const playbook = loadPlaybook(opts.playbook);
   const yomiyasu = opts["no-yomiyasu"] ? null : runYomiyasu(draft, brief);
