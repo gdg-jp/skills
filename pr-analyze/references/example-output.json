@@ -1,0 +1,44 @@
+{
+  "reportMd": "## 目標曲線との差\n申込 312 件。目標曲線より 38 件少ない。残り 21 日で 1 日 23 件が要る。\n\n## チャネル\nX の投稿からのクリックが 80、Discord が 40。\n\n## 広告\nInstagram 広告の CPC は X の半分。\n\n## 運用\nレビュー待ち 3 件、期限切れ 1 件。",
+  "findings": [
+    {
+      "metric": "applications",
+      "observation": "目標曲線より 38 件少ない",
+      "evidence": "connpass_stats 312 / 目標 350"
+    }
+  ],
+  "budgetReallocation": {
+    "byMedium": {
+      "x_ads": 30000,
+      "ig_ads": 60000,
+      "print": 10000
+    },
+    "rationaleMd": "Instagram 広告の CPC が低いので、範囲内（X 33%）で寄せる。"
+  },
+  "creativeChanges": [
+    {
+      "assetId": null,
+      "templateId": "ig-story-9x16",
+      "reason": "ストーリー広告の素材が 1 種類しかない",
+      "slotHints": "学生向けの見出しで 1 枚"
+    }
+  ],
+  "scheduleChanges": [
+    {
+      "action": "add",
+      "itemId": null,
+      "kind": "x_post",
+      "dueAt": "2026-10-01T18:00:00+09:00",
+      "title": "学生展示ブースの紹介",
+      "reason": "学生層の申込が少ない"
+    }
+  ],
+  "perPerson": [
+    {
+      "userId": "dev-user-lead",
+      "thisWeek": ["学生展示ブースの紹介"],
+      "overdue": []
+    }
+  ],
+  "nextWeekFocusMd": "学生層への告知を厚くする。"
+}

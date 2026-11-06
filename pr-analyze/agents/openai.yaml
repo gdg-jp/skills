@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Analyze"
+  short_description: "週次の集客分析と、予算・画像・スケジュールの提案"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-analyze with this campaign's metrics."

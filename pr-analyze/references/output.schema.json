@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-analyze output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "reportMd",
+    "findings",
+    "budgetReallocation",
+    "creativeChanges",
+    "scheduleChanges",
+    "perPerson",
+    "nextWeekFocusMd"
+  ],
+  "properties": {
+    "reportMd": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metric", "observation", "evidence"],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "budgetReallocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["byMedium", "rationaleMd"],
+      "properties": {
+        "byMedium": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x_ads", "ig_ads", "print"],
+          "properties": {
+            "x_ads": {
+              "type": "integer"
+            },
+            "ig_ads": {
+              "type": "integer"
+            },
+            "print": {
+              "type": "integer"
+            }
+          }
+        },
+        "rationaleMd": {
+          "type": "string"
+        }
+      }
+    },
+    "creativeChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assetId", "templateId", "reason", "slotHints"],
+        "properties": {
+          "assetId": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "templateId": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "slotHints": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scheduleChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "itemId", "kind", "dueAt", "title", "reason"],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": ["add", "move", "drop"]
+          },
+          "itemId": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dueAt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "perPerson": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["userId", "thisWeek", "overdue"],
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "thisWeek": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "overdue": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "nextWeekFocusMd": {
+      "type": "string"
+    }
+  }
+}
