@@ -28,6 +28,12 @@ npx skills add gdg-jp/skills --skill gdg-accounts
 - **connpass-session-list-image** — Create session-list graphics with portraits and keyword emphasis.
 - **connpass-syntax** — Write connpass group and event descriptions with supported formatting.
 - **connpass-timetable-image** — Create desktop and mobile event timetable graphics.
+- **pr-playbook** — The source of truth for GDG event PR judgment: rules, guides, examples, and the draft checker.
+- **pr-copy** — Turn a brief's meta-themes into titles and main copy, per medium and audience.
+- **pr-x-post** — Write X and Instagram posts: fold position, image vs OGP, timing, and staff / speaker asks.
+- **pr-connpass-page** — Build a connpass event page with a 3-line summary, decorated sections, and images.
+- **pr-connpass-mail** — Write short, decorated connpass messages at the right time.
+- **pr-plan** — Plan channels, budget, ad flights, schedule, reminders, pre-events, swag, and the survey.
 - **gdg-accounts** — Manage GDG Accounts OIDC clients with the `gdg` CLI.
 - **gdg-connpass** — Manage connpass groups, events, surveys, and organizer workflows.
 - **gdg-design** — Create and review visuals that follow the GDG brand system.

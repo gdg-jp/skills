@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-copy output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidates",
+    "notes"
+  ],
+  "properties": {
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "mainCopy",
+          "connpassTitle",
+          "xShort",
+          "igShort",
+          "flyerLine",
+          "bySegment",
+          "metaThemeMapping",
+          "rationaleMd"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "mainCopy": {
+            "type": "string"
+          },
+          "connpassTitle": {
+            "type": "string"
+          },
+          "xShort": {
+            "type": "string"
+          },
+          "igShort": {
+            "type": "string"
+          },
+          "flyerLine": {
+            "type": "string"
+          },
+          "bySegment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "segmentId",
+                "line"
+              ],
+              "properties": {
+                "segmentId": {
+                  "type": "string"
+                },
+                "line": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "metaThemeMapping": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "theme",
+                "projection"
+              ],
+              "properties": {
+                "theme": {
+                  "type": "string"
+                },
+                "projection": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "rationaleMd": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 10
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

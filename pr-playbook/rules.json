@@ -1,0 +1,532 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "X-NO-HASHTAG",
+      "strength": "MUST",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "X の告知投稿（purpose が live 以外）の本文にハッシュタグを入れない。",
+      "source": "Tips 2: ハッシュタグは X のアルゴリズム上不利に働く",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/no-hashtag"
+      },
+      "fix": "ハッシュタグを削り、必要なら語を本文に溶かす。",
+      "when": {
+        "purposeNot": [
+          "live"
+        ]
+      }
+    },
+    {
+      "id": "LIVE-EVENT-HASHTAG",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "当日実況の投稿（purpose = live）には brief.event.hashtag を付ける。",
+      "source": "Tips 22: 当日実況の投稿",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/live-hashtag"
+      },
+      "fix": "本文の末尾に brief.event.hashtag を足す。",
+      "when": {
+        "purpose": [
+          "live"
+        ]
+      }
+    },
+    {
+      "id": "X-FOLD-LINK-VISIBLE",
+      "strength": "MUST",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "constants.x.foldThreshold を超える投稿は、折りたたみ前の範囲にリンクが収まり、折りたたみ後の冒頭にクリックを後押しする文がある。textAboveFold + textBelowFold は text と一致する。",
+      "source": "Tips 1: X Premium の「さらに表示」の位置を設計する",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/fold"
+      },
+      "fix": "改行位置を調整してリンクを上段に入れ、下段の 1 行目に後押しの文を置く。"
+    },
+    {
+      "id": "X-IMAGE-VS-OGP",
+      "strength": "MUST",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "expectedReaction が quote の投稿は画像を添付し、repost の投稿は OGP 付き短縮リンクにする。",
+      "source": "Tips 3: OGP 画像は引用ポストで表示されない",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/image-vs-ogp"
+      },
+      "fix": "attachment.kind を expectedReaction に合わせる。"
+    },
+    {
+      "id": "OGP-ON-SHORTLINK",
+      "strength": "MUST",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "attachment.kind = ogp のとき attachment.link.ogImage を指定し、本文に {{shortlink}} か URL を入れる。",
+      "source": "Tips 4: OGP 画像は url.gdgs.jp の短縮リンクに設定する",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/ogp-on-shortlink"
+      },
+      "fix": "OGP 画像の URL を attachment.link.ogImage に入れる。"
+    },
+    {
+      "id": "X-POST-TIME",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.x_post"
+      ],
+      "requirement": "告知投稿の scheduledAt（JST）が constants.x.postWindows の窓に入る。",
+      "source": "Tips 9: 平日は夕方、休日は昼か夕方",
+      "verification": {
+        "kind": "mechanical",
+        "check": "x-post/post-time"
+      },
+      "fix": "投稿時刻を窓の中に動かす。",
+      "when": {
+        "purposeNot": [
+          "live"
+        ]
+      }
+    },
+    {
+      "id": "X-FOLLOW-INTENT-LINK",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.x_post",
+        "draft.connpass_page"
+      ],
+      "requirement": "X へのフォロー誘導はインテント付きリンク（constants.x.followIntentPattern か、それにリダイレクトする短縮リンク）で行い、X のプロフィール URL を直接貼らない。",
+      "source": "Tips 35: インテント付きリンクはフォロー確認が自動で出る",
+      "verification": {
+        "kind": "mechanical",
+        "check": "common/follow-intent"
+      },
+      "fix": "https://x.com/<handle> を https://x.com/intent/follow?screen_name=<handle>（の短縮リンク）に置き換える。"
+    },
+    {
+      "id": "ANNOUNCE-AFTER-CONFIRMED",
+      "strength": "MUST",
+      "scope": [
+        "plan",
+        "draft.x_post"
+      ],
+      "requirement": "セッション紹介のアイテム・投稿は、そのセッションの status が confirmed 以上になってから出す。plan は TBA のセッションに関わるアイテムに blockedBy（session:<id>:confirmed）を付ける。",
+      "source": "Tips 30: TBA だらけでは大物でも申し込まれない",
+      "verification": {
+        "kind": "mechanical",
+        "check": "common/announce-after-confirmed"
+      },
+      "fix": "セッションが確定するまで投稿しないか、blockedBy を付ける。"
+    },
+    {
+      "id": "SPEAKER-TIER-HIGH-NO-ASK",
+      "strength": "MUST",
+      "scope": [
+        "plan",
+        "draft.x_post"
+      ],
+      "requirement": "tier = high の登壇者への speaker_request は suggestionOnly: true（自動で依頼しない。人に提案するだけ）。",
+      "source": "Tips 16, 31: 格が高すぎる登壇者には依頼しづらい",
+      "verification": {
+        "kind": "mechanical",
+        "check": "common/speaker-tier-high"
+      },
+      "fix": "suggestionOnly を true にする。"
+    },
+    {
+      "id": "CHANNEL-SPECIFIC-COPY",
+      "strength": "MUST",
+      "scope": [
+        "draft.ig_post"
+      ],
+      "requirement": "Instagram 用の本文は X 用の本文と同一でない。",
+      "source": "Tips 12: X と Instagram は最適なコピーが全く異なる",
+      "verification": {
+        "kind": "mechanical",
+        "check": "ig-post/channel-specific"
+      },
+      "fix": "Instagram 向けに書き直す（ハッシュタグ、文体、改行）。"
+    },
+    {
+      "id": "IG-HASHTAGS",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.ig_post"
+      ],
+      "requirement": "Instagram の投稿本文にハッシュタグが constants.instagram.minHashtags 個以上ある。",
+      "source": "Tips 36: Instagram はハッシュタグを多数付ける",
+      "verification": {
+        "kind": "mechanical",
+        "check": "ig-post/hashtags"
+      },
+      "fix": "関連するハッシュタグを足す。"
+    },
+    {
+      "id": "COPY-FROM-META-THEME",
+      "strength": "MUST",
+      "scope": [
+        "draft.copy"
+      ],
+      "requirement": "各候補に metaThemeMapping（どのメタテーマをどう射影したか）があり、theme は brief.metaThemes のどれか。",
+      "source": "Tips 8: メタテーマを射影したコピー",
+      "verification": {
+        "kind": "mechanical",
+        "check": "copy/meta-theme"
+      },
+      "fix": "候補ごとに対応するメタテーマと射影の説明を書く。"
+    },
+    {
+      "id": "COPY-PER-MEDIUM",
+      "strength": "MUST",
+      "scope": [
+        "draft.copy"
+      ],
+      "requirement": "各候補に connpassTitle / xShort / igShort / flyerLine の媒体別変種と、brief.audienceSegments ごとの変種がある。brief.copyConstraints の語を全変種が含む。",
+      "source": "Tips 12, 37: 媒体と層で最適なコピーが違う",
+      "verification": {
+        "kind": "mechanical",
+        "check": "copy/per-medium"
+      },
+      "fix": "欠けた変種を書き、必須語を入れる。"
+    },
+    {
+      "id": "CP-TITLE-CONVEYS-CONTENT",
+      "strength": "MUST",
+      "scope": [
+        "draft.copy",
+        "draft.connpass_page"
+      ],
+      "requirement": "connpass タイトルが公式シリーズ名・地名・年だけで構成されず、内容語を含み、constants.connpass.titleMinChars 文字以上ある。",
+      "source": "Tips 5, 7, 26: 一覧ではタイトルしか見えない",
+      "verification": {
+        "kind": "mechanical",
+        "check": "connpass/title"
+      },
+      "fix": "内容が分かる語（テーマ、技術）を足す。"
+    },
+    {
+      "id": "CP-THUMB-HAS-FACTS",
+      "strength": "MUST",
+      "scope": [
+        "draft.asset_spec"
+      ],
+      "requirement": "connpass サムネイルのスロットに subcopy / date / place が埋まっている。",
+      "source": "Tips 5: サムネイルはイベント詳細で見られる",
+      "verification": {
+        "kind": "mechanical",
+        "check": "asset/thumb-facts"
+      },
+      "fix": "サブコピー・日時・場所を入れる。"
+    },
+    {
+      "id": "CP-SUMMARY-3-LINES",
+      "strength": "MUST",
+      "scope": [
+        "draft.connpass_page"
+      ],
+      "requirement": "説明冒頭の summary が constants.connpass.summaryMaxLines 行以内、1 行 summaryMaxCharsPerLine 字以内。",
+      "source": "Tips 6: 最近の人は文章を読まない",
+      "verification": {
+        "kind": "mechanical",
+        "check": "connpass/summary"
+      },
+      "fix": "3 行に削り、残りはセクションと画像に回す。"
+    },
+    {
+      "id": "CP-HTML-ALLOWLIST",
+      "strength": "MUST",
+      "scope": [
+        "draft.connpass_page"
+      ],
+      "requirement": "HTML が connpass-syntax の許可タグ・属性・22 の CSS プロパティだけで書かれている。",
+      "source": "Tips 6 と skills/connpass-syntax/references/syntax.md",
+      "verification": {
+        "kind": "mechanical",
+        "check": "connpass/html-allowlist"
+      },
+      "fix": "許可外のタグ・属性・CSS を外すか許可内の表現に置き換える。"
+    },
+    {
+      "id": "MAIL-SEND-TIME",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.connpass_mail"
+      ],
+      "requirement": "connpass メールの scheduledAt（JST）が constants.mail.sendWindows に入る。",
+      "source": "Tips 10: 起床前の朝か退勤前の夕方",
+      "verification": {
+        "kind": "mechanical",
+        "check": "mail/send-time"
+      },
+      "fix": "送信時刻を窓の中に動かす。"
+    },
+    {
+      "id": "MAIL-SHORT",
+      "strength": "MUST",
+      "scope": [
+        "draft.connpass_mail"
+      ],
+      "requirement": "本文が constants.mail.maxBodyLines 行以内で、constants.mail.bannedPhrases を含まない。",
+      "source": "Tips 11: 長い文章や丁寧すぎる文章を避ける",
+      "verification": {
+        "kind": "mechanical",
+        "check": "mail/short"
+      },
+      "fix": "要件だけに削る。"
+    },
+    {
+      "id": "MAIL-DECORATED",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.connpass_mail"
+      ],
+      "requirement": "件名・見出しかフッターに装飾（constants.mail.decorationChars）がある。",
+      "source": "Tips 11: フッターや見出しに装飾を入れる",
+      "verification": {
+        "kind": "mechanical",
+        "check": "mail/decorated"
+      },
+      "fix": "見出しの記号か罫線のフッターを足す。"
+    },
+    {
+      "id": "SURVEY-STANDARD-QUESTIONS",
+      "strength": "MUST",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "アンケート設問に年齢・職業・経験年数・イベントを知った場所の 4 問があり、「知った場所」の選択肢が採用チャネルのラベル（+ その他）と一致する。",
+      "source": "Tips 13: 属性データで広告戦略を決める",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/survey"
+      },
+      "fix": "4 問を入れ、選択肢を channelLabels に揃える。"
+    },
+    {
+      "id": "REMIND-STAFF-BEFORE-POST",
+      "strength": "MUST",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "すべての x_post / ig_post に constants.reminders.staffOffsetMinutes 分前の staff_reminder が派生している。",
+      "source": "Tips 15: 投稿 1 時間前にスタッフへ依頼",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/remind-staff"
+      },
+      "fix": "staff_reminder を derivedFrom 付きで足す。"
+    },
+    {
+      "id": "SPEAKER-REQUEST-BEFORE-POST",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "speakerId 付きの x_post に constants.reminders.speakerOffsetMinutes 分前の speaker_request（purpose = quote）が派生している。",
+      "source": "Tips 16: 数時間前に登壇者へ引用依頼",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/speaker-request"
+      },
+      "fix": "speaker_request を derivedFrom 付きで足す。"
+    },
+    {
+      "id": "SPEAKER-OWN-ANNOUNCE",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "tier = normal の登壇者全員に、本人の登壇予告投稿を依頼する speaker_request（purpose = own_announce）がある。",
+      "source": "Tips 31: 登壇者本人の登壇予告は集客に効く",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/speaker-own-announce"
+      },
+      "fix": "登壇者ごとに own_announce の依頼を足す。"
+    },
+    {
+      "id": "BUDGET-SPLIT",
+      "strength": "MUST",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "印刷等の非広告費が constants.budget.nonAdsMaxYen 前後で、残りが SNS 広告、X : Instagram の比率が xIgRatioRange の範囲内。",
+      "source": "Tips 17: 非広告は 1 万円前後、X : IG = 3 : 7 〜 4 : 6",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/budget-split"
+      },
+      "fix": "非広告を削り、X と Instagram の配分を範囲に入れる。"
+    },
+    {
+      "id": "PLAN-COVERS-CHANNELS",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "constants.channelCatalog の各手段について、採用 / 不採用と理由がある。",
+      "source": "Tips 18, 21: 広報手段のアイデア一覧",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/covers-channels"
+      },
+      "fix": "欠けた手段の採否と理由を書く。"
+    },
+    {
+      "id": "PLAN-HAS-LIVE-POSTS",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "当日実況の live_post が少なくとも 1 件ある。",
+      "source": "Tips 22: 当日実況の投稿準備",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/live-posts"
+      },
+      "fix": "当日の live_post を足す。"
+    },
+    {
+      "id": "ADS-FLIGHT-TIMING",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "X Ads の開始が constants.ads.x.startDaysBefore の範囲で、最初の impressionDays 日は objective = impression。Meta Ads の開始が constants.ads.meta.startDaysBefore 日前前後。",
+      "source": "Tips 28: 広告の開始時期と最適化",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/ads-timing"
+      },
+      "fix": "フライトの開始日とフェーズを直す。"
+    },
+    {
+      "id": "DISCORD-MILESTONES",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "discord_post と connpass_mail が constants.milestonesDaysBefore の節目に対応し、節目以外に無い。",
+      "source": "Tips 29: 頻繁に送ると効果が落ちる",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/milestones"
+      },
+      "fix": "節目の日に寄せ、節目以外を消す。"
+    },
+    {
+      "id": "PLAN-HAS-PRE-EVENTS",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "プレイベントが少なくとも 1 件あり、それぞれに本番への導線（leadsTo）がある。",
+      "source": "Tips 32: プレイベントは告知の布石",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/pre-events"
+      },
+      "fix": "プレイベントと本番への導線を足す。"
+    },
+    {
+      "id": "PLAN-FLYER-VERSIONS",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "flyer_text が v1 / v2 の 2 件ある。",
+      "source": "Tips 33: フライヤーは v1 と v2",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/flyer-versions"
+      },
+      "fix": "v1（詳細未定）と v2（セッション 50 % 確定後）を足す。"
+    },
+    {
+      "id": "PLAN-SWAG-KINDS",
+      "strength": "SHOULD",
+      "scope": [
+        "plan"
+      ],
+      "requirement": "noveltyIdeas が constants.swag.kinds の 5 種に分類されている。",
+      "source": "Tips 34: Swag は 5 種に分けて設計する",
+      "verification": {
+        "kind": "mechanical",
+        "check": "plan/swag-kinds"
+      },
+      "fix": "欠けた種類の案を足す。"
+    },
+    {
+      "id": "BRAND-SKIN-DECLARED",
+      "strength": "MUST",
+      "scope": [
+        "draft.asset_spec",
+        "draft.connpass_page"
+      ],
+      "requirement": "brief に skin があればそれ（brief / brand-guide）を使い、無ければ gdg-design の既定を使ってその旨を skinSource に書く。ロゴの禁則は skin に関係なく守る。",
+      "source": "Tips 23: イベント skin で公式ガイドラインから外れてよい",
+      "verification": {
+        "kind": "mechanical",
+        "check": "brand/skin-declared"
+      },
+      "fix": "skinSource を brief の有無に合わせる。"
+    },
+    {
+      "id": "JA-YOMIYASU",
+      "strength": "MUST",
+      "scope": [
+        "draft.copy",
+        "draft.x_post",
+        "draft.ig_post",
+        "draft.connpass_page",
+        "draft.connpass_mail",
+        "plan"
+      ],
+      "requirement": "日本語の文面は yomiyasu の check（--fail-on error）を通る。",
+      "source": "Tips 24: 日本語の文面は yomiyasu で推敲する",
+      "verification": {
+        "kind": "mechanical",
+        "check": "common/yomiyasu"
+      },
+      "fix": "yomiyasu で推敲し直す。"
+    },
+    {
+      "id": "COPY-REVIEW",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.copy"
+      ],
+      "requirement": "コピーがメタテーマを分かりやすく、キャッチーに射影しているかを人が判断する。",
+      "source": "Tips 8",
+      "verification": {
+        "kind": "review"
+      },
+      "fix": "レビュアーが候補を選ぶ。"
+    },
+    {
+      "id": "PAGE-REVIEW",
+      "strength": "SHOULD",
+      "scope": [
+        "draft.connpass_page"
+      ],
+      "requirement": "ページが画像中心で、申し込みたくなる構成かを人が判断する。",
+      "source": "Tips 6",
+      "verification": {
+        "kind": "review"
+      },
+      "fix": "レビュアーがプレビューで確認する。"
+    }
+  ]
+}

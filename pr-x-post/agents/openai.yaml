@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR X Post"
+  short_description: "X と Instagram の投稿文を Playbook どおりに書く"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-x-post with this brief."

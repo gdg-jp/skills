@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "x": {
+    "foldThreshold": { "weighted": 280, "provisional": true, "note": "X の重み付き文字数（CJK は 2、ASCII は 1、URL は 23）。ユーザーの観察値で更新する" },
+    "urlWeight": 23,
+    "postWindows": {
+      "weekday": [["17:00", "19:30"]],
+      "weekend": [["12:00", "13:30"], ["17:00", "19:30"]],
+      "provisional": true
+    },
+    "followIntentPattern": "^https://(x|twitter)\\.com/intent/(follow|user)\\?"
+  },
+  "mail": {
+    "sendWindows": [["06:00", "07:30"], ["16:30", "18:00"]],
+    "provisional": true,
+    "maxBodyLines": 12,
+    "provisional_maxBodyLines": true,
+    "bannedPhrases": ["させていただきます", "ご確認のほど", "何卒"],
+    "decorationChars": ["━", "─", "■", "□", "◆", "◇", "▼", "▶", "★", "☆", "✨", "📣", "👇", "【", "＼", "／"]
+  },
+  "reminders": { "staffOffsetMinutes": 60, "speakerOffsetMinutes": 180, "provisional_speaker": true },
+  "budget": {
+    "nonAdsMaxYen": 10000,
+    "nonAdsToleranceRatio": 0.5,
+    "xIgRatioRange": [[3, 7], [4, 6]],
+    "bands": [100000, 300000, 500000],
+    "overrunAlertRatio": 0.1,
+    "provisional_overrunAlertRatio": true
+  },
+  "milestonesDaysBefore": [45, 21, 7],
+  "milestoneToleranceDays": 2,
+  "ads": {
+    "x": { "startDaysBefore": [10, 14], "impressionDays": 3 },
+    "meta": { "startDaysBefore": 10, "toleranceDays": 1 }
+  },
+  "connpass": {
+    "titleMinChars": 20,
+    "provisional_titleMinChars": true,
+    "summaryMaxLines": 3,
+    "summaryMaxCharsPerLine": 60,
+    "placeWords": ["Kansai", "Kwansai", "Osaka", "Kobe", "Kyoto", "Tokyo", "Japan", "in", "関西", "大阪", "神戸", "京都", "東京"]
+  },
+  "instagram": { "minHashtags": 5, "provisional_minHashtags": true },
+  "flyer": { "versions": ["v1", "v2"], "v2SessionConfirmedRatio": 0.5 },
+  "swag": { "kinds": ["all", "referral", "lottery", "redeem", "survey"] },
+  "officialSeriesNames": ["Google I/O Extended", "I/O Extended", "Build with AI", "DevFest Kansai", "DevFest", "GDG", "Google Developer Groups"],
+  "channelCatalog": [
+    "x_organic", "x_ads", "ig_organic", "ig_ads", "flyer_distribute", "flyer_post",
+    "other_event_lt", "other_event_flyer", "other_event_attend", "gdg_discord", "org_outreach",
+    "friends", "community_ask", "speaker_invite", "novelty", "segment_content"
+  ],
+  "channelLabels": {
+    "x_organic": "X（投稿）",
+    "x_ads": "X（広告）",
+    "ig_organic": "Instagram（投稿）",
+    "ig_ads": "Instagram（広告）",
+    "flyer_distribute": "チラシ（配布）",
+    "flyer_post": "チラシ（掲示）",
+    "other_event_lt": "他イベントの LT",
+    "other_event_flyer": "他イベントでのチラシ",
+    "other_event_attend": "他イベントで知り合った",
+    "gdg_discord": "GDG の Discord",
+    "org_outreach": "学校・会社からの案内",
+    "friends": "知人・友人",
+    "community_ask": "コミュニティ・サークル",
+    "speaker_invite": "登壇者の告知",
+    "novelty": "ノベルティ",
+    "segment_content": "企画"
+  },
+  "surveyQuestions": ["年齢", "職業", "経験年数", "イベントを知った場所"],
+  "surveySourceQuestion": "イベントを知った場所",
+  "surveyExtraOptions": ["その他"]
+}

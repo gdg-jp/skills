@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-x-post output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "channel",
+    "posts",
+    "notes"
+  ],
+  "properties": {
+    "channel": {
+      "type": "string",
+      "enum": [
+        "x",
+        "ig"
+      ]
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "purpose",
+          "segmentId",
+          "sessionId",
+          "scheduleItemId",
+          "scheduledAt",
+          "text",
+          "textAboveFold",
+          "textBelowFold",
+          "expectedReaction",
+          "attachment",
+          "speakerId",
+          "staffReminder",
+          "speakerRequest"
+        ],
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "announce",
+              "session",
+              "speaker",
+              "countdown",
+              "live",
+              "segment"
+            ]
+          },
+          "segmentId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sessionId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "scheduleItemId": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "scheduledAt": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textAboveFold": {
+            "type": "string"
+          },
+          "textBelowFold": {
+            "type": "string"
+          },
+          "expectedReaction": {
+            "type": "string",
+            "enum": [
+              "quote",
+              "repost",
+              "click"
+            ]
+          },
+          "attachment": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "imageSlots",
+              "link"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "ogp",
+                  "none"
+                ]
+              },
+              "imageSlots": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "headline",
+                      "sub"
+                    ],
+                    "properties": {
+                      "headline": {
+                        "type": "string"
+                      },
+                      "sub": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "link": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "url",
+                      "ogImage"
+                    ],
+                    "properties": {
+                      "url": {
+                        "type": "string"
+                      },
+                      "ogImage": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "speakerId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "staffReminder": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          "speakerRequest": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "speakerId",
+                  "purpose",
+                  "text",
+                  "suggestionOnly"
+                ],
+                "properties": {
+                  "speakerId": {
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "enum": [
+                      "quote",
+                      "own_announce"
+                    ]
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "suggestionOnly": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

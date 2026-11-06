@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-connpass-mail output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "purpose",
+    "subject",
+    "scheduledAt",
+    "bodyLines",
+    "footer",
+    "notes"
+  ],
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "announce",
+        "session",
+        "reminder",
+        "milestone",
+        "thanks"
+      ]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "scheduledAt": {
+      "type": "string"
+    },
+    "bodyLines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "footer": {
+      "type": "string"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "DevFest Kansai 2026",
+  "bg": "#4285F4",
+  "panelBg": "#FFFFFF",
+  "keyline": "#1E1E1E",
+  "accent": ["#4285F4", "#34A853", "#F9AB00", "#EA4335"],
+  "text": "#1E1E1E",
+  "headingFont": "Google Sans",
+  "tone": "DevFest 2026 のブランドガイドに沿ったブルー背景。gdg-design の Off White ではない",
+  "brandGuideUrl": "https://goo.gle/devfest26-brand-guide",
+  "referenceAssetUrls": ["https://img.gdgs.jp/NWbxmMod"]
+}

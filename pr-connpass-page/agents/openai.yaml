@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR connpass Page"
+  short_description: "申込率を上げる connpass ページを組む"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-connpass-page with this brief."

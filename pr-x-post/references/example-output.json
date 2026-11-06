@@ -1,0 +1,80 @@
+{
+  "channel": "x",
+  "posts": [
+    {
+      "purpose": "announce",
+      "segmentId": null,
+      "sessionId": null,
+      "scheduleItemId": null,
+      "scheduledAt": "2026-10-06T18:00:00+09:00",
+      "text": "／\n📣 DevFest Kansai 2026 開催決定✨\n＼\n\nAI 時代の「考える」を取り戻す。\n異分野と越境の AI カンファレンスを、10/18（日）大阪で開催します。\nTransformer の共著者 Llion Jones 氏をはじめ、AI とものづくりの第一線から 30 名が登壇。\n👇参加登録はこちら（無料）\n{{shortlink}}\n\nエンジニアだけでなく、ファッションやデザインを学ぶ人も歓迎です。\n学生展示ブースや学生エンジニア座談会など、現地でしか体験できない企画もあります。\nおひとりさまでの参加も大歓迎です。",
+      "textAboveFold": "／\n📣 DevFest Kansai 2026 開催決定✨\n＼\n\nAI 時代の「考える」を取り戻す。\n異分野と越境の AI カンファレンスを、10/18（日）大阪で開催します。\nTransformer の共著者 Llion Jones 氏をはじめ、AI とものづくりの第一線から 30 名が登壇。\n👇参加登録はこちら（無料）\n{{shortlink}}\n",
+      "textBelowFold": "\nエンジニアだけでなく、ファッションやデザインを学ぶ人も歓迎です。\n学生展示ブースや学生エンジニア座談会など、現地でしか体験できない企画もあります。\nおひとりさまでの参加も大歓迎です。",
+      "expectedReaction": "repost",
+      "attachment": {
+        "kind": "ogp",
+        "imageSlots": null,
+        "link": {
+          "url": "https://gdgkwansai.connpass.com/event/388434/",
+          "ogImage": "https://img.gdgs.jp/NWbxmMod"
+        }
+      },
+      "speakerId": null,
+      "staffReminder": {
+        "text": "18:00 に開催決定の告知を投稿します。いいねとリポストをお願いします。"
+      },
+      "speakerRequest": null
+    },
+    {
+      "purpose": "session",
+      "segmentId": null,
+      "sessionId": "saku",
+      "scheduleItemId": null,
+      "scheduledAt": "2026-10-07T18:00:00+09:00",
+      "text": "／\n📣 DevFest Kansai 2026 セッション紹介✨\n＼\n\n『Web UI 2026 Updates & What's Coming!』\nsaku 氏\n\nWeb UI の最新動向と、これから来る機能をまとめて紹介します。\n\n10/18（日）大阪\n👇AI と最新技術のテックカンファレンス👇\n{{shortlink}}",
+      "textAboveFold": "／\n📣 DevFest Kansai 2026 セッション紹介✨\n＼\n\n『Web UI 2026 Updates & What's Coming!』\nsaku 氏\n\nWeb UI の最新動向と、これから来る機能をまとめて紹介します。\n\n10/18（日）大阪\n👇AI と最新技術のテックカンファレンス👇\n{{shortlink}}",
+      "textBelowFold": "",
+      "expectedReaction": "quote",
+      "attachment": {
+        "kind": "image",
+        "imageSlots": {
+          "headline": "Web UI 2026 Updates & What's Coming!",
+          "sub": "saku 氏"
+        },
+        "link": null
+      },
+      "speakerId": "saku",
+      "staffReminder": {
+        "text": "18:00 に saku さんのセッション紹介を投稿します。いいねとリポストをお願いします。"
+      },
+      "speakerRequest": {
+        "speakerId": "saku",
+        "purpose": "quote",
+        "text": "saku さん、18:00 にセッション紹介を投稿します。よろしければ引用で一言いただけると嬉しいです。",
+        "suggestionOnly": false
+      }
+    },
+    {
+      "purpose": "live",
+      "segmentId": null,
+      "sessionId": "saku",
+      "scheduleItemId": null,
+      "scheduledAt": "2026-10-18T13:50:00+09:00",
+      "text": "💡13:50〜 Track C\n『Web UI 2026 Updates & What's Coming!』\n👤saku 氏\n\nWeb UI の最新動向と、これからの進化に注目です！\n📺配信はこちら\nhttps://gdgs.jp/df26-stream-c\n#DevFestKansai",
+      "textAboveFold": "💡13:50〜 Track C\n『Web UI 2026 Updates & What's Coming!』\n👤saku 氏\n\nWeb UI の最新動向と、これからの進化に注目です！\n📺配信はこちら\nhttps://gdgs.jp/df26-stream-c\n#DevFestKansai",
+      "textBelowFold": "",
+      "expectedReaction": "click",
+      "attachment": {
+        "kind": "none",
+        "imageSlots": null,
+        "link": null
+      },
+      "speakerId": "saku",
+      "staffReminder": {
+        "text": "13:50 に Track C の実況を投稿します。リポストをお願いします。"
+      },
+      "speakerRequest": null
+    }
+  ],
+  "notes": null
+}

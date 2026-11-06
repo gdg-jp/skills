@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Copy"
+  short_description: "brief のメタテーマからタイトルとコピーを作る"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-copy with this brief."

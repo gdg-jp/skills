@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR connpass Mail"
+  short_description: "短く装飾した connpass メールを書く"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-connpass-mail with this brief."

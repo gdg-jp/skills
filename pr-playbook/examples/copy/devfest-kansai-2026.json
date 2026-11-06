@@ -1,0 +1,20 @@
+{
+  "event": "DevFest 2026 in Kansai",
+  "metaThemes": ["Cognitive Surrender の回避", "Tech × Non-tech"],
+  "eventGoals": [
+    "AI を道具から共創のパートナーへ捉え直す",
+    "AI の出力を自分の思考と錯覚せず、相互に増幅し合う関係を志向する"
+  ],
+  "copies": [
+    { "medium": "connpass / Web", "text": "AI 時代の「考える」を取り戻す。異分野と越境の AI カンファレンス", "note": "Postmortem の Keep（抽象的なゴールを売れる形に昇華）" },
+    { "medium": "flyer", "text": "AIに、使われるな。技術と共創し、人間にしかできない価値をつくれ" },
+    { "medium": "x_ads", "text": "関西最大級 AIカンファレンス／Googleのテックイベント 10/18 (日) @大阪開催！", "note": "広告: 目的 = クリック、ターゲット = 10〜20 代の初心者・学生" },
+    { "medium": "instagram", "text": "エンジニアだけじゃない！ AIとさまざまな分野が交差する大型カンファレンス", "note": "ファッション層向け（honoka さんの文面）" }
+  ],
+  "rejected": [
+    "専門を越えれば、アイデアは動き出す。",
+    "ちがう専門が、ひとつの未来をつくる。",
+    "Think Together. Create Together."
+  ],
+  "process": "4 人が候補を出し、多数決ではなく 1〜2 人で決めた"
+}

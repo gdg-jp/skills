@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Playbook"
+  short_description: "GDG イベント PR の判断基準と下書きの検査"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-playbook to check this PR draft against the GDG event PR playbook."

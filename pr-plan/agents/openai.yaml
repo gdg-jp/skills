@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR Plan"
+  short_description: "集客計画・予算・スケジュールを作る"
+  brand_color: "#4285F4"
+  default_prompt: "Use $pr-plan with this brief."

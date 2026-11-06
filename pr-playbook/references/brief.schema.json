@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gdgs.jp/schemas/pr/brief.schema.json",
+  "title": "PR campaign brief",
+  "description": "Every pr Skill's input, and the body of the pr app's briefs table. Optional keys may be omitted.",
+  "type": "object",
+  "required": ["event", "metaThemes", "audienceSegments", "goals", "speakers", "sessions", "budget"],
+  "properties": {
+    "event": {
+      "type": "object",
+      "required": ["name", "startAt", "endAt", "venue", "format", "fee"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "officialSeries": { "type": "string" },
+        "startAt": { "type": "string", "description": "ISO instant with offset" },
+        "endAt": { "type": "string" },
+        "venue": { "type": "string" },
+        "address": { "type": "string" },
+        "format": { "enum": ["onsite", "online", "hybrid"] },
+        "fee": { "type": "string" },
+        "capacity": { "type": "integer" },
+        "connpassUrl": { "type": "string" },
+        "hashtag": { "type": "string", "pattern": "^#" },
+        "streamUrls": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "metaThemes": { "type": "array", "minItems": 1, "maxItems": 4, "items": { "type": "string" } },
+    "audienceSegments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "properties": { "id": { "type": "string" }, "label": { "type": "string" }, "note": { "type": "string" } }
+      }
+    },
+    "goals": {
+      "type": "object",
+      "required": ["applications"],
+      "properties": {
+        "applications": { "type": "integer", "minimum": 0 },
+        "curve": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "applications"],
+            "properties": { "date": { "type": "string" }, "applications": { "type": "integer" } }
+          }
+        },
+        "bySegment": { "type": "object", "additionalProperties": { "type": "integer" } }
+      }
+    },
+    "speakers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "role", "tier"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "org": { "type": "string" },
+          "xHandle": { "type": "string" },
+          "followers": { "type": "integer" },
+          "imageUrl": { "type": "string" },
+          "tier": { "enum": ["normal", "high"] },
+          "sessionIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "speakerIds", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "abstract": { "type": "string" },
+          "track": { "type": "string" },
+          "startAt": { "type": "string" },
+          "endAt": { "type": "string" },
+          "speakerIds": { "type": "array", "items": { "type": "string" } },
+          "keywords": { "type": "array", "items": { "type": "string" } },
+          "status": { "enum": ["tba", "confirmed", "public"] },
+          "publishAfter": { "type": "string" },
+          "flags": { "type": "array", "items": { "enum": ["no_recording", "english", "onsite_only", "bring_pc"] } }
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": ["totalYen"],
+      "properties": {
+        "totalYen": { "type": "integer", "minimum": 0 },
+        "printYen": { "type": "integer", "minimum": 0 },
+        "adsSplit": {
+          "type": "object",
+          "properties": { "x": { "type": "number" }, "ig": { "type": "number" } }
+        }
+      }
+    },
+    "skin": {
+      "type": "object",
+      "properties": {
+        "bg": { "type": "string" },
+        "panelBg": { "type": "string" },
+        "accent": { "type": "array", "items": { "type": "string" } },
+        "textColor": { "type": "string" },
+        "headingFont": { "type": "string" },
+        "tone": { "type": "string" },
+        "referenceAssetUrls": { "type": "array", "items": { "type": "string" } },
+        "brandGuideUrl": { "type": "string" }
+      }
+    },
+    "copyConstraints": { "type": "array", "items": { "type": "string" } },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chapterId", "role"],
+        "properties": { "chapterId": { "type": "integer" }, "role": { "enum": ["host", "co-host"] }, "name": { "type": "string" } }
+      }
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "handle", "role"],
+        "properties": {
+          "kind": { "enum": ["x", "ig", "connpass_group"] },
+          "handle": { "type": "string" },
+          "chapterId": { "type": "integer" },
+          "role": { "enum": ["primary", "mirror"] }
+        }
+      }
+    },
+    "preEvents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "date"],
+        "properties": {
+          "name": { "type": "string" },
+          "date": { "type": "string" },
+          "venue": { "type": "string" },
+          "url": { "type": "string" },
+          "leadsTo": { "type": "string" }
+        }
+      }
+    },
+    "novelty": { "type": "array", "items": { "type": "string" } },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "name"],
+        "properties": {
+          "kind": { "type": "string" },
+          "name": { "type": "string" },
+          "relation": { "type": "string" },
+          "channel": { "type": "string" },
+          "owner": { "type": "string" }
+        }
+      }
+    },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  }
+}

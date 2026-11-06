@@ -1,0 +1,1014 @@
+{
+  "strategyMd": "## 方針\n\nセッションが確定したものから順に告知し、Instagram 広告を厚くする。",
+  "goalCurve": [
+    {
+      "date": "2026-08-18",
+      "applications": 110
+    },
+    {
+      "date": "2026-08-25",
+      "applications": 120
+    },
+    {
+      "date": "2026-09-01",
+      "applications": 150
+    },
+    {
+      "date": "2026-09-08",
+      "applications": 200
+    },
+    {
+      "date": "2026-09-15",
+      "applications": 250
+    },
+    {
+      "date": "2026-09-22",
+      "applications": 300
+    },
+    {
+      "date": "2026-09-29",
+      "applications": 350
+    },
+    {
+      "date": "2026-10-06",
+      "applications": 450
+    },
+    {
+      "date": "2026-10-13",
+      "applications": 550
+    },
+    {
+      "date": "2026-10-18",
+      "applications": 700
+    }
+  ],
+  "channelMix": [
+    {
+      "channel": "x_organic",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "x_ads",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "ig_organic",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "ig_ads",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "flyer_distribute",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "flyer_post",
+      "label": null,
+      "adopt": false,
+      "reason": "今回は見送る（掲示だけのチラシは読まれにくい等）",
+      "weight": null
+    },
+    {
+      "channel": "other_event_lt",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "other_event_flyer",
+      "label": null,
+      "adopt": false,
+      "reason": "今回は見送る（掲示だけのチラシは読まれにくい等）",
+      "weight": null
+    },
+    {
+      "channel": "other_event_attend",
+      "label": null,
+      "adopt": false,
+      "reason": "今回は見送る（掲示だけのチラシは読まれにくい等）",
+      "weight": null
+    },
+    {
+      "channel": "gdg_discord",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "org_outreach",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "friends",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "community_ask",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "speaker_invite",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "novelty",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    },
+    {
+      "channel": "segment_content",
+      "label": null,
+      "adopt": true,
+      "reason": "DevFest 2026 で効果があった",
+      "weight": null
+    }
+  ],
+  "budgetAllocation": {
+    "totalYen": 500000,
+    "printYen": 10000,
+    "adsYen": 440000,
+    "x": 176000,
+    "ig": 264000,
+    "byWeek": [
+      {
+        "weekOf": "2026-10-05",
+        "x": 88000,
+        "ig": 132000,
+        "print": 0
+      },
+      {
+        "weekOf": "2026-10-12",
+        "x": 88000,
+        "ig": 132000,
+        "print": 0
+      }
+    ],
+    "flights": [
+      {
+        "medium": "x_ads",
+        "name": "X Ads 本番前",
+        "startDaysBefore": 14,
+        "endDaysBefore": 0,
+        "plannedYen": 176000,
+        "phases": [
+          {
+            "fromDay": 0,
+            "toDay": 2,
+            "objective": "impression"
+          },
+          {
+            "fromDay": 3,
+            "toDay": 14,
+            "objective": "click"
+          }
+        ]
+      },
+      {
+        "medium": "ig_ads",
+        "name": "Instagram 広告",
+        "startDaysBefore": 10,
+        "endDaysBefore": 0,
+        "plannedYen": 264000,
+        "phases": [
+          {
+            "fromDay": 0,
+            "toDay": 10,
+            "objective": "click"
+          }
+        ]
+      }
+    ]
+  },
+  "scheduleItems": [
+    {
+      "ref": "i1",
+      "kind": "x_post",
+      "channel": "x_organic",
+      "dueAt": "2026-08-19T18:00:00+09:00",
+      "title": "開催決定の告知",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "announce",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i2",
+      "kind": "staff_reminder",
+      "channel": null,
+      "dueAt": "2026-08-19T17:00:00+09:00",
+      "title": "スタッフへいいね・リポスト依頼",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i1",
+      "offsetMinutes": -60,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "lead"
+    },
+    {
+      "ref": "i3",
+      "kind": "ig_post",
+      "channel": "ig_organic",
+      "dueAt": "2026-08-19T19:00:00+09:00",
+      "title": "開催決定（Instagram）",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "announce",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i4",
+      "kind": "staff_reminder",
+      "channel": null,
+      "dueAt": "2026-08-19T18:00:00+09:00",
+      "title": "スタッフへいいね・リポスト依頼",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i3",
+      "offsetMinutes": -60,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "lead"
+    },
+    {
+      "ref": "i5",
+      "kind": "x_post",
+      "channel": "x_organic",
+      "dueAt": "2026-09-18T18:00:00+09:00",
+      "title": "セッション紹介: I didn't need this attention",
+      "speakerId": "llion",
+      "sessionId": "keynote-llion",
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "session",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i6",
+      "kind": "staff_reminder",
+      "channel": null,
+      "dueAt": "2026-09-18T17:00:00+09:00",
+      "title": "スタッフへいいね・リポスト依頼",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i5",
+      "offsetMinutes": -60,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "lead"
+    },
+    {
+      "ref": "i7",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-18T15:00:00+09:00",
+      "title": "登壇者へ引用依頼",
+      "speakerId": "llion",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i5",
+      "offsetMinutes": -180,
+      "purpose": "quote",
+      "suggestionOnly": true,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i8",
+      "kind": "x_post",
+      "channel": "x_organic",
+      "dueAt": "2026-09-19T18:00:00+09:00",
+      "title": "セッション紹介: Web UI 2026 Updates & What's Coming!",
+      "speakerId": "saku",
+      "sessionId": "saku",
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "session",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i9",
+      "kind": "staff_reminder",
+      "channel": null,
+      "dueAt": "2026-09-19T17:00:00+09:00",
+      "title": "スタッフへいいね・リポスト依頼",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i8",
+      "offsetMinutes": -60,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "lead"
+    },
+    {
+      "ref": "i10",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-19T15:00:00+09:00",
+      "title": "登壇者へ引用依頼",
+      "speakerId": "saku",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i8",
+      "offsetMinutes": -180,
+      "purpose": "quote",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i11",
+      "kind": "x_post",
+      "channel": "x_organic",
+      "dueAt": "2026-09-20T18:00:00+09:00",
+      "title": "セッション紹介: 【ハンズオン】Antigravity & Geminiと作るAI手相×MBTI占いアプリ開発体験！",
+      "speakerId": "fukushima",
+      "sessionId": "fukushima",
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "session",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i12",
+      "kind": "staff_reminder",
+      "channel": null,
+      "dueAt": "2026-09-20T17:00:00+09:00",
+      "title": "スタッフへいいね・リポスト依頼",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i11",
+      "offsetMinutes": -60,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "lead"
+    },
+    {
+      "ref": "i13",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-20T15:00:00+09:00",
+      "title": "登壇者へ引用依頼",
+      "speakerId": "fukushima",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": "i11",
+      "offsetMinutes": -180,
+      "purpose": "quote",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i14",
+      "kind": "discord_post",
+      "channel": "gdg_discord",
+      "dueAt": "2026-09-03T12:00:00+09:00",
+      "title": "Discord 告知（45 日前）",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i15",
+      "kind": "discord_post",
+      "channel": "gdg_discord",
+      "dueAt": "2026-09-27T12:00:00+09:00",
+      "title": "Discord 告知（21 日前）",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i16",
+      "kind": "discord_post",
+      "channel": "gdg_discord",
+      "dueAt": "2026-10-11T12:00:00+09:00",
+      "title": "Discord 告知（7 日前）",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i17",
+      "kind": "connpass_mail",
+      "channel": null,
+      "dueAt": "2026-09-27T07:00:00+09:00",
+      "title": "connpass メール（3 週間前）",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "connpass"
+    },
+    {
+      "ref": "i18",
+      "kind": "flyer_text",
+      "channel": null,
+      "dueAt": "2026-08-24T18:00:00+09:00",
+      "title": "フライヤー v1 の文言",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": "v1",
+      "assigneeRole": "designer"
+    },
+    {
+      "ref": "i19",
+      "kind": "flyer_text",
+      "channel": null,
+      "dueAt": "2026-09-15T18:00:00+09:00",
+      "title": "フライヤー v2 の文言",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": null,
+      "suggestionOnly": null,
+      "variant": "v2",
+      "assigneeRole": "designer"
+    },
+    {
+      "ref": "i20",
+      "kind": "live_post",
+      "channel": null,
+      "dueAt": "2026-10-18T10:30:00+09:00",
+      "title": "開場・オープニングの実況",
+      "speakerId": null,
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "live",
+      "suggestionOnly": null,
+      "variant": null,
+      "assigneeRole": "writer"
+    },
+    {
+      "ref": "i21",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "inductor さんへ登壇予告の依頼",
+      "speakerId": "inductor",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i22",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "saku さんへ登壇予告の依頼",
+      "speakerId": "saku",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i23",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "藤井 輝之 さんへ登壇予告の依頼",
+      "speakerId": "fujii",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i24",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "太田 満久 さんへ登壇予告の依頼",
+      "speakerId": "ohta",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i25",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "Goldner Lucas さんへ登壇予告の依頼",
+      "speakerId": "lucas",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i26",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "Minori MATSUDA さんへ登壇予告の依頼",
+      "speakerId": "matsuda",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i27",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "安藤 幸央 さんへ登壇予告の依頼",
+      "speakerId": "ando",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i28",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "足立 昌彦（adamrocker） さんへ登壇予告の依頼",
+      "speakerId": "adamrocker",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i29",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "蜂須賀 大貴 さんへ登壇予告の依頼",
+      "speakerId": "hachisuka",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i30",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "Haren Bhandari さんへ登壇予告の依頼",
+      "speakerId": "haren",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i31",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "Aditya Joshi さんへ登壇予告の依頼",
+      "speakerId": "aditya",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i32",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "村上 智之 さんへ登壇予告の依頼",
+      "speakerId": "murakami-dlg",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i33",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "福島 ゆかり さんへ登壇予告の依頼",
+      "speakerId": "fukushima",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i34",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "山﨑 大介 さんへ登壇予告の依頼",
+      "speakerId": "yamazaki",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i35",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "naga（Yukinaga Oishi） さんへ登壇予告の依頼",
+      "speakerId": "naga",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i36",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "石原 直樹 さんへ登壇予告の依頼",
+      "speakerId": "ishihara",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i37",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "小川たかこ さんへ登壇予告の依頼",
+      "speakerId": "ogawa",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i38",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "川中 真耶 さんへ登壇予告の依頼",
+      "speakerId": "kawanaka",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i39",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "湯川洋平 さんへ登壇予告の依頼",
+      "speakerId": "yukawa",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    },
+    {
+      "ref": "i40",
+      "kind": "speaker_request",
+      "channel": null,
+      "dueAt": "2026-09-08T12:00:00+09:00",
+      "title": "タマムラ ダイキ さんへ登壇予告の依頼",
+      "speakerId": "tamamura",
+      "sessionId": null,
+      "segmentId": null,
+      "blockedBy": [],
+      "derivedFrom": null,
+      "offsetMinutes": null,
+      "purpose": "own_announce",
+      "suggestionOnly": false,
+      "variant": null,
+      "assigneeRole": "outreach"
+    }
+  ],
+  "preEvents": [
+    {
+      "name": "AIどう使ってる？LT会 in 大阪〖DevFest Meetup #1〗",
+      "date": "2026-08-28",
+      "leadsTo": "LT の最後に本番のセッションと申込 QR を紹介する"
+    },
+    {
+      "name": "開発の工夫を語るLT会 in 神戸！〖DevFest Meetup #2〗",
+      "date": "2026-09-15",
+      "leadsTo": "本番の関連セッションの紹介と、一緒に行く人の申込時間"
+    },
+    {
+      "name": "Gemma 4 でローカルLLMハンズオン in 大阪〖DevFest Meetup #3〗",
+      "date": "2026-09-30",
+      "leadsTo": "本番のハンズオン枠の紹介"
+    }
+  ],
+  "outreach": [
+    {
+      "organization": "国際工科専門職大学",
+      "kind": "school",
+      "ownerRole": "outreach",
+      "pitchMd": "授業・研究室で案内していただけるよう依頼する。"
+    }
+  ],
+  "connectionsToUse": [
+    {
+      "name": "Kaggler 関西",
+      "why": "100 人規模を集める地力がある"
+    }
+  ],
+  "noveltyIdeas": [
+    {
+      "kind": "all",
+      "idea": "ステッカー 2 種"
+    },
+    {
+      "kind": "referral",
+      "idea": "グループ来場特典"
+    },
+    {
+      "kind": "lottery",
+      "idea": "SNS 投稿キャンペーンの抽選でサーモボトル"
+    },
+    {
+      "kind": "redeem",
+      "idea": "交換コードでキーキャップ"
+    },
+    {
+      "kind": "survey",
+      "idea": "アンケート回答でホログラムステッカー"
+    }
+  ],
+  "segmentContentIdeas": [
+    {
+      "segmentId": "student",
+      "idea": "学生エンジニア座談会（サブイベント、抽選枠）"
+    }
+  ],
+  "surveyQuestions": [
+    {
+      "title": "年齢",
+      "answerType": "radio",
+      "required": true,
+      "options": [
+        "10代",
+        "20代",
+        "30代",
+        "40代",
+        "50代以上"
+      ]
+    },
+    {
+      "title": "職業",
+      "answerType": "radio",
+      "required": true,
+      "options": [
+        "学生",
+        "エンジニア",
+        "デザイナー",
+        "その他"
+      ]
+    },
+    {
+      "title": "経験年数",
+      "answerType": "radio",
+      "required": true,
+      "options": [
+        "なし",
+        "1 年未満",
+        "1〜3 年",
+        "3 年以上"
+      ]
+    },
+    {
+      "title": "イベントを知った場所",
+      "answerType": "checkbox",
+      "required": true,
+      "options": [
+        "X（投稿）",
+        "X（広告）",
+        "Instagram（投稿）",
+        "Instagram（広告）",
+        "チラシ（配布）",
+        "他イベントの LT",
+        "GDG の Discord",
+        "学校・会社からの案内",
+        "知人・友人",
+        "コミュニティ・サークル",
+        "登壇者の告知",
+        "ノベルティ",
+        "企画",
+        "その他"
+      ]
+    }
+  ],
+  "notes": null
+}

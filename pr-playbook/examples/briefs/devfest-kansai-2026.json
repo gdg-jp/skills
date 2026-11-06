@@ -1,0 +1,918 @@
+{
+  "event": {
+    "name": "DevFest 2026 in Kansai",
+    "officialSeries": "DevFest",
+    "startAt": "2026-10-18T10:30:00+09:00",
+    "endAt": "2026-10-18T18:20:00+09:00",
+    "venue": "国際工科専門職大学 大阪キャンパス",
+    "address": "大阪府大阪市北区梅田3-3-1（JR 大阪駅 徒歩 5 分）",
+    "format": "onsite",
+    "fee": "無料",
+    "capacity": 700,
+    "connpassUrl": "https://gdgkwansai.connpass.com/event/388434/",
+    "hashtag": "#DevFestKansai",
+    "streamUrls": {
+      "Track A": "https://gdgs.jp/df26-stream-a",
+      "Track B": "https://gdgs.jp/df26-stream-b",
+      "Track C": "https://gdgs.jp/df26-stream-c"
+    }
+  },
+  "metaThemes": [
+    "Cognitive Surrender の回避",
+    "Tech × Non-tech"
+  ],
+  "audienceSegments": [
+    {
+      "id": "student",
+      "label": "学生エンジニア",
+      "note": "10〜20 代の初心者・学生"
+    },
+    {
+      "id": "engineer",
+      "label": "現役エンジニア"
+    },
+    {
+      "id": "fashion",
+      "label": "ファッション・クリエイティブ",
+      "note": "服飾学生、PIIF・モード学園"
+    }
+  ],
+  "goals": {
+    "applications": 700,
+    "curve": [
+      {
+        "date": "2026-08-18",
+        "applications": 110
+      },
+      {
+        "date": "2026-08-25",
+        "applications": 120
+      },
+      {
+        "date": "2026-09-01",
+        "applications": 150
+      },
+      {
+        "date": "2026-09-08",
+        "applications": 200
+      },
+      {
+        "date": "2026-09-15",
+        "applications": 250
+      },
+      {
+        "date": "2026-09-22",
+        "applications": 300
+      },
+      {
+        "date": "2026-09-29",
+        "applications": 350
+      },
+      {
+        "date": "2026-10-06",
+        "applications": 450
+      },
+      {
+        "date": "2026-10-13",
+        "applications": 550
+      },
+      {
+        "date": "2026-10-18",
+        "applications": 700
+      }
+    ]
+  },
+  "speakers": [
+    {
+      "id": "sherry",
+      "name": "Sherry Xu",
+      "role": "Developer Ecosystem Regional Lead Japan",
+      "imageUrl": "https://img.gdgs.jp/mH3yDEfI?w=640&h=640&fit=cover&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "opening"
+      ]
+    },
+    {
+      "id": "heiga",
+      "name": "全 炳河",
+      "role": "Google DeepMind プリンシパル サイエンティスト・東京拠点リード",
+      "imageUrl": "https://img.gdgs.jp/EVwB6Cuk?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "keynote-heiga"
+      ]
+    },
+    {
+      "id": "murakami-norio",
+      "name": "村上 憲郎",
+      "role": "国際工科専門職大学（IPUT）学長",
+      "imageUrl": "https://img.gdgs.jp/0ABeKzvg?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "llion",
+      "name": "Llion Jones",
+      "role": "Co-Founder & CTO, Sakana AI",
+      "imageUrl": "https://img.gdgs.jp/WdGkxjCR?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "keynote-llion"
+      ]
+    },
+    {
+      "id": "takeuchi",
+      "name": "竹内 郁雄",
+      "role": "東京大学名誉教授",
+      "imageUrl": "https://img.gdgs.jp/AtXLXNuP?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "takeuchi"
+      ]
+    },
+    {
+      "id": "imamura",
+      "name": "今村 孝矢",
+      "role": "大阪国際工科専門職大学 教授／ゲームクリエイター／イラストレーター／漫画家",
+      "imageUrl": "https://img.gdgs.jp/R2y9BDJD?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "imamura"
+      ]
+    },
+    {
+      "id": "inductor",
+      "name": "inductor",
+      "role": "Google Developers Expert（AI）",
+      "imageUrl": "",
+      "tier": "normal",
+      "sessionIds": [
+        "inductor"
+      ]
+    },
+    {
+      "id": "saku",
+      "name": "saku",
+      "role": "サイボウズ デザインテクノロジスト／Google Developers Expert（Web）",
+      "imageUrl": "https://img.gdgs.jp/u5945MA8?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "saku"
+      ]
+    },
+    {
+      "id": "fujii",
+      "name": "藤井 輝之",
+      "role": "国際ファッション専門職大学 大阪ファッションクリエイション・ビジネス学科 学科長 教授",
+      "imageUrl": "https://img.gdgs.jp/7w0uDAS0?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "fujii"
+      ]
+    },
+    {
+      "id": "ohta",
+      "name": "太田 満久",
+      "role": "ユビー株式会社 Ubie Lab 所長",
+      "imageUrl": "https://img.gdgs.jp/6Z7dxrxU?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "ohta"
+      ]
+    },
+    {
+      "id": "lucas",
+      "name": "Goldner Lucas",
+      "role": "株式会社YOUTRUST プロダクト開発部／Google Developers Expert（Flutter）",
+      "imageUrl": "https://img.gdgs.jp/iL1LHjuX?w=640&h=640&fit=cover&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "lucas"
+      ]
+    },
+    {
+      "id": "asada",
+      "name": "浅田 稔",
+      "role": "大阪国際工科専門職大学 副学長・教授",
+      "imageUrl": "https://img.gdgs.jp/RTbA8Lap?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "asada"
+      ]
+    },
+    {
+      "id": "matsuda",
+      "name": "Minori MATSUDA",
+      "role": "Senior Director & Executive Specialist (AI & ML Lead) @ Enterprise／LLM Researcher, The University of Tokyo／Google Developer Expert (AI/ML)",
+      "imageUrl": "https://img.gdgs.jp/bjm8oGyN?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "matsuda"
+      ]
+    },
+    {
+      "id": "ando",
+      "name": "安藤 幸央",
+      "role": "株式会社エクサ UXデザイナー",
+      "imageUrl": "https://img.gdgs.jp/NCYMjgXY?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "ando"
+      ]
+    },
+    {
+      "id": "ishiguro",
+      "name": "石黒 浩",
+      "role": "大阪大学大学院基礎工学研究科 教授（栄誉教授）",
+      "imageUrl": "https://img.gdgs.jp/fvsMb039?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "ishiguro"
+      ]
+    },
+    {
+      "id": "adamrocker",
+      "name": "足立 昌彦（adamrocker）",
+      "role": "株式会社GENKEI CEO／Google Developer Expert（AI/ML）",
+      "imageUrl": "https://img.gdgs.jp/5VhDJtRd?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "adamrocker"
+      ]
+    },
+    {
+      "id": "hachisuka",
+      "name": "蜂須賀 大貴",
+      "role": "Newbee株式会社 代表取締役",
+      "imageUrl": "https://img.gdgs.jp/8Pdw99do?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "hachisuka"
+      ]
+    },
+    {
+      "id": "haren",
+      "name": "Haren Bhandari",
+      "role": "Developer Relations Engineer, Google Cloud Japan",
+      "imageUrl": "https://img.gdgs.jp/LxsE0uUT?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "haren"
+      ]
+    },
+    {
+      "id": "aditya",
+      "name": "Aditya Joshi",
+      "role": "Senior Software Engineer, Walmart",
+      "imageUrl": "https://img.gdgs.jp/a88h9tvh?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "aditya"
+      ]
+    },
+    {
+      "id": "murakami-dlg",
+      "name": "村上 智之",
+      "role": "データラーニングギルド代表",
+      "imageUrl": "https://img.gdgs.jp/3bNuhcUB?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "murakami-dlg"
+      ]
+    },
+    {
+      "id": "ochiai",
+      "name": "落合 陽一",
+      "role": "メディアアーティスト, 筑波大学デジタルネイチャー開発研究センター長・教授, 東京大学准教授",
+      "imageUrl": "https://img.gdgs.jp/v3tezY8z?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "ochiai"
+      ]
+    },
+    {
+      "id": "fukushima",
+      "name": "福島 ゆかり",
+      "role": "株式会社電通デジタル AIX部門マネージャー 兼 Google Developer Expert [Cloud AI/ML, Data Analytics]",
+      "imageUrl": "https://img.gdgs.jp/NLOcjcTP?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "fukushima"
+      ]
+    },
+    {
+      "id": "yamazaki",
+      "name": "山﨑 大介",
+      "role": "筑波大学 情報学群 情報科学類",
+      "imageUrl": "https://img.gdgs.jp/B8nKX6Ju?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "yamazaki"
+      ]
+    },
+    {
+      "id": "naga",
+      "name": "naga（Yukinaga Oishi）",
+      "role": "GDG Tokyo Organizer／株式会社MIXI「家族アルバム みてね」エンジニア",
+      "imageUrl": "https://img.gdgs.jp/u3tglBlT?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "naga"
+      ]
+    },
+    {
+      "id": "ishihara",
+      "name": "石原 直樹",
+      "role": "GDG Greater Kwansai (広域関西圏) オーガナイザー",
+      "imageUrl": "https://img.gdgs.jp/3Cl1Raoc?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "panel-recruiting",
+        "panel-swe"
+      ]
+    },
+    {
+      "id": "oikawa",
+      "name": "及川 卓也",
+      "role": "Tably株式会社代表取締役",
+      "imageUrl": "https://img.gdgs.jp/KWHJZokJ?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "high",
+      "sessionIds": [
+        "panel-recruiting"
+      ]
+    },
+    {
+      "id": "ogawa",
+      "name": "小川たかこ",
+      "role": "パナリット株式会社",
+      "imageUrl": "https://img.gdgs.jp/RiAtdOJx?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "panel-recruiting"
+      ]
+    },
+    {
+      "id": "kawanaka",
+      "name": "川中 真耶",
+      "role": "一般社団法人ソフトウェアエンジニアリング協会 代表理事／株式会社ナレッジワーク CTO",
+      "imageUrl": "https://img.gdgs.jp/0p7ufe5t?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "panel-swe"
+      ]
+    },
+    {
+      "id": "yukawa",
+      "name": "湯川洋平",
+      "role": "Cicero Aware 代表",
+      "imageUrl": "https://img.gdgs.jp/mO6gRhCg?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "panel-swe"
+      ]
+    },
+    {
+      "id": "tamamura",
+      "name": "タマムラ ダイキ",
+      "role": "国際ファッション専門職大学 学生",
+      "imageUrl": "https://img.gdgs.jp/gecjK3ym?w=640&h=640&fit=cover&radius=640&q=60&f=avif",
+      "tier": "normal",
+      "sessionIds": [
+        "fujii"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "opening",
+      "title": "Opening",
+      "track": "Track A",
+      "startAt": "2026-10-18T10:30:00+09:00",
+      "endAt": "2026-10-18T10:40:00+09:00",
+      "speakerIds": [
+        "sherry"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "greeting",
+      "title": "村上学長挨拶",
+      "track": "Track A",
+      "startAt": "2026-10-18T10:40:00+09:00",
+      "endAt": "2026-10-18T10:50:00+09:00",
+      "speakerIds": [
+        "murakami-norio"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "findy",
+      "title": "Findy スポンサーセッション",
+      "track": "Track A",
+      "startAt": "2026-10-18T10:50:00+09:00",
+      "endAt": "2026-10-18T10:55:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "synergy",
+      "title": "シナジーマーケティング スポンサーセッション",
+      "track": "Track A",
+      "startAt": "2026-10-18T10:55:00+09:00",
+      "endAt": "2026-10-18T11:00:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "keynote-heiga",
+      "title": "Geminiによる音声AI",
+      "track": "Track A",
+      "startAt": "2026-10-18T11:00:00+09:00",
+      "endAt": "2026-10-18T11:20:00+09:00",
+      "speakerIds": [
+        "heiga"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "no_recording"
+      ]
+    },
+    {
+      "id": "fashion-runway",
+      "title": "Fashion show",
+      "track": "Track A",
+      "startAt": "2026-10-18T11:20:00+09:00",
+      "endAt": "2026-10-18T11:30:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "keynote-llion",
+      "title": "I didn't need this attention",
+      "track": "Track A",
+      "startAt": "2026-10-18T12:25:00+09:00",
+      "endAt": "2026-10-18T13:05:00+09:00",
+      "speakerIds": [
+        "llion"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "english"
+      ]
+    },
+    {
+      "id": "panel-recruiting",
+      "title": "パネルディスカッション ～面接で人は見抜けるのか？Google 採用改革の舞台裏～",
+      "track": "Track B",
+      "startAt": "2026-10-18T12:25:00+09:00",
+      "endAt": "2026-10-18T13:30:00+09:00",
+      "speakerIds": [
+        "oikawa",
+        "ogawa",
+        "ishihara"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "asada",
+      "title": "人とAIはともに育つことができるか？ — 認知発達ロボティクスから考える共感・共生・責任 —",
+      "track": "Track A",
+      "startAt": "2026-10-18T13:05:00+09:00",
+      "endAt": "2026-10-18T13:30:00+09:00",
+      "speakerIds": [
+        "asada"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "imamura",
+      "title": "ゲーム界のレジェンドが語る AI との向き合い方",
+      "track": "Track A",
+      "startAt": "2026-10-18T13:50:00+09:00",
+      "endAt": "2026-10-18T14:00:00+09:00",
+      "speakerIds": [
+        "imamura"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "ohta",
+      "title": "生成AIを「なんとなく改善」するのをやめる",
+      "track": "Track C",
+      "startAt": "2026-10-18T15:00:00+09:00",
+      "endAt": "2026-10-18T15:30:00+09:00",
+      "speakerIds": [
+        "ohta"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "saku",
+      "title": "Web UI 2026 Updates & What's Coming!",
+      "track": "Track C",
+      "startAt": "2026-10-18T13:50:00+09:00",
+      "endAt": "2026-10-18T14:15:00+09:00",
+      "speakerIds": [
+        "saku"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "fukushima",
+      "title": "【ハンズオン】Antigravity & Geminiと作るAI手相×MBTI占いアプリ開発体験！",
+      "track": "Track D",
+      "startAt": "2026-10-18T13:50:00+09:00",
+      "endAt": "2026-10-18T14:40:00+09:00",
+      "speakerIds": [
+        "fukushima"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "bring_pc",
+        "onsite_only"
+      ]
+    },
+    {
+      "id": "takeuchi",
+      "title": "未踏統括 PM が語る、AI 時代におけるものづくりの本質",
+      "track": "Track A",
+      "startAt": "2026-10-18T14:00:00+09:00",
+      "endAt": "2026-10-18T14:40:00+09:00",
+      "speakerIds": [
+        "takeuchi"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "inductor",
+      "title": "TBA",
+      "track": "Track C",
+      "startAt": "2026-10-18T15:30:00+09:00",
+      "endAt": "2026-10-18T16:00:00+09:00",
+      "speakerIds": [
+        "inductor"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "lucas",
+      "title": "Flutterは3Dゲームを作れるのか？ Flutter Scene × AIで挑戦",
+      "track": "Track C",
+      "startAt": "2026-10-18T14:15:00+09:00",
+      "endAt": "2026-10-18T14:40:00+09:00",
+      "speakerIds": [
+        "lucas"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "ishiguro",
+      "title": "AIロボットと人間の進化",
+      "track": "Track A",
+      "startAt": "2026-10-18T15:00:00+09:00",
+      "endAt": "2026-10-18T16:00:00+09:00",
+      "speakerIds": [
+        "ishiguro"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "no_recording"
+      ]
+    },
+    {
+      "id": "hachisuka",
+      "title": "AIでコードは書けるのに、つくりたいものがつくれないあなたへ",
+      "track": "Track B",
+      "startAt": "2026-10-18T15:00:00+09:00",
+      "endAt": "2026-10-18T15:30:00+09:00",
+      "speakerIds": [
+        "hachisuka"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "matsuda",
+      "title": "Beyond \"Out-of-the-Box\"：24時間駆動する自律的好奇心エージェント",
+      "track": "Track B",
+      "startAt": "2026-10-18T13:50:00+09:00",
+      "endAt": "2026-10-18T14:15:00+09:00",
+      "speakerIds": [
+        "matsuda"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "haren",
+      "title": "AntigravityでAIエージェントを作ってみよう",
+      "track": "Track D",
+      "startAt": "2026-10-18T15:00:00+09:00",
+      "endAt": "2026-10-18T16:00:00+09:00",
+      "speakerIds": [
+        "haren"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "bring_pc",
+        "onsite_only"
+      ]
+    },
+    {
+      "id": "adamrocker",
+      "title": "思考を手放さないための共創論 — AIエージェント時代におけるエンジニアのメタ認知と境界線",
+      "track": "Track B",
+      "startAt": "2026-10-18T14:15:00+09:00",
+      "endAt": "2026-10-18T14:40:00+09:00",
+      "speakerIds": [
+        "adamrocker"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "no_recording"
+      ]
+    },
+    {
+      "id": "ando",
+      "title": "AIが賢くなるほど、UIは不親切であるべき―Cognitive Surrenderを防ぐ UXデザイン",
+      "track": "Track B",
+      "startAt": "2026-10-18T15:30:00+09:00",
+      "endAt": "2026-10-18T16:00:00+09:00",
+      "speakerIds": [
+        "ando"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "ochiai",
+      "title": "デジタルネイチャーと人間の再定義——AI時代の「共創」を問い直す",
+      "track": "Track A",
+      "startAt": "2026-10-18T16:20:00+09:00",
+      "endAt": "2026-10-18T17:20:00+09:00",
+      "speakerIds": [
+        "ochiai"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "no_recording"
+      ]
+    },
+    {
+      "id": "panel-swe",
+      "title": "知性が外部化される AI 時代の活躍論 ～ 元 Googler たちが語る、変わらない本質 ～",
+      "track": "Track B",
+      "startAt": "2026-10-18T16:20:00+09:00",
+      "endAt": "2026-10-18T16:50:00+09:00",
+      "speakerIds": [
+        "yukawa",
+        "kawanaka",
+        "ishihara"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "aditya",
+      "title": "Give Your AI Agents a Sandbox: Running Untrusted Agent Code Safely on Kubernetes",
+      "track": "Track C",
+      "startAt": "2026-10-18T16:20:00+09:00",
+      "endAt": "2026-10-18T16:50:00+09:00",
+      "speakerIds": [
+        "aditya"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "english"
+      ]
+    },
+    {
+      "id": "fujii",
+      "title": "ファッション×AIワークショップ〜Fashion Futures Lab AI と共創する未来のファッション〜",
+      "track": "Track D",
+      "startAt": "2026-10-18T16:20:00+09:00",
+      "endAt": "2026-10-18T17:40:00+09:00",
+      "speakerIds": [
+        "fujii",
+        "tamamura"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": [
+        "onsite_only"
+      ]
+    },
+    {
+      "id": "murakami-dlg",
+      "title": "オントロジーって結局なにもの？ — AIエージェントに\"意味\"を渡す知識設計の話",
+      "track": "Track C",
+      "startAt": "2026-10-18T16:50:00+09:00",
+      "endAt": "2026-10-18T17:20:00+09:00",
+      "speakerIds": [
+        "murakami-dlg"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "track-b-tba-1650",
+      "title": "TBA",
+      "track": "Track B",
+      "startAt": "2026-10-18T16:50:00+09:00",
+      "endAt": "2026-10-18T17:20:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "naga",
+      "title": "コードはエージェントに任せて、『プロダクトエンジニアリング』はチームで磨き続ける",
+      "track": "Track A",
+      "startAt": "2026-10-18T17:40:00+09:00",
+      "endAt": "2026-10-18T18:05:00+09:00",
+      "speakerIds": [
+        "naga"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "lt",
+      "title": "LT大会",
+      "track": "Track B",
+      "startAt": "2026-10-18T17:40:00+09:00",
+      "endAt": "2026-10-18T18:05:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "yamazaki",
+      "title": "古い指輪から広がった、Javaコミュニティとのつながり",
+      "track": "Track C",
+      "startAt": "2026-10-18T17:40:00+09:00",
+      "endAt": "2026-10-18T18:05:00+09:00",
+      "speakerIds": [
+        "yamazaki"
+      ],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    },
+    {
+      "id": "tenshoku-draft",
+      "title": "転職ドラフト ビールスポンサーLT",
+      "track": "Track A",
+      "startAt": "2026-10-18T18:05:00+09:00",
+      "endAt": "2026-10-18T18:10:00+09:00",
+      "speakerIds": [],
+      "keywords": [],
+      "status": "public",
+      "flags": []
+    }
+  ],
+  "budget": {
+    "totalYen": 500000,
+    "printYen": 10000,
+    "adsSplit": {
+      "x": 0.4,
+      "ig": 0.6
+    }
+  },
+  "skin": {
+    "bg": "#4285F4",
+    "panelBg": "#FFFFFF",
+    "accent": [
+      "#4285F4",
+      "#34A853",
+      "#F9AB00",
+      "#EA4335"
+    ],
+    "textColor": "#1E1E1E",
+    "tone": "DevFest 2026 のブランドガイドに沿ったブルー背景",
+    "brandGuideUrl": "https://goo.gle/devfest26-brand-guide",
+    "referenceAssetUrls": [
+      "https://img.gdgs.jp/NWbxmMod"
+    ]
+  },
+  "copyConstraints": [
+    "AI"
+  ],
+  "chapters": [
+    {
+      "chapterId": 1,
+      "role": "host",
+      "name": "GDG Greater Kwansai"
+    },
+    {
+      "chapterId": 2,
+      "role": "co-host",
+      "name": "GDG on Campus Osaka"
+    }
+  ],
+  "accounts": [
+    {
+      "kind": "x",
+      "handle": "gdgkwansai",
+      "chapterId": 1,
+      "role": "primary"
+    },
+    {
+      "kind": "x",
+      "handle": "gdsc_osaka",
+      "chapterId": 2,
+      "role": "mirror"
+    },
+    {
+      "kind": "ig",
+      "handle": "grkwansai",
+      "chapterId": 1,
+      "role": "primary"
+    },
+    {
+      "kind": "connpass_group",
+      "handle": "gdgkwansai",
+      "chapterId": 1,
+      "role": "primary"
+    }
+  ],
+  "preEvents": [
+    {
+      "name": "AIどう使ってる？LT会 in 大阪〖DevFest Meetup #1〗",
+      "date": "2026-08-28",
+      "venue": "gusuku Ashibina",
+      "url": "https://gdgkwansai.connpass.com/event/403503/",
+      "leadsTo": "LT の最後に本番のセッションと申込 QR を紹介する"
+    },
+    {
+      "name": "開発の工夫を語るLT会 in 神戸！〖DevFest Meetup #2〗",
+      "date": "2026-09-15",
+      "venue": "OPTiM KOBE",
+      "url": "https://gdgkwansai.connpass.com/event/405133/",
+      "leadsTo": "本番の関連セッションの紹介と、一緒に行く人の申込時間"
+    },
+    {
+      "name": "Gemma 4 でローカルLLMハンズオン in 大阪〖DevFest Meetup #3〗",
+      "date": "2026-09-30",
+      "venue": "LINEヤフー 大阪オフィス",
+      "url": "https://gdgkwansai.connpass.com/event/404318/",
+      "leadsTo": "本番のハンズオン枠の紹介"
+    }
+  ],
+  "novelty": [
+    "キーキャップ（交換コード DEVFEST26）",
+    "ステッカー 2 種（全員）",
+    "グループ来場特典",
+    "アンケート特典",
+    "SNS フォロー＆投稿キャンペーンの抽選"
+  ],
+  "constraints": [
+    "スポンサー以外の企業名を推薦の文脈で出さない"
+  ],
+  "notes": "DevFest Kansai 2026 の実績から起こした検証用の brief。tier は検証用の仮置き。"
+}

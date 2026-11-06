@@ -1,0 +1,529 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-plan output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "strategyMd",
+    "goalCurve",
+    "channelMix",
+    "budgetAllocation",
+    "scheduleItems",
+    "preEvents",
+    "outreach",
+    "connectionsToUse",
+    "noveltyIdeas",
+    "segmentContentIdeas",
+    "surveyQuestions",
+    "notes"
+  ],
+  "properties": {
+    "strategyMd": {
+      "type": "string"
+    },
+    "goalCurve": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "applications"
+        ],
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "applications": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "channelMix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "channel",
+          "label",
+          "adopt",
+          "reason",
+          "weight"
+        ],
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "adopt": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "weight": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "budgetAllocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalYen",
+        "printYen",
+        "adsYen",
+        "x",
+        "ig",
+        "byWeek",
+        "flights"
+      ],
+      "properties": {
+        "totalYen": {
+          "type": "integer"
+        },
+        "printYen": {
+          "type": "integer"
+        },
+        "adsYen": {
+          "type": "integer"
+        },
+        "x": {
+          "type": "integer"
+        },
+        "ig": {
+          "type": "integer"
+        },
+        "byWeek": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "weekOf",
+              "x",
+              "ig",
+              "print"
+            ],
+            "properties": {
+              "weekOf": {
+                "type": "string"
+              },
+              "x": {
+                "type": "integer"
+              },
+              "ig": {
+                "type": "integer"
+              },
+              "print": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "flights": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "medium",
+              "name",
+              "startDaysBefore",
+              "endDaysBefore",
+              "plannedYen",
+              "phases"
+            ],
+            "properties": {
+              "medium": {
+                "type": "string",
+                "enum": [
+                  "x_ads",
+                  "ig_ads",
+                  "print"
+                ]
+              },
+              "name": {
+                "type": "string"
+              },
+              "startDaysBefore": {
+                "type": "integer"
+              },
+              "endDaysBefore": {
+                "type": "integer"
+              },
+              "plannedYen": {
+                "type": "integer"
+              },
+              "phases": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "fromDay",
+                    "toDay",
+                    "objective"
+                  ],
+                  "properties": {
+                    "fromDay": {
+                      "type": "integer"
+                    },
+                    "toDay": {
+                      "type": "integer"
+                    },
+                    "objective": {
+                      "type": "string",
+                      "enum": [
+                        "impression",
+                        "click",
+                        "conversion"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "scheduleItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ref",
+          "kind",
+          "channel",
+          "dueAt",
+          "title",
+          "speakerId",
+          "sessionId",
+          "segmentId",
+          "blockedBy",
+          "derivedFrom",
+          "offsetMinutes",
+          "purpose",
+          "suggestionOnly",
+          "variant",
+          "assigneeRole"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "channel": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dueAt": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "speakerId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sessionId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "segmentId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "blockedBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "derivedFrom": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "offsetMinutes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "purpose": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "suggestionOnly": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "variant": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "assigneeRole": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "preEvents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "date",
+          "leadsTo"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "leadsTo": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "outreach": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "organization",
+          "kind",
+          "ownerRole",
+          "pitchMd"
+        ],
+        "properties": {
+          "organization": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "ownerRole": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pitchMd": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "connectionsToUse": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "why"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "noveltyIdeas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "idea"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "all",
+              "referral",
+              "lottery",
+              "redeem",
+              "survey"
+            ]
+          },
+          "idea": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "segmentContentIdeas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segmentId",
+          "idea"
+        ],
+        "properties": {
+          "segmentId": {
+            "type": "string"
+          },
+          "idea": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "surveyQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "answerType",
+          "required",
+          "options"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "answerType": {
+            "type": "string",
+            "enum": [
+              "free_text",
+              "checkbox",
+              "radio",
+              "dropdown"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "options": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

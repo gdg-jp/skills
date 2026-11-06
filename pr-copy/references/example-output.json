@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "title": "DevFest 2026 in Kansai",
+      "mainCopy": "AI 時代の「考える」を取り戻す。異分野と越境の AI カンファレンス",
+      "connpassTitle": "DevFest 2026 in Kansai ― AI 時代の「考える」を取り戻す。異分野と越境の AI カンファレンス",
+      "xShort": "AI 時代の「考える」を取り戻す。10/18（日）大阪で、異分野と越境の AI カンファレンス",
+      "igShort": "エンジニアだけじゃない。AI とファッションが交差する、大阪の 1 日",
+      "flyerLine": "AI に、使われるな。技術と共創し、人間にしかできない価値をつくれ",
+      "bySegment": [
+        {
+          "segmentId": "student",
+          "line": "AI 時代に何を学ぶか、第一線のエンジニアに直接聞ける学生エンジニア座談会"
+        },
+        {
+          "segmentId": "engineer",
+          "line": "AI にコードを任せる時代に、考える力をチームで磨く AI セッション"
+        },
+        {
+          "segmentId": "fashion",
+          "line": "AI と共創する未来のファッションを、エンジニアと一緒に考えるワークショップ"
+        }
+      ],
+      "metaThemeMapping": [
+        {
+          "theme": "Cognitive Surrender の回避",
+          "projection": "AI に考えるのを委ねすぎない →「考える」を取り戻す"
+        },
+        {
+          "theme": "Tech × Non-tech",
+          "projection": "エンジニアと異分野が出会う →「異分野と越境」"
+        }
+      ],
+      "rationaleMd": "抽象的なゴールを、1 行で何のイベントか分かる言葉に射影した。"
+    }
+  ],
+  "notes": null
+}

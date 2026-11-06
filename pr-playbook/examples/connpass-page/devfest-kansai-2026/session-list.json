@@ -1,0 +1,182 @@
+{
+  "title": "DevFest 2026 in Kansai セッション一覧",
+  "speakers": {
+    "llion": {
+      "name": "Llion Jones",
+      "role": "Co-Founder & CTO, Sakana AI",
+      "image": "https://img.gdgs.jp/WdGkxjCR?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "takeuchi": {
+      "name": "竹内 郁雄",
+      "role": "東京大学名誉教授",
+      "image": "https://img.gdgs.jp/AtXLXNuP?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "asada": {
+      "name": "浅田 稔",
+      "role": "大阪国際工科専門職大学 副学長・教授",
+      "image": "https://img.gdgs.jp/RTbA8Lap?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "imamura": {
+      "name": "今村 孝矢",
+      "role": "大阪国際工科専門職大学 教授／ゲームクリエイター／イラストレーター／漫画家",
+      "image": "https://img.gdgs.jp/R2y9BDJD?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "ishiguro": {
+      "name": "石黒 浩",
+      "role": "大阪大学大学院基礎工学研究科 教授（栄誉教授）",
+      "image": "https://img.gdgs.jp/fvsMb039?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "ochiai": {
+      "name": "落合 陽一",
+      "role": "メディアアーティスト, 筑波大学デジタルネイチャー開発研究センター長・教授, 東京大学准教授",
+      "image": "https://img.gdgs.jp/v3tezY8z?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "fukushima": {
+      "name": "福島 ゆかり",
+      "role": "株式会社電通デジタル AIX部門マネージャー 兼 Google Developer Expert [Cloud AI/ML, Data Analytics]",
+      "image": "https://img.gdgs.jp/NLOcjcTP?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "haren": {
+      "name": "Haren Bhandari",
+      "role": "Developer Relations Engineer, Google Cloud Japan",
+      "image": "https://img.gdgs.jp/LxsE0uUT?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "fujii": {
+      "name": "藤井 輝之",
+      "role": "国際ファッション専門職大学 大阪ファッションクリエイション・ビジネス学科 学科長 教授"
+    },
+    "ishihara": {
+      "name": "石原 直樹",
+      "role": "GDG Greater Kwansai (広域関西圏) オーガナイザー",
+      "image": "https://img.gdgs.jp/3Cl1Raoc?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "ogawa": {
+      "name": "小川たかこ",
+      "role": "パナリット株式会社",
+      "image": "https://img.gdgs.jp/RiAtdOJx?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "oikawa": {
+      "name": "及川 卓也",
+      "role": "Tably株式会社代表取締役",
+      "image": "https://img.gdgs.jp/KWHJZokJ?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "yukawa": {
+      "name": "湯川洋平",
+      "role": "Cicero Aware 代表",
+      "image": "https://img.gdgs.jp/mO6gRhCg?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    },
+    "kawanaka": {
+      "name": "川中 真耶",
+      "role": "一般社団法人ソフトウェアエンジニアリング協会 代表理事／株式会社ナレッジワーク CTO",
+      "image": "https://img.gdgs.jp/0p7ufe5t?w=640&h=640&fit=cover&radius=640&q=60&f=avif"
+    }
+  },
+  "sections": [
+    {
+      "id": "talks",
+      "heading": "TALKS",
+      "color": "blue",
+      "desktopColumn": 1,
+      "sessions": [
+        {
+          "id": "keynote-llion",
+          "title": "I didn't need this attention",
+          "speakers": ["llion"],
+          "highlights": [{ "text": "attention", "color": "blue" }]
+        },
+        {
+          "id": "takeuchi",
+          "title": "未踏統括 PM が語る、AI 時代におけるものづくりの本質",
+          "speakers": ["takeuchi"],
+          "highlights": [{ "text": "ものづくり", "color": "yellow" }]
+        },
+        {
+          "id": "asada",
+          "title": "人とAIはともに育つことができるか？ — 認知発達ロボティクスから考える共感・共生・責任 —",
+          "speakers": ["asada"],
+          "highlights": [{ "text": "認知発達ロボティクス", "color": "blue" }]
+        },
+        {
+          "id": "imamura",
+          "title": "ゲーム界のレジェンドが語る AI との向き合い方",
+          "speakers": ["imamura"],
+          "highlights": [
+            { "text": "ゲーム界のレジェンド", "color": "yellow" },
+            { "text": "AI", "color": "blue" }
+          ]
+        },
+        {
+          "id": "ishiguro",
+          "title": "AIロボットと人間の進化",
+          "speakers": ["ishiguro"],
+          "highlights": [
+            { "text": "AIロボット", "color": "blue" },
+            { "text": "人間の進化", "color": "green" }
+          ]
+        },
+        {
+          "id": "ochiai",
+          "title": "デジタルネイチャーと人間の再定義——AI時代の「共創」を問い直す",
+          "speakers": ["ochiai"],
+          "highlights": [
+            { "text": "デジタルネイチャー", "color": "blue" },
+            { "text": "人間", "color": "green" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hands-on",
+      "heading": "HANDS-ON",
+      "color": "red",
+      "desktopColumn": 2,
+      "sessions": [
+        {
+          "id": "fukushima",
+          "title": "【ハンズオン】Antigravity & Geminiと作るAI手相×MBTI占いアプリ開発体験！",
+          "speakers": ["fukushima"],
+          "highlights": [
+            { "text": "Antigravity", "color": "blue" },
+            { "text": "Gemini", "color": "red" },
+            { "text": "AI手相", "color": "green" }
+          ]
+        },
+        {
+          "id": "haren",
+          "title": "AntigravityでAIエージェントを作ってみよう",
+          "speakers": ["haren"],
+          "highlights": [{ "text": "AIエージェント", "color": "green" }]
+        },
+        {
+          "id": "fujii",
+          "title": "ファッション×AIワークショップ〜Fashion Futures Lab AI と共創する未来のファッション〜",
+          "speakers": ["fujii"],
+          "highlights": [
+            { "text": "Fashion Futures Lab", "color": "red" },
+            { "text": "共創", "color": "blue" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "panel-discussion",
+      "heading": "PANEL DISCUSSION",
+      "color": "green",
+      "desktopColumn": 2,
+      "sessions": [
+        {
+          "id": "panel-recruiting",
+          "title": "パネルディスカッション ～面接で人は見抜けるのか？Google 採用改革の舞台裏～",
+          "speakers": ["ishihara", "ogawa", "oikawa"],
+          "highlights": [{ "text": "採用", "color": "green" }]
+        },
+        {
+          "id": "panel-swe",
+          "title": "知性が外部化される AI 時代の活躍論 ～ 元 Googler たちが語る、変わらない本質 ～",
+          "speakers": ["ishihara", "kawanaka", "yukawa"],
+          "highlights": [{ "text": "ソフトウェアエンジニアリング", "color": "blue" }]
+        }
+      ]
+    }
+  ]
+}
