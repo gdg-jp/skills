@@ -41,13 +41,7 @@
       "title": "年齢",
       "answerType": "radio",
       "required": true,
-      "options": [
-        "10代",
-        "20代",
-        "30代",
-        "40代",
-        "50代以上"
-      ]
+      "options": ["10代", "20代", "30代", "40代", "50代以上"]
     }
   ],
   "participantOnlyInfo": "当日の配信 URL と資料はこちらで案内します。Discord: https://gdgs.jp/df26-discord",

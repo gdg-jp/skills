@@ -3,14 +3,26 @@ import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-import { ALLOWED_CSS, CHECKS, mustFailures, runChecks, scanHtml, validateSchema, weightedLength } from "./index.mjs";
+import {
+  ALLOWED_CSS,
+  CHECKS,
+  mustFailures,
+  runChecks,
+  scanHtml,
+  validateSchema,
+  weightedLength,
+} from "./index.mjs";
 import { foldIndex, japaneseTexts } from "./util.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../..");
 const skills = resolve(root, "..");
 const json = (path) => JSON.parse(readFileSync(path, "utf8"));
-const playbook = { rules: json(resolve(root, "rules.json")).rules, constants: json(resolve(root, "constants.json")), version: "test" };
+const playbook = {
+  rules: json(resolve(root, "rules.json")).rules,
+  constants: json(resolve(root, "constants.json")),
+  version: "test",
+};
 const brief = json(resolve(root, "examples/briefs/devfest-kansai-2026.json"));
 const result = (report, id) => report.results.find((r) => r.ruleId === id);
 const check = (kind, draft, b = brief) => runChecks({ kind, draft, brief: b, playbook });
@@ -38,7 +50,8 @@ test("brief example matches brief.schema.json", () => {
 
 test("every mechanical rule has a check", () => {
   for (const rule of playbook.rules) {
-    if (rule.verification.kind === "mechanical") assert.ok(CHECKS[rule.verification.check], rule.id);
+    if (rule.verification.kind === "mechanical")
+      assert.ok(CHECKS[rule.verification.check], rule.id);
   }
 });
 
@@ -46,7 +59,14 @@ test("connpass allowlist keeps all 22 CSS properties and rejects common traps", 
   assert.equal(ALLOWED_CSS.length, 22);
   const keep = ALLOWED_CSS.map((p) => `${p}:0`).join(";");
   assert.deepEqual(scanHtml(`<div style="${keep}">x</div>`), []);
-  for (const trap of ["border-radius", "line-height", "display", "width", "background", "font-family"]) {
+  for (const trap of [
+    "border-radius",
+    "line-height",
+    "display",
+    "width",
+    "background",
+    "font-family",
+  ]) {
     assert.equal(scanHtml(`<div style="${trap}:1px">x</div>`).length, 1, trap);
   }
   assert.equal(scanHtml('<div class="x">x</div>').length, 1);
@@ -117,8 +137,14 @@ test("BUDGET-SPLIT: X : IG = 5 : 5 fails, 3.5 : 6.5 passes", () => {
 });
 
 test("CP-TITLE-CONVEYS-CONTENT: the series name alone fails, with a theme passes", () => {
-  const page = (title) => ({ ...json(resolve(skills, "pr-connpass-page/references/example-output.json")), title });
-  assert.equal(result(check("connpass_page", page("DevFest Kansai 2026")), "CP-TITLE-CONVEYS-CONTENT").status, "fail");
+  const page = (title) => ({
+    ...json(resolve(skills, "pr-connpass-page/references/example-output.json")),
+    title,
+  });
+  assert.equal(
+    result(check("connpass_page", page("DevFest Kansai 2026")), "CP-TITLE-CONVEYS-CONTENT").status,
+    "fail",
+  );
   const ok = page("DevFest Kansai 2026 — AI 時代の考えるを取り戻す異分野の祭典");
   assert.equal(result(check("connpass_page", ok), "CP-TITLE-CONVEYS-CONTENT").status, "pass");
 });
@@ -129,6 +155,11 @@ test("rules that read provisional constants say so", () => {
 });
 
 test("japaneseTexts skips markup and author notes", () => {
-  const texts = japaneseTexts({ html: "<p>本文</p>", rationaleMd: "メモ", text: "告知です", url: "https://x" });
+  const texts = japaneseTexts({
+    html: "<p>本文</p>",
+    rationaleMd: "メモ",
+    text: "告知です",
+    url: "https://x",
+  });
   assert.deepEqual(texts, ["告知です"]);
 });

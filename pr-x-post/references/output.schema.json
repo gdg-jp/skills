@@ -3,18 +3,11 @@
   "title": "pr-x-post output",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "channel",
-    "posts",
-    "notes"
-  ],
+  "required": ["channel", "posts", "notes"],
   "properties": {
     "channel": {
       "type": "string",
-      "enum": [
-        "x",
-        "ig"
-      ]
+      "enum": ["x", "ig"]
     },
     "posts": {
       "type": "array",
@@ -39,14 +32,7 @@
         "properties": {
           "purpose": {
             "type": "string",
-            "enum": [
-              "announce",
-              "session",
-              "speaker",
-              "countdown",
-              "live",
-              "segment"
-            ]
+            "enum": ["announce", "session", "speaker", "countdown", "live", "segment"]
           },
           "segmentId": {
             "anyOf": [
@@ -92,38 +78,23 @@
           },
           "expectedReaction": {
             "type": "string",
-            "enum": [
-              "quote",
-              "repost",
-              "click"
-            ]
+            "enum": ["quote", "repost", "click"]
           },
           "attachment": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "kind",
-              "imageSlots",
-              "link"
-            ],
+            "required": ["kind", "imageSlots", "link"],
             "properties": {
               "kind": {
                 "type": "string",
-                "enum": [
-                  "image",
-                  "ogp",
-                  "none"
-                ]
+                "enum": ["image", "ogp", "none"]
               },
               "imageSlots": {
                 "anyOf": [
                   {
                     "type": "object",
                     "additionalProperties": false,
-                    "required": [
-                      "headline",
-                      "sub"
-                    ],
+                    "required": ["headline", "sub"],
                     "properties": {
                       "headline": {
                         "type": "string"
@@ -150,10 +121,7 @@
                   {
                     "type": "object",
                     "additionalProperties": false,
-                    "required": [
-                      "url",
-                      "ogImage"
-                    ],
+                    "required": ["url", "ogImage"],
                     "properties": {
                       "url": {
                         "type": "string"
@@ -190,9 +158,7 @@
           "staffReminder": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "text"
-            ],
+            "required": ["text"],
             "properties": {
               "text": {
                 "type": "string"
@@ -204,22 +170,14 @@
               {
                 "type": "object",
                 "additionalProperties": false,
-                "required": [
-                  "speakerId",
-                  "purpose",
-                  "text",
-                  "suggestionOnly"
-                ],
+                "required": ["speakerId", "purpose", "text", "suggestionOnly"],
                 "properties": {
                   "speakerId": {
                     "type": "string"
                   },
                   "purpose": {
                     "type": "string",
-                    "enum": [
-                      "quote",
-                      "own_announce"
-                    ]
+                    "enum": ["quote", "own_announce"]
                   },
                   "text": {
                     "type": "string"

@@ -46,7 +46,13 @@ function pushChars(chunk, offset, out) {
   let position = offset;
   for (const char of chunk) {
     const cp = char.codePointAt(0);
-    out.push({ text: char, start: position, end: position + char.length, weight: charWeight(cp), url: false });
+    out.push({
+      text: char,
+      start: position,
+      end: position + char.length,
+      weight: charWeight(cp),
+      url: false,
+    });
     position += char.length;
   }
 }
@@ -124,7 +130,13 @@ export function fromProblems(problems, okDetail = "") {
 export const asArray = (value) => (Array.isArray(value) ? value : []);
 
 const JA_RE = /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u;
-const SKIP_KEYS = new Set(["html", "metaThemeMapping", "rationaleMd", "textAboveFold", "textBelowFold"]);
+const SKIP_KEYS = new Set([
+  "html",
+  "metaThemeMapping",
+  "rationaleMd",
+  "textAboveFold",
+  "textBelowFold",
+]);
 
 /**
  * Japanese prose in a draft, for yomiyasu: every string leaf with kana or kanji, except markup and
@@ -134,6 +146,7 @@ export function japaneseTexts(value, key = "") {
   if (SKIP_KEYS.has(key)) return [];
   if (typeof value === "string") return JA_RE.test(value) ? [value] : [];
   if (Array.isArray(value)) return value.flatMap((item) => japaneseTexts(item, key));
-  if (value && typeof value === "object") return Object.entries(value).flatMap(([k, v]) => japaneseTexts(v, k));
+  if (value && typeof value === "object")
+    return Object.entries(value).flatMap(([k, v]) => japaneseTexts(v, k));
   return [];
 }

@@ -33,7 +33,8 @@ export function liveHashtag(ctx) {
   if (!nonEmpty(tag)) return unevaluated("brief.event.hashtag が無い");
   const problems = [];
   posts(ctx).forEach((post, i) => {
-    if (post.purpose === "live" && !String(post.text).includes(tag)) problems.push(`${label(post, i)}: ${tag} が無い`);
+    if (post.purpose === "live" && !String(post.text).includes(tag))
+      problems.push(`${label(post, i)}: ${tag} が無い`);
   });
   return fromProblems(problems);
 }
@@ -57,13 +58,19 @@ export function fold(ctx) {
     }
     const total = weightedLength(text, urlWeight);
     if (total <= threshold) {
-      if (below !== "") problems.push(`${name}: 折りたたまれない長さ（${total}）なのに textBelowFold がある`);
+      if (below !== "")
+        problems.push(`${name}: 折りたたまれない長さ（${total}）なのに textBelowFold がある`);
       return;
     }
     const xFold = foldIndex(text, threshold, urlWeight);
-    if (above.length > xFold) problems.push(`${name}: 宣言した折りたたみ位置が X の折りたたみ（重み ${threshold}）より後ろ`);
-    if (above.length > 0 && !above.endsWith("\n") && !below.startsWith("\n")) problems.push(`${name}: 折りたたみ位置が行の境目でない`);
-    if (!findUrls(above).length) problems.push(`${name}: 折りたたみ前にリンク（URL か ${SHORTLINK}）が無い`);
+    if (above.length > xFold)
+      problems.push(
+        `${name}: 宣言した折りたたみ位置が X の折りたたみ（重み ${threshold}）より後ろ`,
+      );
+    if (above.length > 0 && !above.endsWith("\n") && !below.startsWith("\n"))
+      problems.push(`${name}: 折りたたみ位置が行の境目でない`);
+    if (!findUrls(above).length)
+      problems.push(`${name}: 折りたたみ前にリンク（URL か ${SHORTLINK}）が無い`);
     const firstHidden = below.replace(/^\n+/, "").split("\n")[0] ?? "";
     if (!firstHidden.trim()) problems.push(`${name}: 折りたたみ後の 1 行目が空`);
   });
@@ -74,8 +81,10 @@ export function imageVsOgp(ctx) {
   const problems = [];
   posts(ctx).forEach((post, i) => {
     const kind = post.attachment?.kind;
-    if (post.expectedReaction === "quote" && kind !== "image") problems.push(`${label(post, i)}: 引用が多い投稿は画像を添付する（${kind}）`);
-    if (post.expectedReaction === "repost" && kind !== "ogp") problems.push(`${label(post, i)}: リポストが多い投稿は OGP 付き短縮リンク（${kind}）`);
+    if (post.expectedReaction === "quote" && kind !== "image")
+      problems.push(`${label(post, i)}: 引用が多い投稿は画像を添付する（${kind}）`);
+    if (post.expectedReaction === "repost" && kind !== "ogp")
+      problems.push(`${label(post, i)}: リポストが多い投稿は OGP 付き短縮リンク（${kind}）`);
   });
   return fromProblems(problems);
 }
@@ -84,7 +93,8 @@ export function ogpOnShortlink(ctx) {
   const problems = [];
   posts(ctx).forEach((post, i) => {
     if (post.attachment?.kind !== "ogp") return;
-    if (!nonEmpty(post.attachment?.link?.ogImage)) problems.push(`${label(post, i)}: attachment.link.ogImage が無い`);
+    if (!nonEmpty(post.attachment?.link?.ogImage))
+      problems.push(`${label(post, i)}: attachment.link.ogImage が無い`);
     if (!findUrls(post.text).length) problems.push(`${label(post, i)}: 本文にリンクが無い`);
   });
   return fromProblems(problems);
@@ -101,7 +111,8 @@ export function postTime(ctx) {
       return;
     }
     const windows = at.weekend ? postWindows.weekend : postWindows.weekday;
-    if (!inWindows(at.time, windows)) problems.push(`${label(post, i)}: ${at.weekend ? "休日" : "平日"} ${at.time} JST は窓の外`);
+    if (!inWindows(at.time, windows))
+      problems.push(`${label(post, i)}: ${at.weekend ? "休日" : "平日"} ${at.time} JST は窓の外`);
   });
   return fromProblems(problems);
 }
@@ -111,7 +122,8 @@ export function igChannelSpecific(ctx) {
   if (xTexts.length === 0) return unevaluated("比較する X の投稿が無い（related.xPosts）");
   const problems = [];
   posts(ctx).forEach((post, i) => {
-    if (xTexts.includes(String(post.text ?? "").trim())) problems.push(`${label(post, i)}: X の投稿と同じ本文`);
+    if (xTexts.includes(String(post.text ?? "").trim()))
+      problems.push(`${label(post, i)}: X の投稿と同じ本文`);
   });
   return fromProblems(problems);
 }

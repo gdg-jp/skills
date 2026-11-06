@@ -1,6 +1,7 @@
+import { skinDeclared, thumbFacts } from "./asset-spec.mjs";
 // Entry point for every consumer of the checks: the Skills' CLI (run.mjs) and the pr Worker.
 // Pure ESM, no Node APIs. Data (rules, constants) is passed in.
-import { followIntent, announceAfterConfirmed, speakerTierHigh, yomiyasu } from "./common.mjs";
+import { announceAfterConfirmed, followIntent, speakerTierHigh, yomiyasu } from "./common.mjs";
 import { htmlAllowlist, summary, title } from "./connpass.mjs";
 import { metaTheme, perMedium } from "./copy.mjs";
 import { decorated, sendTime, short } from "./mail.mjs";
@@ -18,7 +19,6 @@ import {
   survey,
   swagKinds,
 } from "./plan.mjs";
-import { skinDeclared, thumbFacts } from "./asset-spec.mjs";
 import {
   fold,
   igChannelSpecific,
@@ -54,7 +54,10 @@ export const CHECKS = {
   "mail/decorated": { run: decorated },
   "plan/survey": { run: survey },
   "plan/remind-staff": { run: remindStaff },
-  "plan/speaker-request": { run: speakerRequest, provisional: (c) => c.reminders.provisional_speaker },
+  "plan/speaker-request": {
+    run: speakerRequest,
+    provisional: (c) => c.reminders.provisional_speaker,
+  },
   "plan/speaker-own-announce": { run: speakerOwnAnnounce },
   "plan/budget-split": { run: budgetSplit },
   "plan/covers-channels": { run: coversChannels },
@@ -68,7 +71,15 @@ export const CHECKS = {
   "brand/skin-declared": { run: skinDeclared },
 };
 
-export const DRAFT_KINDS = ["copy", "x_post", "ig_post", "connpass_page", "connpass_mail", "asset_spec", "plan"];
+export const DRAFT_KINDS = [
+  "copy",
+  "x_post",
+  "ig_post",
+  "connpass_page",
+  "connpass_mail",
+  "asset_spec",
+  "plan",
+];
 
 export const scopeFor = (kind) => (kind === "plan" ? "plan" : `draft.${kind}`);
 
@@ -82,7 +93,14 @@ export function rulesFor(rules, kind) {
  * @param {{ kind: string, draft: unknown, brief?: unknown, related?: unknown, yomiyasu?: unknown,
  *           playbook: { rules: object[], constants: object, version?: string } }} input
  */
-export function runChecks({ kind, draft, brief = null, related = null, yomiyasu = null, playbook }) {
+export function runChecks({
+  kind,
+  draft,
+  brief = null,
+  related = null,
+  yomiyasu = null,
+  playbook,
+}) {
   if (!DRAFT_KINDS.includes(kind)) throw new Error(`unknown draft kind ${kind}`);
   const ctx = { kind, draft, brief, related, yomiyasu, constants: playbook.constants };
   const results = rulesFor(playbook.rules, kind).map((rule) => {
@@ -91,21 +109,30 @@ export function runChecks({ kind, draft, brief = null, related = null, yomiyasu 
       return { ...base, status: "unevaluated", detail: `${rule.verification.kind}: 人が判断する` };
     }
     const check = CHECKS[rule.verification.check];
-    if (!check) return { ...base, status: "unevaluated", detail: `検査 ${rule.verification.check} が無い` };
+    if (!check)
+      return { ...base, status: "unevaluated", detail: `検査 ${rule.verification.check} が無い` };
     let result;
     try {
       result = check.run(ctx);
     } catch (error) {
-      result = { status: "fail", detail: `検査の実行に失敗: ${error instanceof Error ? error.message : error}` };
+      result = {
+        status: "fail",
+        detail: `検査の実行に失敗: ${error instanceof Error ? error.message : error}`,
+      };
     }
     const provisional = check.provisional?.(playbook.constants) ? "（仮値）" : "";
-    return { ...base, status: result.status, detail: `${result.detail ?? ""}${provisional}`.trim() };
+    return {
+      ...base,
+      status: result.status,
+      detail: `${result.detail ?? ""}${provisional}`.trim(),
+    };
   });
   return { kind, playbookVersion: playbook.version ?? "unknown", results };
 }
 
 /** MUST rules that failed. */
-export const mustFailures = (report) => report.results.filter((r) => r.strength === "MUST" && r.status === "fail");
+export const mustFailures = (report) =>
+  report.results.filter((r) => r.strength === "MUST" && r.status === "fail");
 
 export { validateSchema } from "./schema.mjs";
 export { scanHtml, ALLOWED_TAGS, ALLOWED_CSS } from "./connpass-html.mjs";

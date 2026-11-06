@@ -182,9 +182,7 @@
       "title": "開場／受付",
       "start": "09:30",
       "end": "10:30",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "opening",
@@ -192,12 +190,8 @@
       "title": "Opening",
       "start": "10:30",
       "end": "10:40",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "sherry"
-      ]
+      "tracks": ["a"],
+      "speakers": ["sherry"]
     },
     {
       "id": "greeting",
@@ -205,12 +199,8 @@
       "title": "村上学長挨拶",
       "start": "10:40",
       "end": "10:50",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "murakami-norio"
-      ]
+      "tracks": ["a"],
+      "speakers": ["murakami-norio"]
     },
     {
       "id": "findy",
@@ -218,9 +208,7 @@
       "title": "Findy スポンサーセッション",
       "start": "10:50",
       "end": "10:55",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "synergy",
@@ -228,9 +216,7 @@
       "title": "シナジーマーケティング スポンサーセッション",
       "start": "10:55",
       "end": "11:00",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "keynote-heiga",
@@ -238,12 +224,8 @@
       "title": "Geminiによる音声AI",
       "start": "11:00",
       "end": "11:20",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "heiga"
-      ]
+      "tracks": ["a"],
+      "speakers": ["heiga"]
     },
     {
       "id": "fashion-runway",
@@ -251,9 +233,7 @@
       "title": "Fashion show",
       "start": "11:20",
       "end": "11:30",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "photo",
@@ -261,9 +241,7 @@
       "title": "写真撮影",
       "start": "11:30",
       "end": "11:35",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "lunch",
@@ -271,10 +249,7 @@
       "title": "昼休憩",
       "start": "11:35",
       "end": "12:25",
-      "tracks": [
-        "a",
-        "b"
-      ]
+      "tracks": ["a", "b"]
     },
     {
       "id": "keynote-llion",
@@ -282,12 +257,8 @@
       "title": "I didn't need this attention",
       "start": "12:25",
       "end": "13:05",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "llion"
-      ]
+      "tracks": ["a"],
+      "speakers": ["llion"]
     },
     {
       "id": "panel-recruiting",
@@ -295,14 +266,8 @@
       "title": "パネルディスカッション ～面接で人は見抜けるのか？Google 採用改革の舞台裏～",
       "start": "12:25",
       "end": "13:30",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "oikawa",
-        "ogawa",
-        "ishihara"
-      ]
+      "tracks": ["b"],
+      "speakers": ["oikawa", "ogawa", "ishihara"]
     },
     {
       "id": "asada",
@@ -310,12 +275,8 @@
       "title": "人とAIはともに育つことができるか？ — 認知発達ロボティクスから考える共感・共生・責任 —",
       "start": "13:05",
       "end": "13:30",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "asada"
-      ]
+      "tracks": ["a"],
+      "speakers": ["asada"]
     },
     {
       "id": "break-1330",
@@ -323,11 +284,7 @@
       "title": "休憩",
       "start": "13:30",
       "end": "13:50",
-      "tracks": [
-        "a",
-        "b",
-        "c"
-      ]
+      "tracks": ["a", "b", "c"]
     },
     {
       "id": "imamura",
@@ -335,12 +292,8 @@
       "title": "ゲーム界のレジェンドが語る AI との向き合い方",
       "start": "13:50",
       "end": "14:00",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "imamura"
-      ]
+      "tracks": ["a"],
+      "speakers": ["imamura"]
     },
     {
       "id": "ohta",
@@ -348,12 +301,8 @@
       "title": "生成AIを「なんとなく改善」するのをやめる",
       "start": "15:00",
       "end": "15:30",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "ohta"
-      ]
+      "tracks": ["c"],
+      "speakers": ["ohta"]
     },
     {
       "id": "saku",
@@ -361,12 +310,8 @@
       "title": "Web UI 2026 Updates & What's Coming!",
       "start": "13:50",
       "end": "14:15",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "saku"
-      ]
+      "tracks": ["c"],
+      "speakers": ["saku"]
     },
     {
       "id": "fukushima",
@@ -374,12 +319,8 @@
       "title": "【ハンズオン】Antigravity & Geminiと作るAI手相×MBTI占いアプリ開発体験！",
       "start": "13:50",
       "end": "14:40",
-      "tracks": [
-        "d"
-      ],
-      "speakers": [
-        "fukushima"
-      ]
+      "tracks": ["d"],
+      "speakers": ["fukushima"]
     },
     {
       "id": "takeuchi",
@@ -387,12 +328,8 @@
       "title": "未踏統括 PM が語る、AI 時代におけるものづくりの本質",
       "start": "14:00",
       "end": "14:40",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "takeuchi"
-      ]
+      "tracks": ["a"],
+      "speakers": ["takeuchi"]
     },
     {
       "id": "inductor",
@@ -400,12 +337,8 @@
       "title": "TBA",
       "start": "15:30",
       "end": "16:00",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "inductor"
-      ]
+      "tracks": ["c"],
+      "speakers": ["inductor"]
     },
     {
       "id": "lucas",
@@ -413,12 +346,8 @@
       "title": "Flutterは3Dゲームを作れるのか？ Flutter Scene × AIで挑戦",
       "start": "14:15",
       "end": "14:40",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "lucas"
-      ]
+      "tracks": ["c"],
+      "speakers": ["lucas"]
     },
     {
       "id": "break-1440",
@@ -426,12 +355,7 @@
       "title": "休憩",
       "start": "14:40",
       "end": "15:00",
-      "tracks": [
-        "a",
-        "b",
-        "c",
-        "d"
-      ]
+      "tracks": ["a", "b", "c", "d"]
     },
     {
       "id": "ishiguro",
@@ -439,12 +363,8 @@
       "title": "AIロボットと人間の進化",
       "start": "15:00",
       "end": "16:00",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "ishiguro"
-      ],
+      "tracks": ["a"],
+      "speakers": ["ishiguro"],
       "note": "オンライン"
     },
     {
@@ -453,12 +373,8 @@
       "title": "AIでコードは書けるのに、つくりたいものがつくれないあなたへ",
       "start": "15:00",
       "end": "15:30",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "hachisuka"
-      ]
+      "tracks": ["b"],
+      "speakers": ["hachisuka"]
     },
     {
       "id": "matsuda",
@@ -466,12 +382,8 @@
       "title": "Beyond \"Out-of-the-Box\"：24時間駆動する自律的好奇心エージェント",
       "start": "13:50",
       "end": "14:15",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "matsuda"
-      ]
+      "tracks": ["b"],
+      "speakers": ["matsuda"]
     },
     {
       "id": "haren",
@@ -479,12 +391,8 @@
       "title": "AntigravityでAIエージェントを作ってみよう",
       "start": "15:00",
       "end": "16:00",
-      "tracks": [
-        "d"
-      ],
-      "speakers": [
-        "haren"
-      ]
+      "tracks": ["d"],
+      "speakers": ["haren"]
     },
     {
       "id": "adamrocker",
@@ -492,12 +400,8 @@
       "title": "思考を手放さないための共創論 — AIエージェント時代におけるエンジニアのメタ認知と境界線",
       "start": "14:15",
       "end": "14:40",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "adamrocker"
-      ]
+      "tracks": ["b"],
+      "speakers": ["adamrocker"]
     },
     {
       "id": "ando",
@@ -505,12 +409,8 @@
       "title": "AIが賢くなるほど、UIは不親切であるべき―Cognitive Surrenderを防ぐ UXデザイン",
       "start": "15:30",
       "end": "16:00",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "ando"
-      ]
+      "tracks": ["b"],
+      "speakers": ["ando"]
     },
     {
       "id": "break-1600",
@@ -518,12 +418,7 @@
       "title": "休憩",
       "start": "16:00",
       "end": "16:20",
-      "tracks": [
-        "a",
-        "b",
-        "c",
-        "d"
-      ]
+      "tracks": ["a", "b", "c", "d"]
     },
     {
       "id": "ochiai",
@@ -531,12 +426,8 @@
       "title": "デジタルネイチャーと人間の再定義——AI時代の「共創」を問い直す",
       "start": "16:20",
       "end": "17:20",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "ochiai"
-      ],
+      "tracks": ["a"],
+      "speakers": ["ochiai"],
       "note": "オンライン"
     },
     {
@@ -545,14 +436,8 @@
       "title": "知性が外部化される AI 時代の活躍論 ～ 元 Googler たちが語る、変わらない本質 ～",
       "start": "16:20",
       "end": "16:50",
-      "tracks": [
-        "b"
-      ],
-      "speakers": [
-        "yukawa",
-        "kawanaka",
-        "ishihara"
-      ]
+      "tracks": ["b"],
+      "speakers": ["yukawa", "kawanaka", "ishihara"]
     },
     {
       "id": "aditya",
@@ -560,12 +445,8 @@
       "title": "Give Your AI Agents a Sandbox: Running Untrusted Agent Code Safely on Kubernetes",
       "start": "16:20",
       "end": "16:50",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "aditya"
-      ],
+      "tracks": ["c"],
+      "speakers": ["aditya"],
       "note": "English"
     },
     {
@@ -574,13 +455,8 @@
       "title": "ファッション×AIワークショップ〜Fashion Futures Lab AI と共創する未来のファッション〜",
       "start": "16:20",
       "end": "17:40",
-      "tracks": [
-        "d"
-      ],
-      "speakers": [
-        "fujii",
-        "tamamura"
-      ]
+      "tracks": ["d"],
+      "speakers": ["fujii", "tamamura"]
     },
     {
       "id": "murakami-dlg",
@@ -588,12 +464,8 @@
       "title": "オントロジーって結局なにもの？ — AIエージェントに\"意味\"を渡す知識設計の話",
       "start": "16:50",
       "end": "17:20",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "murakami-dlg"
-      ]
+      "tracks": ["c"],
+      "speakers": ["murakami-dlg"]
     },
     {
       "id": "track-b-tba-1650",
@@ -601,9 +473,7 @@
       "title": "TBA",
       "start": "16:50",
       "end": "17:20",
-      "tracks": [
-        "b"
-      ]
+      "tracks": ["b"]
     },
     {
       "id": "break-1720",
@@ -611,11 +481,7 @@
       "title": "休憩",
       "start": "17:20",
       "end": "17:40",
-      "tracks": [
-        "a",
-        "b",
-        "c"
-      ]
+      "tracks": ["a", "b", "c"]
     },
     {
       "id": "naga",
@@ -623,12 +489,8 @@
       "title": "コードはエージェントに任せて、『プロダクトエンジニアリング』はチームで磨き続ける",
       "start": "17:40",
       "end": "18:05",
-      "tracks": [
-        "a"
-      ],
-      "speakers": [
-        "naga"
-      ]
+      "tracks": ["a"],
+      "speakers": ["naga"]
     },
     {
       "id": "lt",
@@ -636,9 +498,7 @@
       "title": "LT大会",
       "start": "17:40",
       "end": "18:05",
-      "tracks": [
-        "b"
-      ]
+      "tracks": ["b"]
     },
     {
       "id": "yamazaki",
@@ -646,12 +506,8 @@
       "title": "古い指輪から広がった、Javaコミュニティとのつながり",
       "start": "17:40",
       "end": "18:05",
-      "tracks": [
-        "c"
-      ],
-      "speakers": [
-        "yamazaki"
-      ]
+      "tracks": ["c"],
+      "speakers": ["yamazaki"]
     },
     {
       "id": "tenshoku-draft",
@@ -659,11 +515,7 @@
       "title": "転職ドラフト ビールスポンサーLT",
       "start": "18:05",
       "end": "18:10",
-      "tracks": [
-        "a",
-        "b",
-        "c"
-      ]
+      "tracks": ["a", "b", "c"]
     },
     {
       "id": "closing",
@@ -671,11 +523,7 @@
       "title": "Closing",
       "start": "18:10",
       "end": "18:20",
-      "tracks": [
-        "a",
-        "b",
-        "c"
-      ]
+      "tracks": ["a", "b", "c"]
     },
     {
       "id": "move",
@@ -683,9 +531,7 @@
       "title": "懇親会会場へ移動",
       "start": "18:20",
       "end": "18:30",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     },
     {
       "id": "networking",
@@ -693,9 +539,7 @@
       "title": "懇親会",
       "start": "18:30",
       "end": "20:30",
-      "tracks": [
-        "a"
-      ]
+      "tracks": ["a"]
     }
   ]
 }

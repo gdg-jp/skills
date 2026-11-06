@@ -82,10 +82,16 @@ export function scanHtml(html) {
     }
     if (closing) continue;
     const allowed = ALLOWED_TAGS[tag];
-    for (const attr of rawAttrs.matchAll(/([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*("([^"]*)"|'([^']*)'|[^\s"'>]+))?/g)) {
+    for (const attr of rawAttrs.matchAll(
+      /([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*("([^"]*)"|'([^']*)'|[^\s"'>]+))?/g,
+    )) {
       const name = attr[1].toLowerCase();
       if (name === "/") continue;
-      const value = attr[3] ?? attr[4] ?? (attr[2] && !attr[2].startsWith('"') && !attr[2].startsWith("'") ? attr[2] : "") ?? "";
+      const value =
+        attr[3] ??
+        attr[4] ??
+        (attr[2] && !attr[2].startsWith('"') && !attr[2].startsWith("'") ? attr[2] : "") ??
+        "";
       if (!allowed.includes(name)) {
         findings.push(`<${tag} ${name}> は許可されていない属性`);
         continue;
@@ -98,7 +104,8 @@ export function scanHtml(html) {
           const [prop] = declaration.split(":");
           const property = prop?.trim().toLowerCase();
           if (!property) continue;
-          if (!ALLOWED_CSS.includes(property)) findings.push(`<${tag} style="${property}"> は connpass に消される CSS`);
+          if (!ALLOWED_CSS.includes(property))
+            findings.push(`<${tag} style="${property}"> は connpass に消される CSS`);
         }
       }
     }

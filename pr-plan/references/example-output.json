@@ -958,35 +958,19 @@
       "title": "年齢",
       "answerType": "radio",
       "required": true,
-      "options": [
-        "10代",
-        "20代",
-        "30代",
-        "40代",
-        "50代以上"
-      ]
+      "options": ["10代", "20代", "30代", "40代", "50代以上"]
     },
     {
       "title": "職業",
       "answerType": "radio",
       "required": true,
-      "options": [
-        "学生",
-        "エンジニア",
-        "デザイナー",
-        "その他"
-      ]
+      "options": ["学生", "エンジニア", "デザイナー", "その他"]
     },
     {
       "title": "経験年数",
       "answerType": "radio",
       "required": true,
-      "options": [
-        "なし",
-        "1 年未満",
-        "1〜3 年",
-        "3 年以上"
-      ]
+      "options": ["なし", "1 年未満", "1〜3 年", "3 年以上"]
     },
     {
       "title": "イベントを知った場所",

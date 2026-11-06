@@ -57,21 +57,31 @@ function walk(schema, value, path, root, errors) {
       return;
     }
   }
-  if (schema.const !== undefined && value !== schema.const) errors.push(`${path}: expected ${JSON.stringify(schema.const)}`);
-  if (schema.enum && !schema.enum.includes(value)) errors.push(`${path}: not one of ${schema.enum.join(", ")}`);
+  if (schema.const !== undefined && value !== schema.const)
+    errors.push(`${path}: expected ${JSON.stringify(schema.const)}`);
+  if (schema.enum && !schema.enum.includes(value))
+    errors.push(`${path}: not one of ${schema.enum.join(", ")}`);
   if (actual === "string") {
-    if (schema.minLength !== undefined && [...value].length < schema.minLength) errors.push(`${path}: shorter than ${schema.minLength}`);
-    if (schema.maxLength !== undefined && [...value].length > schema.maxLength) errors.push(`${path}: longer than ${schema.maxLength}`);
-    if (schema.pattern && !new RegExp(schema.pattern, "u").test(value)) errors.push(`${path}: does not match ${schema.pattern}`);
+    if (schema.minLength !== undefined && [...value].length < schema.minLength)
+      errors.push(`${path}: shorter than ${schema.minLength}`);
+    if (schema.maxLength !== undefined && [...value].length > schema.maxLength)
+      errors.push(`${path}: longer than ${schema.maxLength}`);
+    if (schema.pattern && !new RegExp(schema.pattern, "u").test(value))
+      errors.push(`${path}: does not match ${schema.pattern}`);
   }
   if (actual === "integer" || actual === "number") {
-    if (schema.minimum !== undefined && value < schema.minimum) errors.push(`${path}: below ${schema.minimum}`);
-    if (schema.maximum !== undefined && value > schema.maximum) errors.push(`${path}: above ${schema.maximum}`);
+    if (schema.minimum !== undefined && value < schema.minimum)
+      errors.push(`${path}: below ${schema.minimum}`);
+    if (schema.maximum !== undefined && value > schema.maximum)
+      errors.push(`${path}: above ${schema.maximum}`);
   }
   if (actual === "array") {
-    if (schema.minItems !== undefined && value.length < schema.minItems) errors.push(`${path}: fewer than ${schema.minItems} items`);
-    if (schema.maxItems !== undefined && value.length > schema.maxItems) errors.push(`${path}: more than ${schema.maxItems} items`);
-    if (schema.items) value.forEach((item, i) => walk(schema.items, item, `${path}[${i}]`, root, errors));
+    if (schema.minItems !== undefined && value.length < schema.minItems)
+      errors.push(`${path}: fewer than ${schema.minItems} items`);
+    if (schema.maxItems !== undefined && value.length > schema.maxItems)
+      errors.push(`${path}: more than ${schema.maxItems} items`);
+    if (schema.items)
+      value.forEach((item, i) => walk(schema.items, item, `${path}[${i}]`, root, errors));
   }
   if (actual === "object") {
     for (const key of schema.required ?? []) {
@@ -80,8 +90,10 @@ function walk(schema, value, path, root, errors) {
     const props = schema.properties ?? {};
     for (const [key, child] of Object.entries(value)) {
       if (key in props) walk(props[key], child, `${path}.${key}`, root, errors);
-      else if (schema.additionalProperties === false) errors.push(`${path}.${key}: unexpected property`);
-      else if (typeof schema.additionalProperties === "object") walk(schema.additionalProperties, child, `${path}.${key}`, root, errors);
+      else if (schema.additionalProperties === false)
+        errors.push(`${path}.${key}: unexpected property`);
+      else if (typeof schema.additionalProperties === "object")
+        walk(schema.additionalProperties, child, `${path}.${key}`, root, errors);
     }
   }
 }

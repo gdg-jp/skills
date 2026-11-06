@@ -1,7 +1,14 @@
 // Types for consumers in TypeScript (the pr Worker). The implementation is index.mjs.
 export type CheckStatus = "pass" | "fail" | "unevaluated";
 export type RuleStrength = "MUST" | "SHOULD";
-export type DraftKind = "copy" | "x_post" | "ig_post" | "connpass_page" | "connpass_mail" | "asset_spec" | "plan";
+export type DraftKind =
+  | "copy"
+  | "x_post"
+  | "ig_post"
+  | "connpass_page"
+  | "connpass_mail"
+  | "asset_spec"
+  | "plan";
 
 export type Rule = {
   id: string;
@@ -14,12 +21,20 @@ export type Rule = {
   when?: Record<string, string[]>;
 };
 
-export type CheckResult = { ruleId: string; strength: RuleStrength; status: CheckStatus; detail: string };
+export type CheckResult = {
+  ruleId: string;
+  strength: RuleStrength;
+  status: CheckStatus;
+  detail: string;
+};
 export type CheckReport = { kind: DraftKind; playbookVersion: string; results: CheckResult[] };
-export type Playbook = { rules: Rule[]; constants: Record<string, any>; version?: string };
+export type Playbook = { rules: Rule[]; constants: Record<string, unknown>; version?: string };
 
 export declare const DRAFT_KINDS: DraftKind[];
-export declare const CHECKS: Record<string, { run: (ctx: unknown) => { status: CheckStatus; detail?: string } }>;
+export declare const CHECKS: Record<
+  string,
+  { run: (ctx: unknown) => { status: CheckStatus; detail?: string } }
+>;
 export declare function scopeFor(kind: DraftKind): string;
 export declare function rulesFor(rules: Rule[], kind: DraftKind): Rule[];
 export declare function runChecks(input: {

@@ -27,7 +27,9 @@ export function loadPlaybook(dir = resolve(here, "../..")) {
   const read = (name) => JSON.parse(readFileSync(resolve(dir, name), "utf8"));
   let version = "unknown";
   try {
-    version = execFileSync("git", ["-C", dir, "rev-parse", "--short", "HEAD"], { encoding: "utf8" }).trim();
+    version = execFileSync("git", ["-C", dir, "rev-parse", "--short", "HEAD"], {
+      encoding: "utf8",
+    }).trim();
   } catch {}
   return { rules: read("rules.json").rules, constants: read("constants.json"), version };
 }
@@ -37,14 +39,23 @@ const readJson = (path) => (path ? JSON.parse(readFileSync(path, "utf8")) : null
 if (import.meta.url === `file://${process.argv[1]}`) {
   const opts = args(process.argv.slice(2));
   if (!opts.kind || !opts.input) {
-    console.error("usage: run.mjs --kind <kind> --input <draft.json> [--brief brief.json] [--related related.json]");
+    console.error(
+      "usage: run.mjs --kind <kind> --input <draft.json> [--brief brief.json] [--related related.json]",
+    );
     process.exit(2);
   }
   const draft = readJson(opts.input);
   const brief = readJson(opts.brief);
   const playbook = loadPlaybook(opts.playbook);
   const yomiyasu = opts["no-yomiyasu"] ? null : runYomiyasu(draft, brief);
-  const report = runChecks({ kind: opts.kind, draft, brief, related: readJson(opts.related), yomiyasu, playbook });
+  const report = runChecks({
+    kind: opts.kind,
+    draft,
+    brief,
+    related: readJson(opts.related),
+    yomiyasu,
+    playbook,
+  });
   if (opts.json) {
     console.log(JSON.stringify(report, null, 2));
   } else {

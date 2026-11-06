@@ -25,11 +25,26 @@ export function runYomiyasu(draft, brief, { dir = findYomiyasu(), python = "pyth
     const finalPath = join(work, "final.txt");
     const materialPath = join(work, "material.txt");
     writeFileSync(finalPath, `${texts.join("\n\n")}\n`);
-    writeFileSync(materialPath, `${japaneseTexts(brief ?? {}).join("\n")}\n${JSON.stringify(brief ?? {})}\n`);
+    writeFileSync(
+      materialPath,
+      `${japaneseTexts(brief ?? {}).join("\n")}\n${JSON.stringify(brief ?? {})}\n`,
+    );
     const result = spawnSync(
       python,
-      [join(dir, "scripts/yomiyasu_check.py"), "run", "--final", finalPath, "--material", materialPath,
-        "--doc-type", "promo", "--fail-on", "error", "--no-record", "--json"],
+      [
+        join(dir, "scripts/yomiyasu_check.py"),
+        "run",
+        "--final",
+        finalPath,
+        "--material",
+        materialPath,
+        "--doc-type",
+        "promo",
+        "--fail-on",
+        "error",
+        "--no-record",
+        "--json",
+      ],
       { encoding: "utf8", cwd: work, timeout: 60_000 },
     );
     let lint = null;
@@ -39,7 +54,10 @@ export function runYomiyasu(draft, brief, { dir = findYomiyasu(), python = "pyth
     const counts = lint?.counts ? `error ${lint.counts.error} / warn ${lint.counts.warn}` : "";
     if (result.status === 0) return { status: "pass", detail: counts };
     if (result.status === 1) return { status: "fail", detail: `yomiyasu の指摘あり（${counts}）` };
-    return { status: "unevaluated", detail: `yomiyasu を実行できなかった（exit ${result.status}）` };
+    return {
+      status: "unevaluated",
+      detail: `yomiyasu を実行できなかった（exit ${result.status}）`,
+    };
   } finally {
     rmSync(work, { recursive: true, force: true });
   }

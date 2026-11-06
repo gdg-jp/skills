@@ -26,10 +26,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "date",
-          "applications"
-        ],
+        "required": ["date", "applications"],
         "properties": {
           "date": {
             "type": "string"
@@ -45,13 +42,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "channel",
-          "label",
-          "adopt",
-          "reason",
-          "weight"
-        ],
+        "required": ["channel", "label", "adopt", "reason", "weight"],
         "properties": {
           "channel": {
             "type": "string"
@@ -88,15 +79,7 @@
     "budgetAllocation": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "totalYen",
-        "printYen",
-        "adsYen",
-        "x",
-        "ig",
-        "byWeek",
-        "flights"
-      ],
+      "required": ["totalYen", "printYen", "adsYen", "x", "ig", "byWeek", "flights"],
       "properties": {
         "totalYen": {
           "type": "integer"
@@ -118,12 +101,7 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "weekOf",
-              "x",
-              "ig",
-              "print"
-            ],
+            "required": ["weekOf", "x", "ig", "print"],
             "properties": {
               "weekOf": {
                 "type": "string"
@@ -156,11 +134,7 @@
             "properties": {
               "medium": {
                 "type": "string",
-                "enum": [
-                  "x_ads",
-                  "ig_ads",
-                  "print"
-                ]
+                "enum": ["x_ads", "ig_ads", "print"]
               },
               "name": {
                 "type": "string"
@@ -179,11 +153,7 @@
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
-                  "required": [
-                    "fromDay",
-                    "toDay",
-                    "objective"
-                  ],
+                  "required": ["fromDay", "toDay", "objective"],
                   "properties": {
                     "fromDay": {
                       "type": "integer"
@@ -193,11 +163,7 @@
                     },
                     "objective": {
                       "type": "string",
-                      "enum": [
-                        "impression",
-                        "click",
-                        "conversion"
-                      ]
+                      "enum": ["impression", "click", "conversion"]
                     }
                   }
                 }
@@ -356,11 +322,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "date",
-          "leadsTo"
-        ],
+        "required": ["name", "date", "leadsTo"],
         "properties": {
           "name": {
             "type": "string"
@@ -379,12 +341,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "organization",
-          "kind",
-          "ownerRole",
-          "pitchMd"
-        ],
+        "required": ["organization", "kind", "ownerRole", "pitchMd"],
         "properties": {
           "organization": {
             "type": "string"
@@ -413,10 +370,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "why"
-        ],
+        "required": ["name", "why"],
         "properties": {
           "name": {
             "type": "string"
@@ -432,20 +386,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "kind",
-          "idea"
-        ],
+        "required": ["kind", "idea"],
         "properties": {
           "kind": {
             "type": "string",
-            "enum": [
-              "all",
-              "referral",
-              "lottery",
-              "redeem",
-              "survey"
-            ]
+            "enum": ["all", "referral", "lottery", "redeem", "survey"]
           },
           "idea": {
             "type": "string"
@@ -458,10 +403,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "segmentId",
-          "idea"
-        ],
+        "required": ["segmentId", "idea"],
         "properties": {
           "segmentId": {
             "type": "string"
@@ -477,24 +419,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "title",
-          "answerType",
-          "required",
-          "options"
-        ],
+        "required": ["title", "answerType", "required", "options"],
         "properties": {
           "title": {
             "type": "string"
           },
           "answerType": {
             "type": "string",
-            "enum": [
-              "free_text",
-              "checkbox",
-              "radio",
-              "dropdown"
-            ]
+            "enum": ["free_text", "checkbox", "radio", "dropdown"]
           },
           "required": {
             "type": "boolean"

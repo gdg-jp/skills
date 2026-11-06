@@ -3,10 +3,7 @@
   "title": "pr-copy output",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "candidates",
-    "notes"
-  ],
+  "required": ["candidates", "notes"],
   "properties": {
     "candidates": {
       "type": "array",
@@ -48,10 +45,7 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": [
-                "segmentId",
-                "line"
-              ],
+              "required": ["segmentId", "line"],
               "properties": {
                 "segmentId": {
                   "type": "string"
@@ -67,10 +61,7 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": [
-                "theme",
-                "projection"
-              ],
+              "required": ["theme", "projection"],
               "properties": {
                 "theme": {
                   "type": "string"

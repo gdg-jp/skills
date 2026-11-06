@@ -3,24 +3,11 @@
   "title": "pr-connpass-mail output",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "purpose",
-    "subject",
-    "scheduledAt",
-    "bodyLines",
-    "footer",
-    "notes"
-  ],
+  "required": ["purpose", "subject", "scheduledAt", "bodyLines", "footer", "notes"],
   "properties": {
     "purpose": {
       "type": "string",
-      "enum": [
-        "announce",
-        "session",
-        "reminder",
-        "milestone",
-        "thanks"
-      ]
+      "enum": ["announce", "session", "reminder", "milestone", "thanks"]
     },
     "subject": {
       "type": "string"

@@ -24,18 +24,25 @@ for (const rule of rules) {
   }
   if (ids.has(rule.id)) problems.push(`rules.json: ${rule.id} が重複`);
   ids.add(rule.id);
-  if (!["MUST", "SHOULD"].includes(rule.strength)) problems.push(`rules.json ${rule.id}: strength ${rule.strength}`);
-  for (const scope of rule.scope ?? []) if (!scopes.has(scope)) problems.push(`rules.json ${rule.id}: 未知の scope ${scope}`);
+  if (!["MUST", "SHOULD"].includes(rule.strength))
+    problems.push(`rules.json ${rule.id}: strength ${rule.strength}`);
+  for (const scope of rule.scope ?? [])
+    if (!scopes.has(scope)) problems.push(`rules.json ${rule.id}: 未知の scope ${scope}`);
   const kind = rule.verification?.kind;
-  if (!["mechanical", "render", "review"].includes(kind)) problems.push(`rules.json ${rule.id}: verification.kind ${kind}`);
-  if (kind === "mechanical" && !CHECKS[rule.verification.check]) problems.push(`rules.json ${rule.id}: 検査 ${rule.verification.check} が無い`);
+  if (!["mechanical", "render", "review"].includes(kind))
+    problems.push(`rules.json ${rule.id}: verification.kind ${kind}`);
+  if (kind === "mechanical" && !CHECKS[rule.verification.check])
+    problems.push(`rules.json ${rule.id}: 検査 ${rule.verification.check} が無い`);
 }
 
 for (const file of readdirSync(join(root, "guides")).filter((f) => f.endsWith(".md"))) {
-  const sections = readFileSync(join(root, "guides", file), "utf8").split(/^## /m).slice(1);
-  sections.forEach((section) => {
-    if (!/<!--\s*tips:\s*[\d,\s]+-->/.test(section)) problems.push(`guides/${file}: 節「${section.split("\n")[0]}」に tips の出典が無い`);
-  });
+  const sections = readFileSync(join(root, "guides", file), "utf8")
+    .split(/^## /m)
+    .slice(1);
+  for (const section of sections) {
+    if (!/<!--\s*tips:\s*[\d,\s]+-->/.test(section))
+      problems.push(`guides/${file}: 節「${section.split("\n")[0]}」に tips の出典が無い`);
+  }
 }
 
 for (const dir of readdirSync(skills).filter((d) => d.startsWith("pr-") && d !== "pr-playbook")) {
@@ -52,13 +59,15 @@ for (const dir of readdirSync(skills).filter((d) => d.startsWith("pr-") && d !==
   const schemaPath = join(skills, dir, "references/output.schema.json");
   const examplePath = join(skills, dir, "references/example-output.json");
   if (existsSync(schemaPath) && existsSync(examplePath)) {
-    for (const error of validateSchema(json(schemaPath), json(examplePath))) problems.push(`${dir}/example-output.json: ${error}`);
+    for (const error of validateSchema(json(schemaPath), json(examplePath)))
+      problems.push(`${dir}/example-output.json: ${error}`);
   }
 }
 
 const briefSchema = json(join(root, "references/brief.schema.json"));
 for (const file of readdirSync(join(root, "examples/briefs")).filter((f) => f.endsWith(".json"))) {
-  for (const error of validateSchema(briefSchema, json(join(root, "examples/briefs", file)))) problems.push(`examples/briefs/${file}: ${error}`);
+  for (const error of validateSchema(briefSchema, json(join(root, "examples/briefs", file))))
+    problems.push(`examples/briefs/${file}: ${error}`);
 }
 
 const provisional = [];
@@ -66,7 +75,8 @@ const provisional = [];
   if (!node || typeof node !== "object") return;
   for (const [key, value] of Object.entries(node)) {
     if (key === "provisional" && value === true) provisional.push(path || "(root)");
-    else if (key.startsWith("provisional_") && value === true) provisional.push(`${path}.${key.slice(12)}`);
+    else if (key.startsWith("provisional_") && value === true)
+      provisional.push(`${path}.${key.slice(12)}`);
     else walk(value, path ? `${path}.${key}` : key);
   }
 })(json(join(root, "constants.json")), "");

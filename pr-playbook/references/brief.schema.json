@@ -4,7 +4,15 @@
   "title": "PR campaign brief",
   "description": "Every pr Skill's input, and the body of the pr app's briefs table. Optional keys may be omitted.",
   "type": "object",
-  "required": ["event", "metaThemes", "audienceSegments", "goals", "speakers", "sessions", "budget"],
+  "required": [
+    "event",
+    "metaThemes",
+    "audienceSegments",
+    "goals",
+    "speakers",
+    "sessions",
+    "budget"
+  ],
   "properties": {
     "event": {
       "type": "object",
@@ -30,7 +38,11 @@
       "items": {
         "type": "object",
         "required": ["id", "label"],
-        "properties": { "id": { "type": "string" }, "label": { "type": "string" }, "note": { "type": "string" } }
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "note": { "type": "string" }
+        }
       }
     },
     "goals": {
@@ -83,7 +95,10 @@
           "keywords": { "type": "array", "items": { "type": "string" } },
           "status": { "enum": ["tba", "confirmed", "public"] },
           "publishAfter": { "type": "string" },
-          "flags": { "type": "array", "items": { "enum": ["no_recording", "english", "onsite_only", "bring_pc"] } }
+          "flags": {
+            "type": "array",
+            "items": { "enum": ["no_recording", "english", "onsite_only", "bring_pc"] }
+          }
         }
       }
     },
@@ -118,7 +133,11 @@
       "items": {
         "type": "object",
         "required": ["chapterId", "role"],
-        "properties": { "chapterId": { "type": "integer" }, "role": { "enum": ["host", "co-host"] }, "name": { "type": "string" } }
+        "properties": {
+          "chapterId": { "type": "integer" },
+          "role": { "enum": ["host", "co-host"] },
+          "name": { "type": "string" }
+        }
       }
     },
     "accounts": {

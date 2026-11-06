@@ -26,11 +26,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "id",
-          "heading",
-          "html"
-        ],
+        "required": ["id", "heading", "html"],
         "properties": {
           "id": {
             "type": "string"
@@ -59,11 +55,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "id",
-          "purpose",
-          "text"
-        ],
+        "required": ["id", "purpose", "text"],
         "properties": {
           "id": {
             "type": "string"
@@ -82,24 +74,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "title",
-          "answerType",
-          "required",
-          "options"
-        ],
+        "required": ["title", "answerType", "required", "options"],
         "properties": {
           "title": {
             "type": "string"
           },
           "answerType": {
             "type": "string",
-            "enum": [
-              "free_text",
-              "checkbox",
-              "radio",
-              "dropdown"
-            ]
+            "enum": ["free_text", "checkbox", "radio", "dropdown"]
           },
           "required": {
             "type": "boolean"
@@ -125,11 +107,7 @@
     },
     "skinSource": {
       "type": "string",
-      "enum": [
-        "brief",
-        "brand-guide",
-        "gdg-design"
-      ]
+      "enum": ["brief", "brand-guide", "gdg-design"]
     },
     "notes": {
       "anyOf": [
