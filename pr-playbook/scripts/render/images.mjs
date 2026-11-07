@@ -54,14 +54,14 @@ const IMAGE_TYPES = {
 
 /** The gdg-design logo and stickers as `assets/...` data URIs (what the agent's HTML references). */
 export function designAssetsFromSkills() {
-  const assets = {
-    "assets/gdg.svg": svgDataUri(
-      readFileSync(new URL("../gdg-design/assets/gdg.svg", root), "utf8"),
-    ),
-  };
+  const assets = {};
+  const logo = new URL("../gdg-design/assets/gdg.svg", root);
+  if (existsSync(logo)) assets["assets/gdg.svg"] = svgDataUri(readFileSync(logo, "utf8"));
+  // In a runner bundle the stickers are under <job>/assets/stickers/ instead (designAssetsFromDir).
   const dir = new URL("../gdg-design/assets/stickers/", root);
-  for (const file of readdirSync(dir).filter((f) => f.endsWith(".svg")))
-    assets[`assets/stickers/${file}`] = svgDataUri(readFileSync(new URL(file, dir), "utf8"));
+  if (existsSync(dir))
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".svg")))
+      assets[`assets/stickers/${file}`] = svgDataUri(readFileSync(new URL(file, dir), "utf8"));
   return assets;
 }
 

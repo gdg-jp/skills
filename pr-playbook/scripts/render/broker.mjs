@@ -32,12 +32,14 @@ async function chromium() {
   if (process.env.GDG_RENDER_DIR && !process.env.PLAYWRIGHT_BROWSERS_PATH)
     process.env.PLAYWRIGHT_BROWSERS_PATH = join(process.env.GDG_RENDER_DIR, "browsers");
   for (const base of [renderDir, process.cwd()]) {
-    try {
-      const require = createRequire(join(base, "noop.js"));
-      const mod = await import(require.resolve("playwright"));
-      const found = mod.chromium ?? mod.default?.chromium;
-      if (found) return found;
-    } catch {}
+    const require = createRequire(join(base, "noop.js"));
+    for (const name of ["playwright", "@playwright/test"]) {
+      try {
+        const mod = await import(require.resolve(name));
+        const found = mod.chromium ?? mod.default?.chromium;
+        if (found) return found;
+      } catch {}
+    }
   }
   throw new Error(`playwright が ${renderDir} に無い`);
 }
