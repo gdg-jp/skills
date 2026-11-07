@@ -95,6 +95,16 @@ test(
         (c) => c.ruleId === "RENDER-NO-OVERFLOW",
       );
       assert.equal(overflow?.status, "fail");
+      // Glyphs taller than the line-height (CJK fonts on Linux) are drawn in full: not overflow.
+      const tight = buildImageHtml({
+        ...tpl,
+        baseCss: `${tpl.baseCss}.headline{line-height:0.8;}`,
+        slots: { headline: "AI の答えを、自分で" },
+      });
+      const tightCheck = (await renderHtml(tight.html, { ...tight, browser })).checks.find(
+        (c) => c.ruleId === "RENDER-NO-OVERFLOW",
+      );
+      assert.equal(tightCheck?.status, "pass", tightCheck?.detail);
       const rotated = buildImageHtml({
         ...tpl,
         baseCss: `${tpl.baseCss}.logo{transform:rotate(1deg);}`,

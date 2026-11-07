@@ -32,7 +32,15 @@
       slots.flatMap((s) => {
         const r = s.getBoundingClientRect();
         const p = [];
-        if (s.scrollWidth > s.clientWidth + 1 || s.scrollHeight > s.clientHeight + 1)
+        // Vertical: the laid-out height without max-height or flex shrinking, not scrollHeight,
+        // which also counts glyphs taller than the line-height (CJK fonts on Linux) that are drawn
+        // in full anyway.
+        const saved = [s.style.maxHeight, s.style.flexShrink];
+        s.style.maxHeight = "none";
+        s.style.flexShrink = "0";
+        const natural = s.getBoundingClientRect().height;
+        [s.style.maxHeight, s.style.flexShrink] = saved;
+        if (s.scrollWidth > s.clientWidth + 1 || natural > r.height + 1)
           p.push(`${name(s)} が枠からはみ出す`);
         if (
           r.left < box.left - 1 ||
