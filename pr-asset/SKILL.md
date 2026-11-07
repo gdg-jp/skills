@@ -31,7 +31,10 @@ description: GDG イベントの画像（connpass サムネイル、OGP、X・In
    `references/` の画像を `view_image` で見る。`guides/design.md` の「新しいイベントで決めるときの手順」のとおり、支配色と
    モチーフの理由を 1 行ずつ決める。理由が書けない色は選ばない。
 2. **purpose が `kit`:** キット（色・書体・ロックアップ・モチーフ・写真・事実の書き方）を決め、顔（`connpass-thumbnail`）を
-   2〜3 案、HTML で書く。1 案は参考に近く、1 案は構図かモチーフが違う。案ごとに `rationaleMd` を書く。
+   2〜3 案、HTML で書く。1 案は参考に近く（同じ系統の顔があればその家族。プレイベントは本編の家族）、1 案は構図か
+   モチーフが違う。案ごとに描画して見て直し、`rationaleMd` に色とモチーフの理由と「見て直した点」を書く。
+   `selfReviewMd` には案全体を見て確かめたことを書く。`examples/design/html/meetup-thumbnail.html`（プレイベントの顔）と
+   `connpass-thumbnail.html`（本編の顔）が出発点。
    **purpose がテンプレート id:** `KIT.json` があればその範囲で（新しい色や書体を足さない）、無ければ 1 で決めたキットで、
    1 枚を HTML で書く。`examples/design/html/` の型から始めてよいが、イベントに合わせて変える。
 3. **描画する。** `draft.html` に書き、

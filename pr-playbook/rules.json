@@ -4,7 +4,10 @@
     {
       "id": "X-NO-HASHTAG",
       "strength": "MUST",
-      "scope": ["draft.x_post", "draft.copy"],
+      "scope": [
+        "draft.x_post",
+        "draft.copy"
+      ],
       "requirement": "X の告知投稿（purpose が live 以外）と、コピー候補の X 用変種（xShort）にハッシュタグを入れない。",
       "source": "Tips 2: ハッシュタグは X のアルゴリズム上不利に働く",
       "verification": {
@@ -13,13 +16,17 @@
       },
       "fix": "ハッシュタグを削り、必要なら語を本文に溶かす。",
       "when": {
-        "purposeNot": ["live"]
+        "purposeNot": [
+          "live"
+        ]
       }
     },
     {
       "id": "LIVE-EVENT-HASHTAG",
       "strength": "SHOULD",
-      "scope": ["draft.x_post"],
+      "scope": [
+        "draft.x_post"
+      ],
       "requirement": "当日実況の投稿（purpose = live）には brief.event.hashtag を付ける。",
       "source": "Tips 22: 当日実況の投稿",
       "verification": {
@@ -28,13 +35,17 @@
       },
       "fix": "本文の末尾に brief.event.hashtag を足す。",
       "when": {
-        "purpose": ["live"]
+        "purpose": [
+          "live"
+        ]
       }
     },
     {
       "id": "X-FOLD-LINK-VISIBLE",
       "strength": "MUST",
-      "scope": ["draft.x_post"],
+      "scope": [
+        "draft.x_post"
+      ],
       "requirement": "constants.x.foldThreshold を超える投稿は、折りたたみ前の範囲にリンクが収まり、折りたたみ後の冒頭にクリックを後押しする文がある。textAboveFold + textBelowFold は text と一致する。",
       "source": "Tips 1: X Premium の「さらに表示」の位置を設計する",
       "verification": {
@@ -46,7 +57,9 @@
     {
       "id": "X-IMAGE-VS-OGP",
       "strength": "MUST",
-      "scope": ["draft.x_post"],
+      "scope": [
+        "draft.x_post"
+      ],
       "requirement": "expectedReaction が quote の投稿は画像を添付し、repost の投稿は OGP 付き短縮リンクにする。",
       "source": "Tips 3: OGP 画像は引用ポストで表示されない",
       "verification": {
@@ -58,7 +71,9 @@
     {
       "id": "OGP-ON-SHORTLINK",
       "strength": "MUST",
-      "scope": ["draft.x_post"],
+      "scope": [
+        "draft.x_post"
+      ],
       "requirement": "attachment.kind = ogp のとき attachment.link.ogImage を指定し、本文に {{shortlink}} か URL を入れる。",
       "source": "Tips 4: OGP 画像は url.gdgs.jp の短縮リンクに設定する",
       "verification": {
@@ -70,7 +85,9 @@
     {
       "id": "X-POST-TIME",
       "strength": "SHOULD",
-      "scope": ["draft.x_post"],
+      "scope": [
+        "draft.x_post"
+      ],
       "requirement": "告知投稿の scheduledAt（JST）が constants.x.postWindows の窓に入る。",
       "source": "Tips 9: 平日は夕方、休日は昼か夕方",
       "verification": {
@@ -79,13 +96,18 @@
       },
       "fix": "投稿時刻を窓の中に動かす。",
       "when": {
-        "purposeNot": ["live"]
+        "purposeNot": [
+          "live"
+        ]
       }
     },
     {
       "id": "X-FOLLOW-INTENT-LINK",
       "strength": "SHOULD",
-      "scope": ["draft.x_post", "draft.connpass_page"],
+      "scope": [
+        "draft.x_post",
+        "draft.connpass_page"
+      ],
       "requirement": "X へのフォロー誘導はインテント付きリンク（constants.x.followIntentPattern か、それにリダイレクトする短縮リンク）で行い、X のプロフィール URL を直接貼らない。",
       "source": "Tips 35: インテント付きリンクはフォロー確認が自動で出る",
       "verification": {
@@ -97,7 +119,10 @@
     {
       "id": "ANNOUNCE-AFTER-CONFIRMED",
       "strength": "MUST",
-      "scope": ["plan", "draft.x_post"],
+      "scope": [
+        "plan",
+        "draft.x_post"
+      ],
       "requirement": "セッション紹介のアイテム・投稿は、そのセッションの status が confirmed 以上になってから出す。plan は TBA のセッションに関わるアイテムに blockedBy（session:<id>:confirmed）を付ける。",
       "source": "Tips 30: TBA だらけでは大物でも申し込まれない",
       "verification": {
@@ -109,7 +134,10 @@
     {
       "id": "SPEAKER-TIER-HIGH-NO-ASK",
       "strength": "MUST",
-      "scope": ["plan", "draft.x_post"],
+      "scope": [
+        "plan",
+        "draft.x_post"
+      ],
       "requirement": "tier = high の登壇者への speaker_request は suggestionOnly: true（自動で依頼しない。人に提案するだけ）。",
       "source": "Tips 16, 31: 格が高すぎる登壇者には依頼しづらい",
       "verification": {
@@ -121,7 +149,9 @@
     {
       "id": "CHANNEL-SPECIFIC-COPY",
       "strength": "MUST",
-      "scope": ["draft.ig_post"],
+      "scope": [
+        "draft.ig_post"
+      ],
       "requirement": "Instagram 用の本文は X 用の本文と同一でない。",
       "source": "Tips 12: X と Instagram は最適なコピーが全く異なる",
       "verification": {
@@ -133,7 +163,9 @@
     {
       "id": "IG-HASHTAGS",
       "strength": "SHOULD",
-      "scope": ["draft.ig_post"],
+      "scope": [
+        "draft.ig_post"
+      ],
       "requirement": "Instagram の投稿本文にハッシュタグが constants.instagram.minHashtags 個以上ある。",
       "source": "Tips 36: Instagram はハッシュタグを多数付ける",
       "verification": {
@@ -145,7 +177,9 @@
     {
       "id": "COPY-FROM-META-THEME",
       "strength": "MUST",
-      "scope": ["draft.copy"],
+      "scope": [
+        "draft.copy"
+      ],
       "requirement": "各候補に metaThemeMapping（どのメタテーマをどう射影したか）があり、theme は brief.metaThemes のどれか。",
       "source": "Tips 8: メタテーマを射影したコピー",
       "verification": {
@@ -157,7 +191,9 @@
     {
       "id": "COPY-PER-MEDIUM",
       "strength": "MUST",
-      "scope": ["draft.copy"],
+      "scope": [
+        "draft.copy"
+      ],
       "requirement": "各候補に connpassTitle / xShort / igShort / flyerLine の媒体別変種と、brief.audienceSegments ごとの変種がある。brief.copyConstraints の語を全変種が含む。",
       "source": "Tips 12, 37: 媒体と層で最適なコピーが違う",
       "verification": {
@@ -169,7 +205,10 @@
     {
       "id": "CP-TITLE-CONVEYS-CONTENT",
       "strength": "MUST",
-      "scope": ["draft.copy", "draft.connpass_page"],
+      "scope": [
+        "draft.copy",
+        "draft.connpass_page"
+      ],
       "requirement": "connpass タイトルが公式シリーズ名・地名・年だけで構成されず、内容語を含み、constants.connpass.titleMinChars 文字以上ある。",
       "source": "Tips 5, 7, 26: 一覧ではタイトルしか見えない",
       "verification": {
@@ -181,7 +220,9 @@
     {
       "id": "CP-THUMB-HAS-FACTS",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "connpass サムネイルのスロットに subcopy / date / place が埋まっている。",
       "source": "Tips 5: サムネイルはイベント詳細で見られる",
       "verification": {
@@ -193,7 +234,9 @@
     {
       "id": "CP-SUMMARY-3-LINES",
       "strength": "MUST",
-      "scope": ["draft.connpass_page"],
+      "scope": [
+        "draft.connpass_page"
+      ],
       "requirement": "説明冒頭の summary が constants.connpass.summaryMaxLines 行以内、1 行 summaryMaxCharsPerLine 字以内。",
       "source": "Tips 6: 最近の人は文章を読まない",
       "verification": {
@@ -205,7 +248,9 @@
     {
       "id": "CP-HTML-ALLOWLIST",
       "strength": "MUST",
-      "scope": ["draft.connpass_page"],
+      "scope": [
+        "draft.connpass_page"
+      ],
       "requirement": "HTML が connpass-syntax の許可タグ・属性・22 の CSS プロパティだけで書かれている。",
       "source": "Tips 6 と skills/connpass-syntax/references/syntax.md",
       "verification": {
@@ -217,7 +262,9 @@
     {
       "id": "MAIL-SEND-TIME",
       "strength": "SHOULD",
-      "scope": ["draft.connpass_mail"],
+      "scope": [
+        "draft.connpass_mail"
+      ],
       "requirement": "connpass メールの scheduledAt（JST）が constants.mail.sendWindows に入る。",
       "source": "Tips 10: 起床前の朝か退勤前の夕方",
       "verification": {
@@ -229,7 +276,9 @@
     {
       "id": "MAIL-SHORT",
       "strength": "MUST",
-      "scope": ["draft.connpass_mail"],
+      "scope": [
+        "draft.connpass_mail"
+      ],
       "requirement": "本文が constants.mail.maxBodyLines 行以内で、constants.mail.bannedPhrases を含まない。",
       "source": "Tips 11: 長い文章や丁寧すぎる文章を避ける",
       "verification": {
@@ -241,7 +290,9 @@
     {
       "id": "MAIL-DECORATED",
       "strength": "SHOULD",
-      "scope": ["draft.connpass_mail"],
+      "scope": [
+        "draft.connpass_mail"
+      ],
       "requirement": "件名・見出しかフッターに装飾（constants.mail.decorationChars）がある。",
       "source": "Tips 11: フッターや見出しに装飾を入れる",
       "verification": {
@@ -253,7 +304,9 @@
     {
       "id": "SURVEY-STANDARD-QUESTIONS",
       "strength": "MUST",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "アンケート設問に年齢・職業・経験年数・イベントを知った場所の 4 問があり、「知った場所」の選択肢が採用チャネルのラベル（+ その他）と一致する。",
       "source": "Tips 13: 属性データで広告戦略を決める",
       "verification": {
@@ -265,7 +318,9 @@
     {
       "id": "REMIND-STAFF-BEFORE-POST",
       "strength": "MUST",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "すべての x_post / ig_post に constants.reminders.staffOffsetMinutes 分前の staff_reminder が派生している。",
       "source": "Tips 15: 投稿 1 時間前にスタッフへ依頼",
       "verification": {
@@ -277,7 +332,9 @@
     {
       "id": "SPEAKER-REQUEST-BEFORE-POST",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "speakerId 付きの x_post に constants.reminders.speakerOffsetMinutes 分前の speaker_request（purpose = quote）が派生している。",
       "source": "Tips 16: 数時間前に登壇者へ引用依頼",
       "verification": {
@@ -289,7 +346,9 @@
     {
       "id": "SPEAKER-OWN-ANNOUNCE",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "tier = normal の登壇者全員に、本人の登壇予告投稿を依頼する speaker_request（purpose = own_announce）がある。",
       "source": "Tips 31: 登壇者本人の登壇予告は集客に効く",
       "verification": {
@@ -301,7 +360,9 @@
     {
       "id": "BUDGET-SPLIT",
       "strength": "MUST",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "印刷等の非広告費が constants.budget.nonAdsMaxYen 前後で、残りが SNS 広告、X : Instagram の比率が xIgRatioRange の範囲内。",
       "source": "Tips 17: 非広告は 1 万円前後、X : IG = 3 : 7 〜 4 : 6",
       "verification": {
@@ -313,7 +374,9 @@
     {
       "id": "PLAN-COVERS-CHANNELS",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "constants.channelCatalog の各手段について、採用 / 不採用と理由がある。",
       "source": "Tips 18, 21: 広報手段のアイデア一覧",
       "verification": {
@@ -325,7 +388,9 @@
     {
       "id": "PLAN-HAS-LIVE-POSTS",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "当日実況の live_post が少なくとも 1 件ある。",
       "source": "Tips 22: 当日実況の投稿準備",
       "verification": {
@@ -337,7 +402,9 @@
     {
       "id": "ADS-FLIGHT-TIMING",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "X Ads の開始が constants.ads.x.startDaysBefore の範囲で、最初の impressionDays 日は objective = impression。Meta Ads の開始が constants.ads.meta.startDaysBefore 日前前後。",
       "source": "Tips 28: 広告の開始時期と最適化",
       "verification": {
@@ -349,7 +416,9 @@
     {
       "id": "DISCORD-MILESTONES",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "discord_post と connpass_mail が constants.milestonesDaysBefore の節目に対応し、節目以外に無い。",
       "source": "Tips 29: 頻繁に送ると効果が落ちる",
       "verification": {
@@ -361,7 +430,9 @@
     {
       "id": "PLAN-HAS-PRE-EVENTS",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "プレイベントが少なくとも 1 件あり、それぞれに本番への導線（leadsTo）がある。",
       "source": "Tips 32: プレイベントは告知の布石",
       "verification": {
@@ -373,7 +444,9 @@
     {
       "id": "PLAN-FLYER-VERSIONS",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "flyer_text が v1 / v2 の 2 件ある。",
       "source": "Tips 33: フライヤーは v1 と v2",
       "verification": {
@@ -385,7 +458,9 @@
     {
       "id": "PLAN-SWAG-KINDS",
       "strength": "SHOULD",
-      "scope": ["plan"],
+      "scope": [
+        "plan"
+      ],
       "requirement": "noveltyIdeas が constants.swag.kinds の 5 種に分類されている。",
       "source": "Tips 34: Swag は 5 種に分けて設計する",
       "verification": {
@@ -397,7 +472,10 @@
     {
       "id": "BRAND-SKIN-DECLARED",
       "strength": "MUST",
-      "scope": ["draft.asset_spec", "draft.connpass_page"],
+      "scope": [
+        "draft.asset_spec",
+        "draft.connpass_page"
+      ],
       "requirement": "brief に skin があればそれ（brief / brand-guide）を使い、キットが決まっていれば kit、無ければ gdg-design の既定を使ってその旨を skinSource に書く。ロゴの禁則は skin に関係なく守る。",
       "source": "Tips 23: イベント skin で公式ガイドラインから外れてよい",
       "verification": {
@@ -428,7 +506,9 @@
     {
       "id": "COPY-REVIEW",
       "strength": "SHOULD",
-      "scope": ["draft.copy"],
+      "scope": [
+        "draft.copy"
+      ],
       "requirement": "コピーがメタテーマを分かりやすく、キャッチーに射影しているかを人が判断する。",
       "source": "Tips 8",
       "verification": {
@@ -439,7 +519,9 @@
     {
       "id": "PAGE-REVIEW",
       "strength": "SHOULD",
-      "scope": ["draft.connpass_page"],
+      "scope": [
+        "draft.connpass_page"
+      ],
       "requirement": "ページが画像中心で、申し込みたくなる構成かを人が判断する。",
       "source": "Tips 6",
       "verification": {
@@ -450,7 +532,9 @@
     {
       "id": "RENDER-NO-OVERFLOW",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "スロットの文字が枠と画像の外にはみ出さない。",
       "source": "Tips 5: サムネイルは縮小表示でも読める",
       "verification": {
@@ -462,7 +546,9 @@
     {
       "id": "RENDER-MIN-FONT",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "必須スロットの文字が、一覧の縮小表示（constants.render.thumbnailScale）で constants.render.minFontPxAtThumbnail px 以上ある。",
       "source": "Tips 5: サムネイルは縮小表示でも読める",
       "verification": {
@@ -474,7 +560,9 @@
     {
       "id": "RENDER-CONTRAST",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "必須スロットの文字と背景のコントラスト比が constants.render.minContrast 以上。",
       "source": "Tips 23: イベント skin の色でも読める",
       "verification": {
@@ -486,7 +574,9 @@
     {
       "id": "RENDER-SAFE-ZONE",
       "strength": "SHOULD",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "必須スロットがテンプレートのセーフゾーン（data-safe-inset）の内側にある。",
       "source": "Tips 12: 媒体ごとの表示枠",
       "verification": {
@@ -498,7 +588,9 @@
     {
       "id": "RENDER-LOGO-INTACT",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "ロゴは比率・回転・切り抜きを変えず、上に何も重ねない。",
       "source": "gdg-design: Logo の禁則",
       "verification": {
@@ -510,7 +602,9 @@
     {
       "id": "RENDER-FONTS-LOADED",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "見出しと本文の書体が読み込まれている（フォントを配置していない環境では unevaluated）。",
       "source": "Tips 23: 書体もブランドの一部",
       "verification": {
@@ -522,7 +616,9 @@
     {
       "id": "RENDER-CANVAS-SIZE",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "描画した canvas がテンプレートのサイズと一致する。",
       "source": "Tips 46: 媒体ごとのサイズ",
       "verification": {
@@ -534,7 +630,9 @@
     {
       "id": "DESIGN-FACTS-MARKED",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "design 方式の HTML は、テンプレートの必須スロット（題・日時・場所など）を data-slot と data-required=\"true\" で印し、検査器が測れるようにする。",
       "source": "Tips 46, 49: 縮小表示で読める事実",
       "verification": {
@@ -546,7 +644,9 @@
     {
       "id": "DESIGN-NO-EXTERNAL",
       "strength": "MUST",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "design 方式の HTML に script、iframe、イベント属性、許可外の URL が無い。画像は束の assets/ か data: か img.gdgs.jp。",
       "source": "pr の描画方針（Stage 06）: Worker は外へ出ない HTML だけ描く",
       "verification": {
@@ -558,7 +658,9 @@
     {
       "id": "DESIGN-SELF-REVIEW",
       "strength": "SHOULD",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "design 方式では描画した画像を見てセルフレビュー（縮小で読める・3 秒で分かる・文字量・揃え・色数・写真・ロゴ）を selfReviewMd に書く。",
       "source": "Tips 49: セルフレビュー",
       "verification": {
@@ -570,7 +672,9 @@
     {
       "id": "DESIGN-SERIES",
       "strength": "SHOULD",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "キットが決まっているイベントでは、派生画像はキットの支配色とロックアップを使う（新しい色や書体を足さない）。",
       "source": "Tips 38, 47: キット → 顔 → 派生",
       "verification": {
@@ -582,13 +686,29 @@
     {
       "id": "DESIGN-RATIONALE",
       "strength": "SHOULD",
-      "scope": ["draft.asset_spec"],
+      "scope": [
+        "draft.asset_spec"
+      ],
       "requirement": "rationaleMd に、支配色をイベントの文脈（開催地・季節・公式シリーズ・趣旨・対象）から選んだ理由と、モチーフを「感じ」から選んだ理由が 1 行ずつある。「GDG だから」「去年と同じ」は理由にならない。",
       "source": "Tips 39, 40, 48",
       "verification": {
         "kind": "review"
       },
       "fix": "理由を書けない色やモチーフは選び直す。"
+    },
+    {
+      "id": "RENDER-NO-OVERLAP",
+      "strength": "MUST",
+      "scope": [
+        "draft.asset_spec"
+      ],
+      "requirement": "文字（data-slot）同士、文字とロゴが重ならない（入れ子は除く）。",
+      "source": "Tips 49: セルフレビュー（揃い、重なり）",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-no-overlap"
+      },
+      "fix": "文字を 1 行に収めるか、位置とサイズを直す。"
     }
   ]
 }

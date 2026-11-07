@@ -64,6 +64,24 @@
       }),
     );
 
+    // Text must not sit on other text or on the logo (a nested slot is fine).
+    const boxes = [...slots, ...canvas.querySelectorAll("img[data-logo]")];
+    const overlaps = [];
+    for (let i = 0; i < boxes.length; i++)
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i];
+        const b = boxes[j];
+        if (a.contains(b) || b.contains(a)) continue;
+        const ra = a.getBoundingClientRect();
+        const rb = b.getBoundingClientRect();
+        const w = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left);
+        const h = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+        if (w <= 2 || h <= 2) continue;
+        const smaller = Math.max(1, Math.min(ra.width * ra.height, rb.width * rb.height));
+        if ((w * h) / smaller > 0.04) overlaps.push(`${name(a)} と ${name(b)} が重なる`);
+      }
+    add("RENDER-NO-OVERLAP", [...new Set(overlaps)].slice(0, 6));
+
     add(
       "RENDER-MIN-FONT",
       required.flatMap((s) => {

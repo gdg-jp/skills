@@ -1,0 +1,52 @@
+<!--
+  プレイベント（Meetup）の顔（1200×630、テンプレート connpass-thumbnail）— DevFest Kansai 2026 の Meetup #1〜#4 の型。
+  本編のキット（青のブレース）の家族で、ロックアップだけ 2 段 `{ DevFest / Meetup #1 # }`。Off White の 1 面に、
+  ステッカーを句読点として 5 種類（年の黄色いピル、チェブロン＋矢印、三つ並びの円、地球、緑の丸 3 つ）。
+  日本語の大見出しが主役、日付は白いピルに黒丸の曜日バッジ。文言はダミー。
+-->
+<style>
+  .canvas { background: #EEEEEE; color: #1E1E1E; font-family: "Google Sans Flex", "LINE Seed JP", sans-serif; }
+  .lockup { position: absolute; left: 32px; top: 36px; display: flex; align-items: center; gap: 10px; }
+  .brace { width: 50px; height: 140px; flex: none; }
+  .lockup .series { margin: 0; font: 800 78px/1 "Google Sans Flex", sans-serif; letter-spacing: -0.01em; }
+  .lockup .meetup { margin: 4px 0 0; display: flex; align-items: center; gap: 14px; font: 500 50px/1 "Google Sans Flex", sans-serif; }
+  .lockup .meetup img { height: 52px; }
+  .year { position: absolute; left: 498px; top: 54px; padding: 10px 34px; border: 3px solid #000; border-radius: 999px; background: #FAAB00;
+          font: 400 32px/1.1 "Google Sans Flex", sans-serif; }
+  .chevron { position: absolute; left: 500px; top: 144px; height: 48px; }
+  .arrow { position: absolute; left: 588px; top: 142px; width: 552px; height: 50px; }
+  .circles { position: absolute; left: 910px; top: 46px; height: 80px; }
+  .globe { position: absolute; left: 82px; top: 256px; height: 96px; }
+  .gdg { position: absolute; left: 56px; top: 350px; display: flex; flex-direction: column; gap: 10px; }
+  .gdg img[data-logo] { width: 118px; height: 118px; }
+  .gdg p { margin: 0; font: 400 30px/1.1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .headline { position: absolute; left: 300px; top: 236px; width: 860px; margin: 0; white-space: nowrap;
+              font: 800 92px/1.05 "LINE Seed JP", "Google Sans Flex", sans-serif; letter-spacing: -0.01em; }
+  .sub { position: absolute; left: 288px; top: 372px; width: 860px; margin: 0; white-space: nowrap; font: 700 46px/1.1 "LINE Seed JP", "Google Sans Flex", sans-serif; }
+  .facts { position: absolute; left: 270px; top: 466px; height: 80px; padding: 0 26px; border: 3px solid #000; border-radius: 999px; background: #fff;
+           display: flex; align-items: center; gap: 12px; font: 500 36px/1 "Google Sans Flex", "LINE Seed JP", sans-serif; white-space: nowrap; }
+  .facts .day { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #1E1E1E; color: #fff;
+                font: 700 27px/1 "LINE Seed JP", sans-serif; }
+  .dots { position: absolute; left: 1000px; top: 560px; display: flex; gap: 14px; }
+  .dots span { width: 48px; height: 48px; border-radius: 50%; background: #5CDB6D; border: 3px solid #414042; }
+</style>
+<div class="canvas" data-safe-inset="24" style="width:1200px;height:630px;">
+  <div class="lockup">
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#414042" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#C3ECF6" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div>
+      <p class="series" data-slot="eventName" data-required="true">DevFest</p>
+      <p class="meetup" data-slot="title" data-required="true">Meetup #1 <img src="assets/stickers/16-hash-outline.svg" alt=""></p>
+    </div>
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true" style="transform:scaleX(-1)"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#414042" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#C3ECF6" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  </div>
+  <span class="year" data-slot="flags">2026</span>
+  <img class="chevron" src="assets/stickers/31-less-than-three-outline.svg" alt="">
+  <svg class="arrow" viewBox="0 0 552 50" aria-hidden="true"><path d="M4 25 H520 M496 6 L536 25 L496 44" fill="none" stroke="#1E1E1E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <img class="circles" src="assets/stickers/01-ellipsis-green.svg" alt="">
+  <img class="globe" src="assets/stickers/40-globe-outline.svg" alt="">
+  <div class="gdg"><img data-logo src="assets/gdg.svg" alt="GDG"><p>Google<br>Developer<br>Groups</p></div>
+  <p class="headline" data-slot="headline" data-required="true">AI どう使ってる？</p>
+  <p class="sub" data-slot="subcopy" data-required="true">疑問と経験を共有する LT ＆ 交流会</p>
+  <p class="facts"><span data-slot="date" data-required="true">8.28 <span class="day">金</span> 19:00~21:00</span><span data-slot="place" data-required="true">@ gusuku Ashibinaa OSAKA</span></p>
+  <div class="dots"><span></span><span></span><span></span></div>
+</div>
