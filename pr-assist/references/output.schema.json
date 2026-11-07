@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pr-assist output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reply", "briefJson", "briefChanges", "questions", "actions"],
+  "properties": {
+    "reply": {
+      "type": "string",
+      "minLength": 1
+    },
+    "briefJson": {
+      "type": ["string", "null"]
+    },
+    "briefChanges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "label", "scheduleItemIds", "dueAt", "path", "instructions"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["run_plan", "adopt_plan", "draft_items", "move_item", "open_page"]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scheduleItemIds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "dueAt": {
+            "type": ["string", "null"]
+          },
+          "path": {
+            "type": ["string", "null"]
+          },
+          "instructions": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+}

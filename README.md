@@ -34,6 +34,7 @@ npx skills add gdg-jp/skills --skill gdg-accounts
 - **pr-connpass-page** — Build a connpass event page with a 3-line summary, decorated sections, and images.
 - **pr-connpass-mail** — Write short, decorated connpass messages at the right time.
 - **pr-plan** — Plan channels, budget, ad flights, schedule, reminders, pre-events, swag, and the survey.
+- **pr-assist** — The event's assistant on pr.gdgs.jp: read pasted pages, shared Google files and images, update the brief, and offer next steps.
 - **gdg-accounts** — Manage GDG Accounts OIDC clients with the `gdg` CLI.
 - **gdg-connpass** — Manage connpass groups, events, surveys, and organizer workflows.
 - **gdg-design** — Create and review visuals that follow the GDG brand system.

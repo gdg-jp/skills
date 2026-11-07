@@ -50,7 +50,9 @@
       "followup": "{{mention}} 「{{title}}」の依頼にまだ返事がありません。もう一度連絡してください。\n{{url}}",
       "delegated": "{{mention}} {{account}} での投稿をお願いします（{{at}}）。\n{{text}}",
       "discordPost": "{{text}}",
-      "linkBroken": "リンク切れ: {{target}} が {{status}} を返しています（{{campaign}}）\n{{url}}"
+      "linkBroken": "リンク切れ: {{target}} が {{status}} を返しています（{{campaign}}）\n{{url}}",
+      "approvalDue": "{{mention}} 「{{title}}」は {{at}} の予定ですが、まだ承認されていません。\n{{url}}",
+      "digest": "おはようございます。{{campaign}} の今日の予定と返事待ちです。\n{{today}}\n{{waiting}}\n{{url}}"
     },
     "provisional_templates": true
   },
