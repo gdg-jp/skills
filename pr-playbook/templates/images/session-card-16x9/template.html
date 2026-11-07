@@ -1,0 +1,11 @@
+<div class="canvas" data-safe-inset="32" style="width:{{width}}px;height:{{height}}px;">
+  <img class="logo" data-logo src="{{logoSrc}}" alt="GDG" style="left:64px;top:32px;" />
+  <div class="panel" style="left:64px;top:112px;width:{{#if speakerImageUrl}}940{{else}}1472{{/if}}px;height:724px;padding:40px;justify-content:flex-start;">
+  {{#if eventName}}<p class="slot eyebrow" data-slot="eventName" style="font-size:30px;">{{eventName}}</p>{{/if}}
+  {{#if track}}<span class="slot fact" data-slot="track" style="align-self:flex-start;font-size:28px;">{{track}}{{#if time}} {{time}}{{/if}}</span>{{/if}}
+  <p class="slot title" data-slot="sessionTitle" data-required="true" style="font-size:calc(var(--title-scale) * 64px);max-height:250px;">{{#each sessionTitleParts}}{{#if em}}<span class="em">{{text}}</span>{{else}}{{text}}{{/if}}{{/each}}</p>
+  <p class="slot" data-slot="speakerName" data-required="true" style="font-size:52px;font-weight:700;max-height:70px;margin-top:auto;">{{speakerName}}</p>
+  <p class="slot sub" data-slot="speakerRole" data-required="true" style="font-size:36px;max-height:108px;">{{speakerRole}}</p>
+  </div>
+  {{#if speakerImageUrl}}<div style="position:absolute;left:1044px;top:112px;width:492px;height:724px;"><img class="avatar" src="{{url speakerImageUrl}}" alt="{{speakerName}}" /></div>{{/if}}
+</div>

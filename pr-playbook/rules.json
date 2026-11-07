@@ -398,7 +398,7 @@
       "id": "BRAND-SKIN-DECLARED",
       "strength": "MUST",
       "scope": ["draft.asset_spec", "draft.connpass_page"],
-      "requirement": "brief に skin があればそれ（brief / brand-guide）を使い、無ければ gdg-design の既定を使ってその旨を skinSource に書く。ロゴの禁則は skin に関係なく守る。",
+      "requirement": "brief に skin があればそれ（brief / brand-guide）を使い、キットが決まっていれば kit、無ければ gdg-design の既定を使ってその旨を skinSource に書く。ロゴの禁則は skin に関係なく守る。",
       "source": "Tips 23: イベント skin で公式ガイドラインから外れてよい",
       "verification": {
         "kind": "mechanical",
@@ -518,6 +518,77 @@
         "check": "render/render-fonts-loaded"
       },
       "fix": "フォントを配置する（pr の README）。"
+    },
+    {
+      "id": "RENDER-CANVAS-SIZE",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "描画した canvas がテンプレートのサイズと一致する。",
+      "source": "Tips 46: 媒体ごとのサイズ",
+      "verification": {
+        "kind": "render",
+        "check": "render/render-canvas-size"
+      },
+      "fix": "ルートの .canvas を width / height で固定する。"
+    },
+    {
+      "id": "DESIGN-FACTS-MARKED",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "design 方式の HTML は、テンプレートの必須スロット（題・日時・場所など）を data-slot と data-required=\"true\" で印し、検査器が測れるようにする。",
+      "source": "Tips 46, 49: 縮小表示で読める事実",
+      "verification": {
+        "kind": "mechanical",
+        "check": "design/facts-marked"
+      },
+      "fix": "必須の文字要素に data-slot=\"<名前>\" data-required=\"true\" を付ける。"
+    },
+    {
+      "id": "DESIGN-NO-EXTERNAL",
+      "strength": "MUST",
+      "scope": ["draft.asset_spec"],
+      "requirement": "design 方式の HTML に script、iframe、イベント属性、許可外の URL が無い。画像は束の assets/ か data: か img.gdgs.jp。",
+      "source": "pr の描画方針（Stage 06）: Worker は外へ出ない HTML だけ描く",
+      "verification": {
+        "kind": "mechanical",
+        "check": "design/no-external"
+      },
+      "fix": "外部参照を assets/ の束のファイルに置き換え、script を消す。"
+    },
+    {
+      "id": "DESIGN-SELF-REVIEW",
+      "strength": "SHOULD",
+      "scope": ["draft.asset_spec"],
+      "requirement": "design 方式では描画した画像を見てセルフレビュー（縮小で読める・3 秒で分かる・文字量・揃え・色数・写真・ロゴ）を selfReviewMd に書く。",
+      "source": "Tips 49: セルフレビュー",
+      "verification": {
+        "kind": "mechanical",
+        "check": "design/self-review"
+      },
+      "fix": "画像を view_image で見て、項目ごとに 1 行ずつ書く。"
+    },
+    {
+      "id": "DESIGN-SERIES",
+      "strength": "SHOULD",
+      "scope": ["draft.asset_spec"],
+      "requirement": "キットが決まっているイベントでは、派生画像はキットの支配色とロックアップを使う（新しい色や書体を足さない）。",
+      "source": "Tips 38, 47: キット → 顔 → 派生",
+      "verification": {
+        "kind": "mechanical",
+        "check": "design/series"
+      },
+      "fix": "KIT.json の palette.dominant と lockup を使う。"
+    },
+    {
+      "id": "DESIGN-RATIONALE",
+      "strength": "SHOULD",
+      "scope": ["draft.asset_spec"],
+      "requirement": "rationaleMd に、支配色をイベントの文脈（開催地・季節・公式シリーズ・趣旨・対象）から選んだ理由と、モチーフを「感じ」から選んだ理由が 1 行ずつある。「GDG だから」「去年と同じ」は理由にならない。",
+      "source": "Tips 39, 40, 48",
+      "verification": {
+        "kind": "review"
+      },
+      "fix": "理由を書けない色やモチーフは選び直す。"
     }
   ]
 }

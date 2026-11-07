@@ -1,0 +1,85 @@
+{
+  "event": "DevFest Kansai 2026",
+  "date": "2026-10-18",
+  "feel": "公式 DevFest の語彙（ブレース、ステッカー）を、大阪らしい青で",
+  "why": "大阪府のシンボルカラーが青。公式ガイドの Off White 1 面ではなく、青の帯で囲むと一覧の中で目に付く",
+  "palette": {
+    "dominant": "#4285F4",
+    "ground": "#F0F0F0",
+    "band": "#C3ECF6",
+    "halftone": "#58CAFF",
+    "panel": "#FFFFFF",
+    "ink": "#1E1E1E",
+    "keyline": "#000000",
+    "emphasis": "#4285F4",
+    "badges": {
+      "参加無料": ["#FFE7A5", "#8A5E00"],
+      "入退場自由": ["#CCF6C5", "#1E1E1E"],
+      "ハンズオン": ["#F8D8D8", "#000000"],
+      "パネルディスカッション": ["#CCF6C5", "#000000"],
+      "特別企画": ["#FFE7A5", "#000000"]
+    },
+    "adsOnly": { "cta": "#4285F4", "gridPaper": "#C3ECF6 の 30px 格子を白地に", "lime": "#DDFF00" }
+  },
+  "type": {
+    "lockupName": "Google Sans Flex Bold 145 / 字間 -2% / 中央揃え（@1920 顔）、124（@1920 派生の左上）",
+    "lockupSub": "LINE Seed JP Bold 76 / 行間 110px（顔）、Regular 42 / 行間 61px（派生）。キーワードだけ #4285F4",
+    "sessionTitle": "LINE Seed JP Bold 84 / 行間 130px / 字間 -4% / 2〜3 行 / 幅 1146 @1920",
+    "speakerName": "Google Sans Flex SemiBold 75 / 行間 82px",
+    "speakerRole": "Google Sans Flex Regular 48 / 行間 72px",
+    "date": "Google Sans Flex Bold: 数字 70, 曜日 60, 時刻 48（顔）/ 数字 82, 残り 70（派生）",
+    "venue": "LINE Seed JP Bold: 駅 55, 施設 32",
+    "countdown": "LINE Seed JP Bold 179 / 字間 -2%",
+    "badge": "LINE Seed JP Bold 52（顔）、40（派生のタグ）",
+    "wordmark": "Google Sans Regular 35 / 行間 38px / 字間 -2% / 3 行（派生）、46 / 1 行（顔の上帯）",
+    "meetupHeadline": "LINE Seed JP ExtraBold 141 と Bold 75（プレイベントの顔）"
+  },
+  "lockup": {
+    "kind": "braces",
+    "left": "pastel の { （#C3ECF6、黒 3〜5px 罫線、高さ 234 @1920 派生 / 373 顔）",
+    "right": "halftone の } （#58CAFF）",
+    "name": "DevFest Kansai",
+    "rule": "名前とサブコピーの間に黒 1〜3px の横罫",
+    "sub": "AI時代の「考える」を取り戻す。 / 異分野と越境のAIカンファレンス",
+    "subEmphasis": ["考える", "異分野", "越境"],
+    "punctuation": "左に // 、右に地球（線）を添える",
+    "placement": {
+      "landscape": "左上 69,32 の 1090×295 @1920",
+      "thumbnail": "中央の白パネル（-166,176 の 2253×557、r=44、黒 4px）の中、名前 217,213 の 1486×462",
+      "portrait": "上中央、2 行（DevFest / Kansai）に折る",
+      "meetup": "{ DevFest / Meetup #1 # } の 2 段、左上 42,49 の 589×218 @1600"
+    }
+  },
+  "motifs": [
+    "ブレース（pastel / halftone 塗り）",
+    "ハッシュ、二重スラッシュ、アスタリスク、地球、波線（黒 4px の線）",
+    "3 つ並びの雲（#58CAFF 塗り）、プラス（#58CAFF 塗り）、矢印（#C3ECF6 塗り、黒罫線）",
+    "顔の上帯には公式 DevFest 2026 のマスコット列（公式素材があるときだけ）",
+    "広告: 方眼の地、白い帯の下辺を波線に、右下に大きな // "
+  ],
+  "photo": {
+    "shape": "角丸矩形 r=48、621×920 @1920 の右カラム（x=1236）",
+    "keyline": "#000000 4px",
+    "notch": "右下に白 252×252 の切り欠き、中に GDG ロゴ（180×105）と 3 行 wordmark",
+    "group": "座談会は正円 ×4〜5 を下帯に並べ、最後に「and more」の白い円",
+    "ads": "角丸矩形 361×400 @1440 を 3 つ横並び、下に名前（Google Sans Display Bold 47）。縦長広告はアーチ型"
+  },
+  "facts": {
+    "date": "2026.10.18 Sun 10:30-18:00 を #4285F4 のピル（964×236 @1920、r=999、黒 4.5px 罫線）に白文字 #F0F0F0",
+    "venue": "同じピルの 2 行目: JR大阪駅直結 国際工科専門職大学 大阪キャンパス",
+    "badges": ["参加無料", "入退場自由"],
+    "derivative": "10.18 Sun @大阪梅田 を縦ブレースの間に。カテゴリのタグは題の左上（257×92、r=999、pastel、黒 3.7px）"
+  },
+  "archetypes": {
+    "connpass-thumbnail": "3 段: 上帯 0-176（#C3ECF6、マスコット列 + GDG wordmark 横 1 行）、白パネル 176-733、下帯 733-1080（雲+矢印、日付ピル、プラス、バッジ 2 個）",
+    "x-session-card": "地 #F1F1F0。左上ロックアップ、タグ 71,368、題 71,475 幅 1146、名前 69,833、所属 70,941。右に写真 1236,94。アスタリスク 964,378",
+    "x-speaker-announce": "右 778px を写真が全高で占め、左上に GDG wordmark 横 1 行 + 矢印 + ハッシュ、白パネル（950×488、r=29、黒 4.9px）に「Heiga Zen 氏 登壇決定！」124px、下に縦ブレースで囲んだ主催・サブコピー・日付。右下の写真の上に小さなロックアップ（859×362、#F0F0F0 r=25）",
+    "countdown-16x9": "地 #F1F1F0。上帯にロックアップ（2 段、Kansai, Osaka の白ピル）、2026 の白ピル、ハッシュ、矢印、GDG ロゴ + 3 行 wordmark。中央に縦ブレース（77×505）で挟んだ「1 week!」179px。左下に地球、右上にアスタリスク",
+    "countdown-1x1": "同じ構成を 1080×1080 に。✨ の絵文字を 2 隅に",
+    "x-ad-1x1": "方眼の地。上に白帯「Google 協力のテックカンファレンス」（LINE Seed JP Bold 68、Google ロゴ画像）、下辺が波線。ロックアップ 68,235 幅 1300。登壇者 3 人（361×400）+ 名前。下に #4285F4 の CTA 箱（1149×292、r=25）: 日付 91px + 「今すぐ無料で申し込み」68px",
+    "x-ad-4x5": "1x1 に「AIを使いこなす側へ。」の黒帯 + ハッシュタグ行を足す",
+    "ig-story-ad": "1440×2560。方眼。「Google 協力」の白ピル、#4285F4 の 2 つの帯に白文字 224px「関西最大級 / AIイベント」、10 / 18 を 178px + 丸バッジ「日」、@大阪梅田 110px、傾けた白帯にロックアップ、最下部に GDG wordmark 横 1 行",
+    "ig-story-session": "4 色の大きな円（red / blue / yellow / green）を画面端に重ね、写真を中央〜右に、見出しは白地の帯に乗せた黒文字"
+  },
+  "growth": "顔の前の版は Off White 1 面で、紫の英語サブコピーと小さな 2026 ピルだった。採用版では帯で 3 段に分け、事実を青いピルに入れ、公式マスコット列を上帯に足し、バッジを pastel にした。セッションカードは、英題 + 3 行の説明文の版から、1 行ロックアップ + カテゴリのタグ + 題だけの版へ減らした（文字を減らし、題を大きく）"
+}

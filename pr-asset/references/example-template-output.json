@@ -1,0 +1,33 @@
+{
+  "mode": "template",
+  "templateId": "connpass-thumbnail",
+  "html": null,
+  "kit": null,
+  "directions": null,
+  "slots": {
+    "cta": null,
+    "date": "10/18（日）10:30〜",
+    "eventName": "DevFest Kansai 2026",
+    "flags": null,
+    "headline": null,
+    "photoUrl": null,
+    "place": "大阪・梅田",
+    "sessionTitle": null,
+    "speakerImageUrl": null,
+    "speakerName": null,
+    "speakerRole": null,
+    "sub": null,
+    "subcopy": "異分野と越境の AI カンファレンス",
+    "time": null,
+    "title": "AI 時代の「考える」を取り戻す。",
+    "track": null
+  },
+  "layoutVars": {
+    "titleScale": 0.9,
+    "align": "left",
+    "emphasis": ["考える"]
+  },
+  "skinSource": "brief",
+  "rationaleMd": "メインコピーを題に、日時と場所を縮小表示でも読める大きさで載せた。",
+  "selfReviewMd": null
+}

@@ -99,6 +99,8 @@ export function buildImageHtml(input) {
   });
   const config = JSON.stringify({
     ...input.render,
+    width: schema.size.width,
+    height: schema.size.height,
     fonts: [...new Set(fonts.map((f) => f.family))],
   }).replace(/</g, "\\u003c");
   const vars = `:root{--bg:${skin.bg};--panel:${skin.panelBg};--keyline:${skin.keyline};--text:${skin.text};--sticker:${skin.sticker};--accent1:${skin.accent1};--accent2:${skin.accent2};--accent3:${skin.accent3};--accent4:${skin.accent4};--title-scale:${layout.titleScale};--align:${layout.align};}`;

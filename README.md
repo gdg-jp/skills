@@ -33,6 +33,7 @@ npx skills add gdg-jp/skills --skill gdg-accounts
 - **pr-x-post** — Write X and Instagram posts: fold position, image vs OGP, timing, and staff / speaker asks.
 - **pr-connpass-page** — Build a connpass event page with a 3-line summary, decorated sections, and images.
 - **pr-connpass-mail** — Write short, decorated connpass messages at the right time.
+- **pr-asset** — Design an event's images (thumbnail, session and speaker cards, countdowns, ads, Instagram) in HTML by the event's design kit, render, look and self-review (`pr-playbook/guides/design.md`).
 - **pr-plan** — Plan channels, budget, ad flights, schedule, reminders, pre-events, swag, and the survey.
 - **pr-assist** — The event's assistant on pr.gdgs.jp: read pasted pages, shared Google files and images, update the brief, and offer next steps.
 - **gdg-accounts** — Manage GDG Accounts OIDC clients with the `gdg` CLI.

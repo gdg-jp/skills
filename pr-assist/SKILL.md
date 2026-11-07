@@ -35,7 +35,8 @@ description: pr.gdgs.jp の秘書。イベントごとのスレッドで人の�
    - `adopt_plan`: `STATE.json` の最新の計画が未採用で、必須検査の不合格が 0 のとき
    - `draft_items`: 直近の予定のうち、下書きの無い投稿・connpass メール（`scheduleItemIds` に ID）
    - `move_item`: 人が予定の時刻の変更を頼んだとき（`scheduleItemIds` に 1 件、`dueAt` に新しい時刻）
-   - `open_page`: 見てほしい画面（`path` は `STATE.json` の `campaign.base` で始まる）
+   - `open_page`: 見てほしい画面（`path` は `STATE.json` の `campaign.base` で始まる）。brief にセッションが揃い、
+     `STATE.json` に `kit` が無ければ、`<base>/assets` を「デザインキットを作る」として出す（画像はキットが決まってから揃う）
    - 使わない欄は空配列か null。`instructions` には runner への補足（人の指示）を書いてよい
 5. `questions` に、人にしか決められないことだけを書く（3 つまで）
 6. 日本語は `yomiyasu` の方針（不自然な比喩・コピー調・曖昧な主述を避ける）で書く

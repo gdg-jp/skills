@@ -1,0 +1,56 @@
+<!--
+  セッション紹介カード（X、1600×900、テンプレート session-card-16x9）— DevFest Kansai 2026 のキットで組んだ型。文言と写真はダミー。
+  左 58% に文字（ロックアップ → タグ → 題 → 名前 → 所属）、右に角丸の写真とノッチの GDG ロゴ。
+  必須スロットは data-slot + data-required、ロゴは <img data-logo src="assets/gdg.svg">。
+-->
+<style>
+  .canvas { background: #F1F1F0; color: #1E1E1E; }
+  .lockup { position: absolute; left: 58px; top: 36px; display: flex; align-items: flex-start; gap: 18px; }
+  .brace { width: 56px; height: 196px; flex: none; }
+  .lockup .name { font: 800 104px/1 "Google Sans Flex", "LINE Seed JP", sans-serif; letter-spacing: -0.02em; margin: 0; }
+  .lockup .rule { width: 100%; height: 2px; background: #1E1E1E; margin: 14px 0 12px; }
+  .lockup .sub { font: 400 35px/1.45 "LINE Seed JP", "Google Sans Flex", sans-serif; margin: 0; text-align: center; }
+  .lockup .sub b { color: #4285F4; font-weight: 400; }
+  .lockup .punct { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; padding: 0 70px; }
+  .tag { position: absolute; left: 59px; top: 307px; padding: 10px 26px; border: 3px solid #1E1E1E; border-radius: 999px;
+         background: #F8D8D8; font: 700 33px/1.4 "LINE Seed JP", sans-serif; }
+  .title { position: absolute; left: 59px; top: 396px; width: 955px; margin: 0;
+           font: 700 70px/1.55 "LINE Seed JP", "Google Sans Flex", sans-serif; letter-spacing: -0.04em; max-height: 330px; overflow: hidden; }
+  .speaker { position: absolute; left: 58px; top: 694px; margin: 0; font: 600 62px/1.1 "Google Sans Flex", "LINE Seed JP", sans-serif; }
+  .role { position: absolute; left: 58px; top: 782px; width: 960px; margin: 0; font: 400 36px/1.4 "Google Sans Flex", "LINE Seed JP", sans-serif; }
+  .photo { position: absolute; left: 1030px; top: 78px; width: 518px; height: 767px; border: 4px solid #1E1E1E; border-radius: 40px; overflow: hidden;
+           background: linear-gradient(160deg, #cfd8dc, #90a4ae); }
+  .photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .notch { position: absolute; right: 0; bottom: 0; width: 330px; height: 170px; background: #F1F1F0; border-top-left-radius: 40px;
+           display: flex; align-items: center; gap: 14px; padding: 24px 0 0 30px; }
+  .notch img[data-logo] { height: 86px; width: auto; }
+  .wordmark { font: 400 29px/1.1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; margin: 0; }
+  .asterisk { position: absolute; left: 803px; top: 315px; width: 135px; }
+</style>
+<div class="canvas" data-safe-inset="32" style="width:1600px;height:900px;">
+  <div class="lockup">
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#C3ECF6" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div>
+      <p class="name" data-slot="eventName" data-required="true">DevFest Kansai</p>
+      <div class="rule"></div>
+      <p class="sub" data-slot="sub">AI時代の「<b>考える</b>」を取り戻す。<br><b>異分野</b>と<b>越境</b>のAIカンファレンス</p>
+      <div class="punct">
+        <img src="assets/stickers/28-double-slash-outline.svg" alt="" style="height:44px;">
+        <img src="assets/stickers/40-globe-outline.svg" alt="" style="height:44px;">
+      </div>
+    </div>
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true" style="transform:scaleX(-1)"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#58CAFF" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  </div>
+  <span class="tag" data-slot="track">ハンズオン</span>
+  <p class="title" data-slot="sessionTitle" data-required="true">Antigravityで<br>AIエージェントを作ってみよう</p>
+  <p class="speaker" data-slot="speakerName" data-required="true">Haren Bhandari</p>
+  <p class="role" data-slot="speakerRole" data-required="true">Developer Relations Engineer, Google Cloud Japan</p>
+  <img class="asterisk" src="assets/stickers/27-asterisk-outline.svg" alt="">
+  <div class="photo">
+    <!-- 本番では assets/photos/<speakerId>.jpg を <img> で置く -->
+    <div class="notch">
+      <img data-logo src="assets/gdg.svg" alt="GDG">
+      <p class="wordmark">Google<br>Developer<br>Groups</p>
+    </div>
+  </div>
+</div>

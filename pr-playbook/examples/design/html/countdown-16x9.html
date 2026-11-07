@@ -1,0 +1,42 @@
+<!--
+  カウントダウン（X、1600×900）— 数字だけを中央に、縦のブレースで挟む。上帯にロックアップ、年、ハッシュ、矢印、GDG ロゴ。
+-->
+<style>
+  .canvas { background: #F1F1F0; color: #1E1E1E; font-family: "Google Sans Flex", "LINE Seed JP", sans-serif; }
+  .lockup { position: absolute; left: 50px; top: 40px; display: flex; align-items: flex-start; gap: 14px; }
+  .brace { width: 50px; height: 160px; flex: none; }
+  .lockup .name { margin: 0; font: 800 90px/1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .lockup .place { margin: 10px 0 0; padding: 8px 60px; border: 3px solid #1E1E1E; border-radius: 999px; background: #fff;
+                   font: 500 26px/1.1 "Google Sans Flex", sans-serif; letter-spacing: 0.01em; text-align: center; }
+  .year { position: absolute; left: 634px; top: 64px; padding: 18px 48px; border: 3px solid #000; border-radius: 999px; background: #fff;
+          font: 400 46px/1.1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .hash { position: absolute; left: 868px; top: 64px; height: 108px; }
+  .arrow { position: absolute; left: 980px; top: 58px; height: 122px; }
+  .gdg { position: absolute; left: 1176px; top: 60px; display: flex; align-items: center; gap: 24px; }
+  .gdg img[data-logo] { height: 120px; width: auto; }
+  .gdg p { margin: 0; font: 400 29px/1.1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .vbrace { position: absolute; top: 318px; width: 64px; height: 420px; }
+  .count { position: absolute; left: 380px; top: 318px; width: 840px; height: 420px; margin: 0; display: flex; align-items: center; justify-content: center;
+           font: 700 150px/1 "LINE Seed JP", "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .globe { position: absolute; left: 45px; top: 728px; height: 135px; }
+  .asterisk { position: absolute; left: 1412px; top: 305px; height: 120px; }
+</style>
+<div class="canvas" data-safe-inset="32" style="width:1600px;height:900px;">
+  <div class="lockup">
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#C3ECF6" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div>
+      <p class="name" data-slot="eventName" data-required="true">DevFest</p>
+      <p class="place" data-slot="place">Kansai, Osaka</p>
+    </div>
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true" style="transform:scaleX(-1)"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#58CAFF" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  </div>
+  <span class="year" data-slot="date">2026</span>
+  <img class="hash" src="assets/stickers/16-hash-outline.svg" alt="">
+  <img class="arrow" src="assets/stickers/04-arrow-right-yellow.svg" alt="">
+  <div class="gdg"><img data-logo src="assets/gdg.svg" alt="GDG"><p>Google<br>Developer<br>Groups</p></div>
+  <img class="vbrace" style="left:290px" src="assets/stickers/18-brace-left-outline.svg" alt="">
+  <img class="vbrace" style="left:1246px" src="assets/stickers/17-brace-right-outline.svg" alt="">
+  <p class="count" data-slot="headline" data-required="true">1 week!</p>
+  <img class="globe" src="assets/stickers/40-globe-outline.svg" alt="">
+  <img class="asterisk" src="assets/stickers/27-asterisk-outline.svg" alt="">
+</div>

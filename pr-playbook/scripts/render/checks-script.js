@@ -23,9 +23,20 @@
     );
     const canvas = document.querySelector(".canvas");
     const box = canvas.getBoundingClientRect();
-    const slots = [...canvas.querySelectorAll(".slot")];
+    const slots = [...canvas.querySelectorAll("[data-slot]")];
     const required = slots.filter((s) => s.dataset.required === "true");
     const name = (el) => el.dataset.slot || el.className;
+
+    add(
+      "RENDER-CANVAS-SIZE",
+      cfg.width && cfg.height
+        ? Math.abs(box.width - cfg.width) > 1 || Math.abs(box.height - cfg.height) > 1
+          ? [
+              `canvas が ${Math.round(box.width)}×${Math.round(box.height)}（${cfg.width}×${cfg.height} が要る）`,
+            ]
+          : []
+        : [],
+    );
 
     add(
       "RENDER-NO-OVERFLOW",
@@ -95,9 +106,13 @@
         if (!fg || !bg) return [];
         const [l1, l2] = [lum(fg), lum(bg)].sort((a, b) => b - a);
         const ratio = (l1 + 0.05) / (l2 + 0.05);
-        return ratio + 1e-6 < cfg.minContrast
-          ? [`${name(s)} のコントラスト ${ratio.toFixed(2)}`]
-          : [];
+        // WCAG large text (24px, or 18.66px bold) may use the lower threshold.
+        const style = getComputedStyle(s);
+        const px = Number.parseFloat(style.fontSize);
+        const bold = Number.parseInt(style.fontWeight, 10) >= 700;
+        const large = px >= 24 || (bold && px >= 18.66);
+        const min = large && cfg.minContrastLarge ? cfg.minContrastLarge : cfg.minContrast;
+        return ratio + 1e-6 < min ? [`${name(s)} のコントラスト ${ratio.toFixed(2)}`] : [];
       }),
     );
 
@@ -142,8 +157,12 @@
     add(
       "RENDER-FONTS-LOADED",
       cfg.fonts
-        .filter((f) => !document.fonts.check(`16px "${f}"`))
-        .map((f) => `${f} が読み込まれていない`),
+        .filter((f) =>
+          [...document.fonts].some(
+            (face) => face.family.replace(/^"|"$/g, "") === f && face.status === "error",
+          ),
+        )
+        .map((f) => `${f} が読み込めない`),
       cfg.fonts.length ? null : "フォントを配置していない",
     );
   } catch (error) {

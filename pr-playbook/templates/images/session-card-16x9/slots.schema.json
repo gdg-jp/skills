@@ -1,0 +1,58 @@
+{
+  "templateId": "session-card-16x9",
+  "size": {
+    "width": 1600,
+    "height": 900
+  },
+  "purpose": "セッション紹介（横）",
+  "slots": {
+    "eventName": {
+      "type": "text",
+      "required": false,
+      "maxLength": 40
+    },
+    "sessionTitle": {
+      "type": "text",
+      "required": true,
+      "maxLength": 60
+    },
+    "speakerName": {
+      "type": "text",
+      "required": true,
+      "maxLength": 30
+    },
+    "speakerRole": {
+      "type": "text",
+      "required": true,
+      "maxLength": 60
+    },
+    "speakerImageUrl": {
+      "type": "url",
+      "required": false
+    },
+    "track": {
+      "type": "text",
+      "required": false,
+      "maxLength": 20
+    },
+    "time": {
+      "type": "text",
+      "required": false,
+      "maxLength": 12
+    }
+  },
+  "layoutVars": {
+    "titleScale": {
+      "min": 0.8,
+      "max": 1.2,
+      "default": 1
+    },
+    "align": {
+      "enum": ["left", "center"],
+      "default": "left"
+    },
+    "emphasis": {
+      "maxItems": 3
+    }
+  }
+}

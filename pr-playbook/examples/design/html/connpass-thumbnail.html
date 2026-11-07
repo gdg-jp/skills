@@ -1,0 +1,68 @@
+<!--
+  connpass サムネイル（顔、1200×630）— DevFest Kansai 2026 のキットの 3 段構成を 1200×630 に収めた型。
+  上帯: ステッカー列 + GDG wordmark。中央: 白パネルにロックアップ。下帯: 日付のピルとバッジ。
+-->
+<style>
+  .canvas { background: #C3ECF6; color: #1E1E1E; font-family: "Google Sans Flex", "LINE Seed JP", sans-serif; }
+  .top { position: absolute; left: 0; top: 0; width: 100%; height: 100px; display: flex; align-items: center; padding: 0 28px; gap: 56px; }
+  .top img { height: 42px; width: auto; }
+  .gdg { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .gdg img[data-logo] { height: 40px; width: auto; }
+  .gdg p { margin: 0; font: 400 27px/1 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; }
+  .panel { position: absolute; left: -60px; top: 100px; width: 1320px; height: 332px; background: #FFFFFF; border: 4px solid #000000; border-radius: 30px; }
+  .lockup { position: absolute; left: 0; top: 116px; width: 100%; display: flex; justify-content: center; align-items: flex-start; gap: 24px; }
+  .brace { width: 68px; height: 240px; flex: none; margin-top: 14px; }
+  .name { margin: 0; font: 800 88px/1.05 "Google Sans Flex", sans-serif; letter-spacing: -0.02em; text-align: center; }
+  .rule { height: 2px; background: #000; margin: 10px 0 14px; }
+  .sub { margin: 0; font: 700 40px/1.45 "LINE Seed JP", "Google Sans Flex", sans-serif; text-align: center; }
+  .sub b { color: #4285F4; }
+  .punct-l, .punct-r { position: absolute; top: 185px; height: 110px; }
+  .punct-l { left: 28px; }  .punct-r { right: 28px; }
+  .bottom { position: absolute; left: 0; top: 432px; width: 100%; height: 198px; }
+  .cloud { position: absolute; left: 30px; top: 40px; height: 56px; }
+  .arrow { position: absolute; left: 30px; top: 118px; width: 180px; height: 44px; }
+  .facts { position: absolute; left: 250px; top: 30px; width: 690px; height: 142px; background: #4285F4; border: 3px solid #000; border-radius: 999px;
+           color: #F0F0F0; display: flex; flex-direction: column; justify-content: center; padding: 0 56px; gap: 6px; }
+  .facts .date { margin: 0; font: 700 36px/1.1 "Google Sans Flex", sans-serif; letter-spacing: -0.01em; }
+  .facts .date b { font-size: 44px; } .facts .date small { font-size: 30px; }
+  .facts .place { margin: 0; font: 700 36px/1.1 "LINE Seed JP", "Google Sans Flex", sans-serif; white-space: nowrap; }
+  .facts .place small { font-size: 17px; font-weight: 700; }
+  .plus { position: absolute; left: 944px; top: 56px; height: 52px; }
+  .badges { position: absolute; left: 1002px; top: 40px; display: flex; flex-direction: column; gap: 8px; }
+  .badge { padding: 8px 20px; border: 3px solid #000; border-radius: 999px; font: 700 28px/1.2 "LINE Seed JP", sans-serif; white-space: nowrap; }
+  .free { background: #FFE7A5; color: #8A5E00; } .open { background: #CCF6C5; color: #1E1E1E; }
+</style>
+<div class="canvas" data-safe-inset="24" style="width:1200px;height:630px;">
+  <div class="top">
+    <img src="assets/stickers/02-square-brackets-filled-pastel-yellow.svg" alt="">
+    <img src="assets/stickers/03-pill-pastel-blue.svg" alt="">
+    <img src="assets/stickers/09-scalloped-pill-pastel-red.svg" alt="">
+    <img src="assets/stickers/36-hash-green.svg" alt="">
+    <div class="gdg"><img data-logo src="assets/gdg.svg" alt="GDG"><p>Google Developer Groups</p></div>
+  </div>
+  <div class="panel"></div>
+  <img class="punct-l" src="assets/stickers/28-double-slash-outline.svg" alt="">
+  <div class="lockup">
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#C3ECF6" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div style="width:720px;">
+      <p class="name" data-slot="title" data-required="true">DevFest Kansai</p>
+      <div class="rule"></div>
+      <p class="sub" data-slot="subcopy" data-required="true">AI時代の「<b>考える</b>」を取り戻す。<br><b>異分野</b>と<b>越境</b>のAIカンファレンス</p>
+    </div>
+    <svg class="brace" viewBox="0 0 120 420" aria-hidden="true" style="transform:scaleX(-1)"><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#1E1E1E" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/><path d="M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100" fill="none" stroke="#58CAFF" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  </div>
+  <img class="punct-r" src="assets/stickers/40-globe-outline.svg" alt="">
+  <div class="bottom">
+    <img class="cloud" src="assets/stickers/01-ellipsis-green.svg" alt="">
+    <svg class="arrow" viewBox="0 0 180 44" aria-hidden="true"><path d="M4 22 H160 M138 4 L166 22 L138 40" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="facts">
+      <p class="date" data-slot="date" data-required="true">2026.<b>10.18</b> Sun <small>10:30-18:00</small></p>
+      <p class="place" data-slot="place" data-required="true">JR大阪駅直結 <small>国際工科専門職大学 大阪キャンパス</small></p>
+    </div>
+    <img class="plus" src="assets/stickers/39-plus-blue.svg" alt="">
+    <div class="badges">
+      <span class="badge free" data-slot="flags">参加無料</span>
+      <span class="badge open">入退場自由</span>
+    </div>
+  </div>
+</div>

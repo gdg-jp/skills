@@ -1,4 +1,11 @@
-import { skinDeclared, thumbFacts } from "./asset-spec.mjs";
+import {
+  factsMarked,
+  noExternal,
+  selfReview,
+  series,
+  skinDeclared,
+  thumbFacts,
+} from "./asset-spec.mjs";
 // Entry point for every consumer of the checks: the Skills' CLI (run.mjs) and the pr Worker.
 // Pure ESM, no Node APIs. Data (rules, constants) is passed in.
 import { announceAfterConfirmed, followIntent, speakerTierHigh, yomiyasu } from "./common.mjs";
@@ -70,6 +77,10 @@ export const CHECKS = {
   "plan/swag-kinds": { run: swagKinds },
   "asset/thumb-facts": { run: thumbFacts },
   "brand/skin-declared": { run: skinDeclared },
+  "design/facts-marked": { run: factsMarked },
+  "design/no-external": { run: noExternal },
+  "design/self-review": { run: selfReview },
+  "design/series": { run: series },
 };
 
 export const DRAFT_KINDS = [

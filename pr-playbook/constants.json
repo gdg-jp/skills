@@ -161,7 +161,9 @@
     "minFontPxAtThumbnail": 9,
     "minContrast": 4.5,
     "provisional_thumbnailScale": true,
-    "provisional_minFontPxAtThumbnail": true
+    "provisional_minFontPxAtThumbnail": true,
+    "minContrastLarge": 3,
+    "note": "minContrast は本文、minContrastLarge は WCAG の大きい文字（24px か太字 18.66px 以上）。縮小表示の文字サイズは仮値"
   },
   "images": {
     "connpassThumbnail": {
@@ -192,5 +194,49 @@
       "closing": "{{time}} クロージングです。ご参加ありがとうございました！\n{{hashtag}}"
     },
     "provisional_templates": true
+  },
+  "design": {
+    "fontsBase": "https://pr.gdgs.jp/fonts",
+    "fonts": [
+      {
+        "family": "Google Sans Flex",
+        "file": "GoogleSansFlex.ttf",
+        "license": "OFL",
+        "use": "英数字の見出しと本文（可変: wght 100〜1000）"
+      },
+      {
+        "family": "LINE Seed JP",
+        "file": "LINESeedJP-Regular.ttf",
+        "license": "OFL",
+        "use": "日本語の本文"
+      },
+      {
+        "family": "LINE Seed JP",
+        "file": "LINESeedJP-Bold.ttf",
+        "license": "OFL",
+        "use": "日本語の見出し"
+      },
+      {
+        "family": "LINE Seed JP",
+        "file": "LINESeedJP-ExtraBold.ttf",
+        "license": "OFL",
+        "use": "日本語の大見出し"
+      },
+      {
+        "family": "Google Sans Code",
+        "file": "GoogleSansCode.ttf",
+        "license": "OFL",
+        "use": "等幅（コード、プロモーションコード）"
+      }
+    ],
+    "allowedImageHosts": ["img.gdgs.jp", "pr.gdgs.jp"],
+    "safeInset": 32,
+    "referenceImagesPerJob": 6,
+    "maxRevisions": 3,
+    "directions": {
+      "min": 2,
+      "max": 3
+    },
+    "note": "Tips 38〜50（guides/design.md）。参考画像は pr の「デザインの参考」から新しい順に添付する"
   }
 }

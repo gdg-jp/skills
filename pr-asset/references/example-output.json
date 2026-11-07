@@ -1,28 +1,71 @@
 {
-  "templateId": "connpass-thumbnail",
+  "mode": "design",
+  "templateId": "session-card-16x9",
+  "html": "<style>\n  .canvas { background: #F1F1F0; color: #1E1E1E; }\n  .lockup { position: absolute; left: 58px; top: 36px; display: flex; align-items: flex-start; gap: 18px; }\n  .brace { width: 56px; height: 196px; flex: none; }\n  .lockup .name { font: 800 104px/1 \"Google Sans Flex\", \"LINE Seed JP\", sans-serif; letter-spacing: -0.02em; margin: 0; }\n  .lockup .rule { width: 100%; height: 2px; background: #1E1E1E; margin: 14px 0 12px; }\n  .lockup .sub { font: 400 35px/1.45 \"LINE Seed JP\", \"Google Sans Flex\", sans-serif; margin: 0; text-align: center; }\n  .lockup .sub b { color: #4285F4; font-weight: 400; }\n  .lockup .punct { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; padding: 0 70px; }\n  .tag { position: absolute; left: 59px; top: 307px; padding: 10px 26px; border: 3px solid #1E1E1E; border-radius: 999px;\n         background: #F8D8D8; font: 700 33px/1.4 \"LINE Seed JP\", sans-serif; }\n  .title { position: absolute; left: 59px; top: 396px; width: 955px; margin: 0;\n           font: 700 70px/1.55 \"LINE Seed JP\", \"Google Sans Flex\", sans-serif; letter-spacing: -0.04em; max-height: 330px; overflow: hidden; }\n  .speaker { position: absolute; left: 58px; top: 694px; margin: 0; font: 600 62px/1.1 \"Google Sans Flex\", \"LINE Seed JP\", sans-serif; }\n  .role { position: absolute; left: 58px; top: 782px; width: 960px; margin: 0; font: 400 36px/1.4 \"Google Sans Flex\", \"LINE Seed JP\", sans-serif; }\n  .photo { position: absolute; left: 1030px; top: 78px; width: 518px; height: 767px; border: 4px solid #1E1E1E; border-radius: 40px; overflow: hidden;\n           background: linear-gradient(160deg, #cfd8dc, #90a4ae); }\n  .photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }\n  .notch { position: absolute; right: 0; bottom: 0; width: 330px; height: 170px; background: #F1F1F0; border-top-left-radius: 40px;\n           display: flex; align-items: center; gap: 14px; padding: 24px 0 0 30px; }\n  .notch img[data-logo] { height: 86px; width: auto; }\n  .wordmark { font: 400 29px/1.1 \"Google Sans Flex\", sans-serif; letter-spacing: -0.02em; margin: 0; }\n  .asterisk { position: absolute; left: 803px; top: 315px; width: 135px; }\n</style>\n<div class=\"canvas\" data-safe-inset=\"32\" style=\"width:1600px;height:900px;\">\n  <div class=\"lockup\">\n    <svg class=\"brace\" viewBox=\"0 0 120 420\" aria-hidden=\"true\"><path d=\"M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100\" fill=\"none\" stroke=\"#1E1E1E\" stroke-width=\"40\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100\" fill=\"none\" stroke=\"#C3ECF6\" stroke-width=\"30\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>\n    <div>\n      <p class=\"name\" data-slot=\"eventName\" data-required=\"true\">DevFest Kansai</p>\n      <div class=\"rule\"></div>\n      <p class=\"sub\" data-slot=\"sub\">AI時代の「<b>考える</b>」を取り戻す。<br><b>異分野</b>と<b>越境</b>のAIカンファレンス</p>\n      <div class=\"punct\">\n        <img src=\"assets/stickers/28-double-slash-outline.svg\" alt=\"\" style=\"height:44px;\">\n        <img src=\"assets/stickers/40-globe-outline.svg\" alt=\"\" style=\"height:44px;\">\n      </div>\n    </div>\n    <svg class=\"brace\" viewBox=\"0 0 120 420\" aria-hidden=\"true\" style=\"transform:scaleX(-1)\"><path d=\"M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100\" fill=\"none\" stroke=\"#1E1E1E\" stroke-width=\"40\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M100 14 H78 Q48 14 48 44 V170 Q48 210 14 210 Q48 210 48 250 V376 Q48 406 78 406 H100\" fill=\"none\" stroke=\"#58CAFF\" stroke-width=\"30\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>\n  </div>\n  <span class=\"tag\" data-slot=\"track\">ハンズオン</span>\n  <p class=\"title\" data-slot=\"sessionTitle\" data-required=\"true\">Antigravityで<br>AIエージェントを作ってみよう</p>\n  <p class=\"speaker\" data-slot=\"speakerName\" data-required=\"true\">Haren Bhandari</p>\n  <p class=\"role\" data-slot=\"speakerRole\" data-required=\"true\">Developer Relations Engineer, Google Cloud Japan</p>\n  <img class=\"asterisk\" src=\"assets/stickers/27-asterisk-outline.svg\" alt=\"\">\n  <div class=\"photo\">\n    <!-- 本番では assets/photos/<speakerId>.jpg を <img> で置く -->\n    <div class=\"notch\">\n      <img data-logo src=\"assets/gdg.svg\" alt=\"GDG\">\n      <p class=\"wordmark\">Google<br>Developer<br>Groups</p>\n    </div>\n  </div>\n</div>\n",
+  "kit": {
+    "feel": "公式 DevFest の語彙（ブレース、ステッカー）を、大阪らしい青で",
+    "why": "大阪府のシンボルカラーが青。公式の Off White 1 面より、青の帯で囲むと一覧で目に付く",
+    "palette": {
+      "dominant": "#4285F4",
+      "ground": "#F1F1F0",
+      "panel": "#FFFFFF",
+      "ink": "#1E1E1E",
+      "keyline": "#000000",
+      "emphasis": "#4285F4",
+      "extra": ["#C3ECF6", "#58CAFF", "#FFE7A5", "#CCF6C5", "#F8D8D8"]
+    },
+    "fonts": {
+      "heading": "Google Sans Flex 800",
+      "headingJa": "LINE Seed JP 700",
+      "body": "Google Sans Flex 400 / LINE Seed JP 400"
+    },
+    "lockup": {
+      "kind": "braces",
+      "text": "DevFest Kansai",
+      "sub": "AI時代の「考える」を取り戻す。異分野と越境のAIカンファレンス",
+      "notes": "左 pastel、右 halftone のブレース。名前の下に罫線、サブコピーのキーワードだけ青。横長は左上"
+    },
+    "motifs": [
+      "ブレース",
+      "ハッシュ・二重スラッシュ・アスタリスク・地球の線ステッカー",
+      "3 つ並びの雲、プラス、矢印の塗りステッカー"
+    ],
+    "photo": {
+      "shape": "角丸矩形 r=40〜48",
+      "keyline": "#1E1E1E 4px",
+      "notes": "右下に白いノッチを作り GDG ロゴと 3 行 wordmark を収める"
+    },
+    "facts": {
+      "dateStyle": "2026.10.18 Sun 10:30-18:00（数字を大きく、曜日と時刻を一段小さく）",
+      "venueStyle": "JR大阪駅直結 国際工科専門職大学 大阪キャンパス（駅を大きく、施設は小さく）",
+      "badges": ["参加無料", "入退場自由"]
+    }
+  },
+  "directions": null,
   "slots": {
     "cta": null,
-    "date": "10/18（日）10:30〜",
-    "eventName": "DevFest Kansai 2026",
+    "date": null,
+    "eventName": null,
     "flags": null,
     "headline": null,
     "photoUrl": null,
-    "place": "大阪・梅田",
+    "place": null,
     "sessionTitle": null,
     "speakerImageUrl": null,
     "speakerName": null,
     "speakerRole": null,
     "sub": null,
-    "subcopy": "異分野と越境の AI カンファレンス",
+    "subcopy": null,
     "time": null,
-    "title": "AI 時代の「考える」を取り戻す。",
+    "title": null,
     "track": null
   },
   "layoutVars": {
-    "titleScale": 0.9,
+    "titleScale": 1,
     "align": "left",
-    "emphasis": ["考える"]
+    "emphasis": []
   },
-  "skinSource": "brief",
-  "rationaleMd": "メインコピーを題に、日時と場所を縮小表示でも読める大きさで載せた。"
+  "skinSource": "kit",
+  "rationaleMd": "支配色は大阪府の青（キットどおり）。モチーフは GDG のステッカー語彙（ブレース、アスタリスク、// と地球）を句読点として 4 つ。ハンズオンなので pastel pink のタグ、題は 2 行に収め、所属は 1 行。写真は角丸矩形に黒 4px、ノッチに GDG ロゴ。",
+  "selfReviewMd": "- 25% に縮小して題と名前が読める（題 70px、名前 62px）\n- 3 秒でイベント名・セッション・登壇者が分かる\n- 文字は 5 要素だけ。説明文は無し\n- 左端 58px に揃え、上下の余白は 36 / 32px\n- 色は地・白・青・ピンクの 4 色、青はサブコピーのキーワードだけ\n- ロゴはノッチの中、何も重ならない"
 }

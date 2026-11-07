@@ -1,0 +1,66 @@
+{
+  "event": "Innovative Crosstalk 2026 (Jamboree Geeks '26)",
+  "date": "2026-08-02",
+  "feel": "夏祭りの夜。技術とエンタメが混ざる「お祭りカンファレンス」",
+  "why": "お祭り感のあるイベントにしたかった。GDG の語彙より祭りの語彙を優先し、公式ガイドから意図的に外れた。来年の同名イベントは別のデザインになってよい",
+  "palette": {
+    "dominant": "#15193E",
+    "ground": "#15193E（濃紺の夜空。星の写真素材を薄く重ねる版もある）",
+    "panel": "#F4EFE8",
+    "ink": "#151515",
+    "accent": "#E2644B（提灯・団扇の朱）",
+    "logoGradient": "#E9B300 → #F39A00 → #E75656 → #A75974",
+    "lime": "#DDFF00（広告の見出しだけ）",
+    "adsHeader": "#002A70",
+    "badges": {
+      "途中参加退出可": ["#F4EFE8", "#15193E"],
+      "会場限定グッズあり": ["#F4EFE8", "#15193E"]
+    }
+  },
+  "type": {
+    "sessionTitle": "Google Sans Flex Bold 92 / 行間 105px / 字間 -2%（@1600）。日本語題は LINE Seed JP Bold",
+    "speakerName": "Google Sans Flex Bold 64 / 字間 -1%",
+    "speakerRole": "Google Sans Flex Medium 32 / 行間 46px",
+    "date": "Google Sans Flex Bold 52〜57（8.2 Sun 12:30- @東京大学）",
+    "countdown": "Google Sans Bold 120 + 数字だけ 180（あと 1 日 !）",
+    "badge": "LINE Seed JP Bold 43",
+    "wordmark": "Google Sans Regular 37 / 3 行（白）",
+    "adsHeadline": "LINE Seed JP Bold 136〜151 / 行間 200px、#DDFF00",
+    "adsCta": "LINE Seed JP Bold 103（今すぐ無料申し込み）"
+  },
+  "lockup": {
+    "kind": "logo-image",
+    "name": "Innovative Crosstalk! / Jamboree Geeks '26（グラデーションのロゴ画像、ドロップシャドウ付き）",
+    "placement": {
+      "landscape": "左上 116,54 の 475×242 @1600。右隣に GDG ロゴと 3 行 wordmark（白）",
+      "thumbnail": "中央上 505,24 の 590×300、下にサブコピーと日付ピル",
+      "ads": "右下に小さく（連投の広告は上帯に文言、ロゴは隅）"
+    }
+  },
+  "motifs": [
+    "提灯（単体と連なり）、花火（大小）、和傘、和雲、星、ヨーヨー、ラムネ、かき氷（PNG 素材）",
+    "四隅と上辺に散らす。中央は空ける。雲は下辺にも",
+    "顔は大きな満月（#F4EFE8 の円、直径 1179 @1600、薄い雲の線画を重ねる）を地にする"
+  ],
+  "photo": {
+    "shape": "卵型（楕円 538×609 @1600）。右カラム x=962",
+    "keyline": "グラデーション #F39A00 → #E75656 → #A75974 の 6px",
+    "group": "パネルディスカッションは左右に 1 人ずつ、名札をクリームのピルで下に",
+    "lt": "LT 大会は正円の列を下辺に 5 つ"
+  },
+  "facts": {
+    "date": "8.2 Sun 12:30- @東京大学 をクリーム #F4EFE8 のピル（656×107、r=43）に黒文字。写真の下、右カラム",
+    "badges": ["途中参加退出可", "会場限定グッズあり"],
+    "thumbnail": "日付は黒 #1E1E1E のピル（白文字）を月の中に、バッジは右下にクリームのピル"
+  },
+  "archetypes": {
+    "connpass-thumbnail": "濃紺の地 + 四隅の祭り素材 + 中央の満月。月の中にロゴ、サブコピー（LINE Seed JP Bold 36）、黒ピルの日付。左下に GDG ロゴ + 3 行 wordmark（白）。右下にバッジ 2 個",
+    "x-session-card": "左: クリームのパネル（940×461、r=20、右上を切り欠いた形）に題 92 / 名前 64 / 所属 32。右: 卵型の写真 + 下に日付ピル。上帯にロゴ + GDG wordmark、四隅に祭り素材",
+    "crosstalk": "左右に卵型の写真、中央にクリームのパネル「Cross Talk パネルディスカッション / IBM × Antigravity」、下に日付ピル",
+    "countdown": "顔と同じ満月の中に #15193E の角丸パネル（793×291、r=44）で「あと 1 日 !」白",
+    "x-ad-1x1": "上帯 #002A70 に白文字「AI の実装と運用が学べる技術イベント」+ GDG ロゴ。写真の上に黒のグラデ覆い、#DDFF00 の見出し 3 行 + ハッシュタグ、白い CTA 箱（1037×306、r=30）に日付 + 「今すぐ無料申し込み」",
+    "ig-post": "4:5。1 枚目は顔の縦長版、2 枚目は提灯の横断幕 + クリームの説明パネル、3〜4 枚目は Tech Stage / Collab Stage のセッション一覧カード（クリームのカード、丸写真）",
+    "venue": "2 枚の写真を斜めに切り替えた角丸矩形（虹のグラデ罫線）に日付ピル"
+  },
+  "growth": "DevFest Kansai より 2 か月前の制作。写真の型（卵型 + グラデ罫線）と日付ピルの置き方は DevFest に引き継がれ、罫線は黒 4px に簡素化された"
+}

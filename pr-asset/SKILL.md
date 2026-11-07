@@ -1,38 +1,62 @@
 ---
 name: pr-asset
-description: GDG イベントの画像（connpass サムネイル、OGP、X・Instagram の投稿画像と広告、セッション・登壇者カード、写真下地）を、テンプレートのスロットを埋めて作る。ピクセル・CSS・HTML は書かず、文言と範囲付きのレイアウト変数だけを返し、ローカルで描画して pr-playbook の render 検査（はみ出し・縮小時の文字サイズ・コントラスト・ロゴ）を通す。イベントの画像、サムネイル、バナーを作るときに使う。
+description: GDG イベントの画像（connpass サムネイル、OGP、X・Instagram の投稿画像と広告、セッション・登壇者カード、カウントダウン）を、イベントごとのデザインキット（色・モチーフ・書体・ロックアップ）に沿って HTML と CSS で設計し、ローカルで描画して自分の目で見て直し、pr-playbook の render 検査（はみ出し・縮小時の文字サイズ・コントラスト・ロゴ）を通す。キットと顔（サムネイル）の方向案を出すときにも使う。イベントの画像、サムネイル、バナー、広告画像を作るときに使う。
 ---
 
 # pr-asset — 画像
 
-<!-- reads: guides/thumbnail.md, guides/brand.md, templates/images/README.md -->
+<!-- reads: guides/design.md, guides/thumbnail.md, guides/brand.md, templates/images/README.md, examples/design/README.md -->
 
-AI はピクセルを設計しない。テンプレートのスロットに文言を入れ、描画器が組み、検査器が測る。
+チャプターのデザイナーと同じ判断基準で、イベントごとに違う答えを出す。描いて、見て、直す。
+ピクセルは描かない（HTML と CSS を書き、描画器が描き、検査器が測る）。
 
-## 入力
+## 入力（JOB.md が指す）
 
-- テンプレート id（`pr-playbook/templates/images/<id>/`）、brief（skin、登壇者・セッション）、採用コピー、
-  投稿や connpass ページの `imageSlots` の文言（あれば）
+- `BRIEF.json`。`KIT.json` と `KIT.html`（キットが決まっていれば。顔の HTML）。`COPY.json`（採用コピー）、`POST.json`（添える投稿）
+- `references/`（参考画像。ファイル名の日付が新しいほど重く見る。**同じ絵にしない**）
+- `assets/`（`gdg.svg`、`stickers/*.svg`、`photos/<speakerId>.jpg`、`logo.*`）。HTML からは相対パスで参照する
+- 目的（purpose）: `kit`（キットと顔の方向案）か、テンプレート id（`templates/images/README.md` の表）
+- `PREVIOUS.html` と人の指示（直しのとき）
 
 ## 読むもの
 
-- `pr-playbook/templates/images/<id>/{slots.schema.json,README.md}`（必須スロット、字数、サイズ）
-- `pr-playbook/guides/thumbnail.md`（縮小表示で読める、事実を載せる）、`guides/brand.md`（skin、ロゴの禁則）
-- `pr-playbook/rules.json` のうち scope が `draft.asset_spec` のルール（`RENDER-*`、`CP-THUMB-HAS-FACTS`、`BRAND-SKIN-DECLARED`）
+- `pr-playbook/guides/design.md` — 判断基準。全部読む
+- `pr-playbook/examples/design/kits/*.json` — 過去 3 イベントの測った値。`html/*.html` — 型（出発点にしてよい）
+- `pr-playbook/templates/images/<id>/slots.schema.json` — サイズと必須スロット。`templates/images/README.md` — HTML の契約
+- `pr-playbook/rules.json` のうち scope が `draft.asset_spec` のルール
 
 ## 手順
 
-1. `slots.schema.json` の必須スロットを全部埋める。字数（`maxLength`）を守る。使わないスロットは null
-2. 見出しは採用コピーから短く。日時・場所は brief の事実をそのまま（サムネイルは縮小表示で読まれる）
-3. `layoutVars` は範囲の中だけ: `titleScale` 0.8〜1.2、`align` left / center、`emphasis` は強調する語を 3 つまで
-4. 色は brief の skin（無ければ gdg-design）。`skinSource` に出所を書く。色・書体・座標は返さない
-5. ローカルで描画して検査する。MUST が落ちたら文言を短くするか `titleScale` を下げる
+1. **文脈を拾う。** brief から開催地・季節・公式シリーズ・趣旨・対象・`skin`（公式ロゴ、ブランドガイド、前回の画像）。
+   `references/` の画像を `view_image` で見る。`guides/design.md` の「新しいイベントで決めるときの手順」のとおり、支配色と
+   モチーフの理由を 1 行ずつ決める。理由が書けない色は選ばない。
+2. **purpose が `kit`:** キット（色・書体・ロックアップ・モチーフ・写真・事実の書き方）を決め、顔（`connpass-thumbnail`）を
+   2〜3 案、HTML で書く。1 案は参考に近く、1 案は構図かモチーフが違う。案ごとに `rationaleMd` を書く。
+   **purpose がテンプレート id:** `KIT.json` があればその範囲で（新しい色や書体を足さない）、無ければ 1 で決めたキットで、
+   1 枚を HTML で書く。`examples/design/html/` の型から始めてよいが、イベントに合わせて変える。
+3. **描画する。** `draft.html` に書き、
 
-```sh
-node <pr-playbook>/scripts/render/images.mjs --template <id> --slots out.json --skin <skin.json> --out /tmp/asset
-```
+   ```sh
+   node skills/pr-playbook/scripts/render/images.mjs --html draft.html --template <id> --assets . --out out/
+   ```
+
+   （サンドボックスでは描画器 broker が `GDG_RENDER_BROKER` で指定されている。無ければ `--broker .render`）
+4. **見る。** `out/<id>.png` を `view_image` で開き、`guides/design.md` のセルフレビューの項目を順に確かめる。
+   `out/checks.json` の MUST（はみ出し、縮小時の文字サイズ、コントラスト、ロゴ、サイズ）を直す。直して描画し直すのは 3 周まで。
+   良くなったときだけ採用する。
+5. **返す。** `html` は `draft.html` の中身そのまま（`<style>` と `.canvas`）。`selfReviewMd` に見て確かめたことを項目ごとに
+   1 行ずつ。`rationaleMd` に色とモチーフの理由。`skinSource` は KIT.json があれば `kit`。
+
+## HTML の約束（`templates/images/README.md`）
+
+- ルート `<div class="canvas" data-safe-inset="32" style="width:Wpx;height:Hpx">`。サイズはテンプレートどおり
+- 必須スロットの文字要素に `data-slot="<名前>" data-required="true"`。任意の文字にも `data-slot` を付ける
+- GDG ロゴは `<img data-logo src="assets/gdg.svg">`。比率・回転・切り抜きを変えず、上に何も重ねない
+- 画像は `assets/` の相対パスか `data:`。外の URL は img.gdgs.jp だけ。script、iframe、`on*`、`@import` は消される
+- 書体は `"Google Sans Flex"`、`"LINE Seed JP"`、`"Google Sans Code"` だけ（@font-face は注入される）
+- 写真が無い登壇者に写真を置かない。公式ロゴを文字で似せて作らない。参考画像の丸写しをしない
 
 ## 出力
 
-`references/output.schema.json` の JSON だけを返す（`templateId`, `slots`, `layoutVars`, `skinSource`, `rationaleMd`）。
-例は `references/example-output.json`。
+`references/output.schema.json` の JSON だけを返す。`mode` は `design`。キットの案のときは `directions`（2〜3 件）。
+例は `references/example-output.json`（design）と `references/example-template-output.json`（template）。
